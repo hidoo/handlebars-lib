@@ -1,7 +1,7 @@
 {
   "name": "@hidoo/handlebars-helpers",
   "version": "0.0.0",
-  "description": "",
+  "description": "A helper library that summarizes commonly used functions in Handlebars.",
   "keywords": [
     "handlebars"
   ],
@@ -38,5 +38,9 @@
     "power-assert": "^1.6.0"
   },
   "author": "hidoo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hidoo/handlebars-helpers"
+  },
   "license": "MIT"
 }
