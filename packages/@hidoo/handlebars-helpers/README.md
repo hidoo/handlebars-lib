@@ -1,5 +1,7 @@
 # @hidoo/handlebars-helpers
 
+[![Build Status](https://travis-ci.org/hidoo/handlebars-helpers.svg?branch=master)](https://travis-ci.org/hidoo/handlebars-helpers)
+
 A helper library that summarizes commonly used functions in Handlebars.
 
 ## Installation
