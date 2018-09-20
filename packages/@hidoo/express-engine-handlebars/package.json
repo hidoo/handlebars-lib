@@ -2,23 +2,29 @@
   "name": "@hidoo/express-engine-handlebars",
   "version": "0.0.0",
   "description": "Handlebars template engine for express.",
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "main": "lib/index.js",
   "files": [
     "lib/"
   ],
-  "scripts": {
-    "prebuild": "rimraf ./lib",
-    "build": "babel ./src --out-dir ./lib",
-    "test": "npm-run-all -s test:*",
-    "test:lint": "eslint .",
-    "test:unit": "cross-env NODE_ENV=test mocha ./test"
-  },
   "keywords": [
     "express",
     "engine"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "hidoo",
   "license": "MIT",
+  "scripts": {
+    "prebuild": "rimraf ./lib",
+    "build": "cross-env NODE_ENV=production babel ./src --out-dir ./lib",
+    "test": "npm-run-all -s test:*",
+    "test:lint": "eslint .",
+    "test:unit": "cross-env NODE_ENV=test mocha ./test"
+  },
   "dependencies": {
     "@hidoo/handlebars-helpers": "^0.1.1",
     "glob": "^7.1.3",
