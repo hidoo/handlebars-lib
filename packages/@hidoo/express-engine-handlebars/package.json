@@ -16,6 +16,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hidoo/express-engine-handlebars.git"
+  },
   "author": "hidoo",
   "license": "MIT",
   "scripts": {
@@ -23,7 +27,8 @@
     "build": "cross-env NODE_ENV=production babel ./src --out-dir ./lib",
     "test": "npm-run-all -s test:*",
     "test:lint": "eslint .",
-    "test:unit": "cross-env NODE_ENV=test mocha ./test"
+    "test:unit": "cross-env NODE_ENV=test mocha ./test",
+    "prepare": "npm-run-all -s test build"
   },
   "dependencies": {
     "@hidoo/handlebars-helpers": "^0.1.1",
