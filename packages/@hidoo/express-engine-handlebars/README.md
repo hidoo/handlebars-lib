@@ -1,5 +1,7 @@
 # @hidoo/express-engine-handlebars
 
+[![Build Status](https://travis-ci.org/hidoo/express-engine-handlebars.svg?branch=master)](https://travis-ci.org/hidoo/express-engine-handlebars)
+
 > Handlebars template engine for express.
 
 ## Installation
