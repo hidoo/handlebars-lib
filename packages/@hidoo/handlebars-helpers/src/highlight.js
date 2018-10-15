@@ -13,7 +13,7 @@ import hljs from 'highlight.js';
  * {{highlight value lang='html'}}
  */
 export default function highlight(value, options) {
-  const {lang} = options.hash;
+  const lang = options.hash.lang || 'html';
 
   if (!value && value !== 0) { // eslint-disable-line no-magic-numbers
     return '';
@@ -21,5 +21,5 @@ export default function highlight(value, options) {
   if (typeof value !== 'string') {
     return String(value);
   }
-  return hljs.highlightAuto(value, typeof lang === 'string' ? [lang] : null).value;
+  return hljs.highlight(lang, value).value;
 }

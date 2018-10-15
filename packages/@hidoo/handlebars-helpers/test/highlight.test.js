@@ -7,7 +7,7 @@ import assert from 'assert';
 import Handlebars from 'handlebars';
 import highlight from '../src/highlight';
 
-describe('{{highlight value lang=\'html\'}}', () => {
+describe('{{highlight value lang=\'<lang>\'}}', () => {
   let template = null;
 
   before(() => {
@@ -35,7 +35,7 @@ describe('{{highlight value lang=\'html\'}}', () => {
 
   it('should return highlighted string if argument "value" is string.', () => {
     const values = [
-      ['value', null, '<span class="hljs-keyword">value</span>'],
+      ['value', null, 'value'],
       [
         '<div class="hoge"></div>',
         'html',
