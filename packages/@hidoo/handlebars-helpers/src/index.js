@@ -7,6 +7,7 @@ export {default as convertBreaks} from './convertBreaks';
 export {default as encodeUrl} from './encodeUrl';
 export {default as filterArray} from './filterArray';
 export {default as fromJson} from './fromJson';
+export {default as highlight} from './highlight';
 export {default as ifAnchorUrl} from './ifAnchorUrl';
 export {default as ifContain} from './ifContain';
 export {default as ifLte} from './ifLte';
