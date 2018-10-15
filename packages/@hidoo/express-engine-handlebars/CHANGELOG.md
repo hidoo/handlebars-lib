@@ -1,3 +1,8 @@
+<a name="0.1.3"></a>
+## [0.1.3](https://github.com/hidoo/express-engine-handlebars/compare/v0.1.2...v0.1.3) (2018-10-15)
+
+
+
 <a name="0.1.2"></a>
 ## [0.1.2](https://github.com/hidoo/express-engine-handlebars/compare/v0.1.1...v0.1.2) (2018-10-15)
 
