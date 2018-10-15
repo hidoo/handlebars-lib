@@ -64,11 +64,11 @@ describe('{{#markdown}}...{{/markdown}}', () => {
     const contents = [
       [
         `# heading
-~~~html
+\`\`\`html
 <div class="hoge">
   huga
 </div>
-~~~
+\`\`\`
 `,
         `<h1 id="heading">heading</h1>
 <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hoge"</span>&gt;</span>

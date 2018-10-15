@@ -17,6 +17,6 @@ export default function markdown(options) {
     return content;
   }
   return marked(content, {
-    highlight: (code, lang) => hljs.highlightAuto(code, [lang]).value
+    highlight: (code, lang) => hljs.highlight(lang || 'html', code).value
   });
 }
