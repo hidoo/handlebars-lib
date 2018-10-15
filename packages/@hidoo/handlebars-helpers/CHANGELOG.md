@@ -1,3 +1,13 @@
+<a name="0.2.2"></a>
+## [0.2.2](https://github.com/hidoo/handlebars-helpers/compare/v0.2.1...v0.2.2) (2018-10-15)
+
+
+### Bug Fixes
+
+* **highlight:** fix to export hightlight ([ee22d75](https://github.com/hidoo/handlebars-helpers/commit/ee22d75))
+
+
+
 <a name="0.2.1"></a>
 ## [0.2.1](https://github.com/hidoo/handlebars-helpers/compare/v0.2.0...v0.2.1) (2018-10-15)
 
