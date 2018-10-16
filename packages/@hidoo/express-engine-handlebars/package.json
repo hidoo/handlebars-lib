@@ -1,6 +1,6 @@
 {
   "name": "@hidoo/express-engine-handlebars",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Handlebars template engine for express.",
   "engines": {
     "node": ">=8.0.0"
