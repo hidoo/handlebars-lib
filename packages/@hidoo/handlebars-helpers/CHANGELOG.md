@@ -1,3 +1,13 @@
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/hidoo/handlebars-helpers/compare/v0.2.2...v0.3.0) (2018-10-16)
+
+
+### Features
+
+* **markdown:** extend marked.Renderer to add "hljs" class to code block ([78b5d6d](https://github.com/hidoo/handlebars-helpers/commit/78b5d6d))
+
+
+
 <a name="0.2.2"></a>
 ## [0.2.2](https://github.com/hidoo/handlebars-helpers/compare/v0.2.1...v0.2.2) (2018-10-15)
 
