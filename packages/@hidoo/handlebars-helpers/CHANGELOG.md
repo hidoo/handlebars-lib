@@ -1,3 +1,13 @@
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/hidoo/handlebars-helpers/compare/v0.3.0...v0.4.0) (2018-10-25)
+
+
+### Features
+
+* **sliceArray:** add helper that wrapped array.prototype.slice ([47c3334](https://github.com/hidoo/handlebars-helpers/commit/47c3334))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/hidoo/handlebars-helpers/compare/v0.2.2...v0.3.0) (2018-10-16)
 
