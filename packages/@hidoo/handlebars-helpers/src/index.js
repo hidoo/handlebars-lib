@@ -16,5 +16,6 @@ export {default as is} from './is';
 export {default as isnt} from './isnt';
 export {default as markdown} from './markdown';
 export {default as replace} from './replace';
+export {default as sliceArray} from './sliceArray';
 export {default as sortArray} from './sortArray';
 export {default as toJson} from './toJson';
