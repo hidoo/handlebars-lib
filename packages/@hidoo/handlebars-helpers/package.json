@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "highlight.js": "^9.13.0",
-    "marked": "^0.5.1",
+    "marked": "^0.6.0",
     "path-browserify": "^1.0.0"
   },
   "peerDependencies": {
