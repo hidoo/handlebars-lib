@@ -27,7 +27,7 @@
     "version:commit": "git add ./CHANGELOG.md"
   },
   "dependencies": {
-    "highlight.js": "^9.13.0",
+    "highlight.js": "^9.15.6",
     "marked": "^0.6.0",
     "path-browserify": "^1.0.0"
   },
