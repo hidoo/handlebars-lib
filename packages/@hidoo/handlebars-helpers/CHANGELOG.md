@@ -1,3 +1,13 @@
+<a name="0.4.2"></a>
+## [0.4.2](https://github.com/hidoo/handlebars-helpers/compare/v0.4.1...v0.4.2) (2019-03-04)
+
+
+### Bug Fixes
+
+* **package:** update marked to version 0.6.0 ([b4706f3](https://github.com/hidoo/handlebars-helpers/commit/b4706f3))
+
+
+
 <a name="0.4.1"></a>
 ## [0.4.1](https://github.com/hidoo/handlebars-helpers/compare/v0.4.0...v0.4.1) (2018-10-26)
 
