@@ -8,7 +8,7 @@
 export default function ifLte(value, test, options) {
   const self = this; // eslint-disable-line no-invalid-this
 
-  if (!value) {
+  if (!value && value !== 0 && value !== '') { // eslint-disable-line no-magic-numbers
     throw new TypeError('{{#ifLte}}: Argument "value" is required.');
   }
   if (typeof value !== 'string' && typeof value !== 'number') {

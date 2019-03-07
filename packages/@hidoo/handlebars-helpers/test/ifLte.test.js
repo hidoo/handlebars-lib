@@ -39,6 +39,19 @@ describe('{{#ifLte value test}}...{{/ifLte}}', () => {
     });
   });
 
+  it('should return comparison result if argument "value" is valid, but falsy. (0 or empty string)', () => {
+    const validFaslyCases = [
+      [0, 100, 'less than equel'],
+      ['', 'a', 'less than equel']
+    ];
+
+    validFaslyCases.forEach(([value, test, expected]) => {
+      const actual = template({value, test});
+
+      assert(actual === expected);
+    });
+  });
+
   it('should return "less than equel" if argument "value" is "a" and argument "test" is "b".', () => {
     const value = 'a',
           test = 'b',
