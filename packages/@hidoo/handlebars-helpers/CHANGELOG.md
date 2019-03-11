@@ -1,3 +1,18 @@
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/hidoo/handlebars-helpers/compare/v0.4.2...v0.5.0) (2019-03-11)
+
+
+### Bug Fixes
+
+* **iflte:** fix to support falsy value ([f908472](https://github.com/hidoo/handlebars-helpers/commit/f908472))
+
+
+### Features
+
+* add helper that return default value if value is falsy ([73649cb](https://github.com/hidoo/handlebars-helpers/commit/73649cb))
+
+
+
 <a name="0.4.2"></a>
 ## [0.4.2](https://github.com/hidoo/handlebars-helpers/compare/v0.4.1...v0.4.2) (2019-03-04)
 
