@@ -1,3 +1,13 @@
+<a name="0.1.8"></a>
+## [0.1.8](https://github.com/hidoo/express-engine-handlebars/compare/v0.1.7...v0.1.8) (2019-03-11)
+
+
+### Bug Fixes
+
+* **package:** update [@hidoo](https://github.com/hidoo)/handlebars-helpers to version 0.5.0 ([c171cdc](https://github.com/hidoo/express-engine-handlebars/commit/c171cdc))
+
+
+
 <a name="0.1.7"></a>
 ## [0.1.7](https://github.com/hidoo/express-engine-handlebars/compare/v0.1.6...v0.1.7) (2019-03-04)
 
