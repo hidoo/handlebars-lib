@@ -8,6 +8,7 @@ before_install:
   - npm install -g yarn
 install:
   - yarn
+  - yarn build
   - yarn bootstrap
 cache:
   yarn: true
