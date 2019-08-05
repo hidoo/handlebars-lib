@@ -1,0 +1,45 @@
+{
+  "name": "@hidoo/handlebars-helpers",
+  "version": "0.5.1",
+  "description": "A helper library that summarizes commonly used functions in Handlebars.",
+  "keywords": [
+    "handlebars"
+  ],
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib/"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prebuild": "rimraf ./lib",
+    "build": "cross-env NODE_ENV=production babel ./src --out-dir ./lib",
+    "test": "cross-env NODE_ENV=test mocha ./test"
+  },
+  "author": "hidoo",
+  "license": "MIT",
+  "dependencies": {
+    "highlight.js": "9.15.8",
+    "marked": "0.7.0",
+    "path-browserify": "1.0.0"
+  },
+  "peerDependencies": {
+    "handlebars": "4.1.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.5.5",
+    "@babel/core": "7.5.5",
+    "@babel/preset-env": "7.5.5",
+    "@babel/register": "7.5.5",
+    "babel-preset-power-assert": "3.0.0",
+    "cross-env": "5.2.0",
+    "handlebars": "4.1.2",
+    "mocha": "6.2.0",
+    "power-assert": "1.6.1",
+    "rimraf": "2.6.3"
+  }
+}
