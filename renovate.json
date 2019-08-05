@@ -1,5 +1,18 @@
 {
   "extends": [
     "config:base"
-  ]
+  ],
+  "timezone": "Asia/Tokyo",
+  "labels": [
+    "renovate"
+  ],
+  "schedule": [
+    "every weekend"
+  ],
+  "patch": {
+    "automerge": true
+  },
+  "lockFileMaintenance": {
+    "enabled": true
+  }
 }
