@@ -1,0 +1,47 @@
+{
+  "name": "@hidoo/express-engine-handlebars",
+  "version": "0.1.9",
+  "description": "Handlebars template engine for express.",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib/"
+  ],
+  "keywords": [
+    "express",
+    "engine"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "hidoo",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "rimraf ./lib",
+    "build": "cross-env NODE_ENV=production babel ./src --out-dir ./lib",
+    "test": "cross-env NODE_ENV=test mocha ./test"
+  },
+  "dependencies": {
+    "@hidoo/handlebars-helpers": "^0.5.1",
+    "glob": "^7.1.4",
+    "glob-parent": "^5.0.0",
+    "handlebars": "^4.1.2",
+    "handlebars-layouts": "^3.1.4",
+    "vinyl": "^2.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "babel-preset-power-assert": "^3.0.0",
+    "cross-env": "^5.2.0",
+    "express": "^4.17.1",
+    "mocha": "^6.2.0",
+    "power-assert": "^1.6.1",
+    "request": "^2.88.0",
+    "rimraf": "^2.6.3"
+  }
+}
