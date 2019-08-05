@@ -1,3 +1,24 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# 0.6.0 (2019-08-05)
+
+
+### Bug Fixes
+
+* **package:** update @hidoo/handlebars-helpers to version 0.4.1 ([e165915](https://github.com/hidoo/handlebars-lib/commit/e165915))
+
+
+### Features
+
+* **packages:** add handlebars template engine for express ([3d1f1c9](https://github.com/hidoo/handlebars-lib/commit/3d1f1c9))
+
+
+
+
+
 <a name="0.1.9"></a>
 ## [0.1.9](https://github.com/hidoo/express-engine-handlebars/compare/v0.1.8...v0.1.9) (2019-06-10)
 
@@ -80,6 +101,3 @@
 ### Features
 
 * **packages:** add handlebars template engine for express ([d219722](https://github.com/hidoo/express-engine-handlebars/commit/d219722))
-
-
-

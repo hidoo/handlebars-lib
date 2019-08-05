@@ -1,3 +1,27 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# 0.6.0 (2019-08-05)
+
+
+### Bug Fixes
+
+* **highlight:** fix to export hightlight ([879b027](https://github.com/hidoo/handlebars-lib/commit/879b027))
+* **highlight:** fix to use hljs.highlight from hljs.highlightAuto ([ad3ce86](https://github.com/hidoo/handlebars-lib/commit/ad3ce86))
+* **markdown:** fix to use hljs.highlight from hljs.highlightAuto ([a32033d](https://github.com/hidoo/handlebars-lib/commit/a32033d))
+* **sliceArray:** fix to export sliceArray ([37c95db](https://github.com/hidoo/handlebars-lib/commit/37c95db))
+
+
+### Features
+
+* **markdown:** extend marked.Renderer to add "hljs" class to code block ([271182d](https://github.com/hidoo/handlebars-lib/commit/271182d))
+
+
+
+
+
 <a name="0.5.1"></a>
 ## [0.5.1](https://github.com/hidoo/handlebars-helpers/compare/v0.5.0...v0.5.1) (2019-06-10)
 
@@ -97,6 +121,3 @@
 
 <a name="0.1.0"></a>
 # 0.1.0 (2018-08-20)
-
-
-
