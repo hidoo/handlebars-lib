@@ -24,7 +24,7 @@ Object.entries(helpers).forEach(([name, helper]) =>
 ## Test
 
 ```sh
-$ npm test
+$ yarn test
 ```
 
 ## License

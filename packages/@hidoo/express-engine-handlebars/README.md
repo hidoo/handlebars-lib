@@ -42,7 +42,7 @@ export const register = (handlebars) => {
 ## Test
 
 ```sh
-$ npm test
+$ yarn test
 ```
 
 ## License
