@@ -1,7 +1,5 @@
 # @hidoo/express-engine-handlebars
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/hidoo/express-engine-handlebars.svg)](https://greenkeeper.io/)
-
 > Handlebars template engine for express.
 
 ## Installation

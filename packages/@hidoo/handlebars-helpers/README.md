@@ -1,7 +1,5 @@
 # @hidoo/handlebars-helpers
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/hidoo/handlebars-helpers.svg)](https://greenkeeper.io/)
-
 A helper library that summarizes commonly used functions in Handlebars.
 
 ## Installation
