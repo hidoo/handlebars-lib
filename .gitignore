@@ -1,0 +1,21 @@
+# maxos files
+.DS_Store
+._*
+
+# cache files
+*.swp
+*.cache
+
+# diff files
+*.diff
+
+# log files
+*.log
+
+# npm
+node_modules/
+packages/**/node_modules/
+
+# distribution files
+packages/**/test/build/
+packages/**/lib/
