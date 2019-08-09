@@ -32,16 +32,16 @@
     "vinyl": "^2.2.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/register": "^7.5.5",
-    "babel-preset-power-assert": "^3.0.0",
-    "cross-env": "^5.2.0",
-    "express": "^4.17.1",
-    "mocha": "^6.2.0",
-    "power-assert": "^1.6.1",
-    "request": "^2.88.0",
-    "rimraf": "^2.6.3"
+    "@babel/cli": "7.5.5",
+    "@babel/core": "7.5.5",
+    "@babel/preset-env": "7.5.5",
+    "@babel/register": "7.5.5",
+    "babel-preset-power-assert": "3.0.0",
+    "cross-env": "5.2.0",
+    "express": "4.17.1",
+    "mocha": "6.2.0",
+    "power-assert": "1.6.1",
+    "request": "2.88.0",
+    "rimraf": "2.6.3"
   }
 }
