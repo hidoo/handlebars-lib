@@ -42,6 +42,6 @@
     "mocha": "6.2.0",
     "power-assert": "1.6.1",
     "request": "2.88.0",
-    "rimraf": "2.6.3"
+    "rimraf": "2.7.1"
   }
 }
