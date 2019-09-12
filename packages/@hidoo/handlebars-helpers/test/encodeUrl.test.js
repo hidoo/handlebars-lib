@@ -1,5 +1,3 @@
-/* eslint no-magic-numbers: 0, max-len: 0 */
-
 /**
  * import modules
  */
@@ -28,7 +26,7 @@ describe('{{encodeUrl value}}', () => {
     });
   });
 
-  it('should throw TypeError if argument "value" is not valid. (must be string)', () => {
+  it('should return encoded stringif argument "value" is valid.', () => {
     const values = ['text', '日本語', 'text?key=value+value2', 'text#hash'];
 
     values.forEach((value) => {

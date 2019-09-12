@@ -1,5 +1,6 @@
 /**
  * 元の値が比較する値以下であるかどうかでの条件分岐をする
+ *
  * @param {String|Number} value 元の値
  * @param {String|Number} test 比較する値
  * @param {Object} options Handlebars のオプション

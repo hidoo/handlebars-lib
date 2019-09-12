@@ -1,4 +1,4 @@
-/* eslint max-len: 0, no-magic-numbers: 0 */
+/* eslint no-sync: off */
 
 import fs from 'fs';
 import assert from 'assert';
@@ -37,7 +37,7 @@ describe('util', () => {
       assert(filepaths.length === 0);
     });
 
-    it('should return Promise<Array> that includes empty array if argument "pattern" matched files not readed.', async () => {
+    it('should return Promise<Array> that includes file paths if argument "pattern" matched files readed.', async () => {
       const filepaths = await globPromise(`${path.src}/exists_*.txt`, {silent: true});
 
       assert(Array.isArray(filepaths));

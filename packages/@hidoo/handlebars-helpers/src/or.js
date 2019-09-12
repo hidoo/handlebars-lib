@@ -1,5 +1,6 @@
 /**
  * return default value if value is falsy value
+ *
  * @param {Number|String} value value
  * @param {Number|String} defaultValue default value
  * @return {Any}

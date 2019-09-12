@@ -4,14 +4,15 @@ import globParent from 'glob-parent';
 import Vinyl from 'vinyl';
 
 /**
- * [globPromise description]
+ * promisify glob
+ *
  * @param {String} pattern glob pattern
  * @param {Object} options same as options of glob
  * @return {Array<String>}
  */
 export function globPromise(pattern = '', options = {}) {
-  return new Promise((resolve) =>
-    glob(pattern, options, (err, filepaths) => {
+  return new Promise(
+    (resolve) => glob(pattern, options, (err, filepaths) => {
       if (err) {
         return resolve([]);
       }
@@ -22,6 +23,7 @@ export function globPromise(pattern = '', options = {}) {
 
 /**
  * read file async
+ *
  * @param {String} filepath file path
  * @param {Object} options options
  * @param {Object} options.encoding same as options.encoding of fs.readFile
@@ -37,7 +39,7 @@ export function readFile(filepath, options = {}) {
     fs.readFile(filepath, readFileOptions, (error, contents) => {
       if (error) {
         if (verbose) {
-          console.error(error); // eslint-disable-line no-console
+          console.error(error);
         }
         return resolve(new Vinyl({path: filepath, base, error}));
       }
@@ -48,6 +50,7 @@ export function readFile(filepath, options = {}) {
 
 /**
  * read multi file async
+ *
  * @param {String} pattern glob pattern
  * @param {Object} options options
  * @param {Object} options.glob same as options of glob

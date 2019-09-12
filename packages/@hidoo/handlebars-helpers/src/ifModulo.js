@@ -1,15 +1,15 @@
 /**
  * 割った時の余りが指定した値の時に条件分岐をする
  *
- * ```
- * {{#ifModulo value 3 1}}value が 3 で割って 1 余る時{{/ifModulo}}
- * ```
- *
  * @param {Number} value 比較する値
  * @param {Number} div 割る値
  * @param {Number} rest あまりの値
  * @param {Object} options Handlebars のオプション
  * @return {String}
+ *
+ * @example ```hbs
+ * {{#ifModulo value 3 1}}value が 3 で割って 1 余る時{{/ifModulo}}
+ * ```
  */
 export default function ifModulo(value, div, rest, options) { // eslint-disable-line max-params
   const self = this; // eslint-disable-line no-invalid-this

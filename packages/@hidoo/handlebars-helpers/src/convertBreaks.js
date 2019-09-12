@@ -5,6 +5,7 @@ import {SafeString} from 'handlebars';
 
 /**
  * マッチングパターン
+ *
  * @type {RegExp}
  */
 const PATTERN_START_PARAGRAPH = /^<p>/,
@@ -15,6 +16,7 @@ const PATTERN_START_PARAGRAPH = /^<p>/,
 
 /**
  * 改行を含む文字列を本文用にマークアップする
+ *
  * @param {Number} value 本文用のテキスト
  * @return {String}
  */
@@ -33,7 +35,8 @@ export default function convertBreaks(value = '') {
   const paragraphs = value
     .replace(PATTERN_SINGLE_LINEFEEDS, '<br />')
     .replace(PATTERN_MULTI_LINEFEEDS, '</p>\n<p>')
-    .split('\n').map((line) => {
+    .split('\n')
+    .map((line) => {
       const hasStartParagraphTag = PATTERN_START_PARAGRAPH.test(line),
             hasEndParagraphTag = PATTERN_END_PARAGRAPH.test(line);
 

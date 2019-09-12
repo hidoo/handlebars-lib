@@ -1,5 +1,6 @@
 /**
  * 加算
+ *
  * @param {Number|String} value 元の値
  * @param {Number|String} addition 加算する値
  * @return {Number}

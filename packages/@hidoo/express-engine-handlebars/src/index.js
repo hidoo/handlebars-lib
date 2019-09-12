@@ -6,12 +6,14 @@ import {globPromise, readFile, readFiles} from './util';
 
 /**
  * Handlebars default instance
+ *
  * @type {Object}
  */
 export {default as Handlebars} from 'handlebars';
 
 /**
  * default options
+ *
  * @type {Object}
  */
 const DEFAULT_OPTIONS = {
@@ -38,8 +40,6 @@ const DEFAULT_OPTIONS = {
 
 /**
  * return Handlebars template engine for express
- * @param {Object} options options
- * @return {Function}
  *
  * @example
  * import express from 'express';
@@ -54,6 +54,9 @@ const DEFAULT_OPTIONS = {
  *   partials: '/path/to/views/partials/**.hbs',
  *   helpers: '/path/to/views/helpers/**.js'
  * }));
+ *
+ * @param {Object} [options={}] options
+ * @return {Function}
  */
 export default function expressEngineHandlebars(options = {}) {
   const opts = {...DEFAULT_OPTIONS, ...options};
@@ -76,8 +79,8 @@ export default function expressEngineHandlebars(options = {}) {
       hbs.registerHelper(layoutsHelper(hbs));
 
       // register default helpers
-      Object.entries(defaultHelpers).forEach(([name, helper]) =>
-        hbs.registerHelper(name, helper)
+      Object.entries(defaultHelpers).forEach(
+        ([name, helper]) => hbs.registerHelper(name, helper)
       );
 
       // register additional helpers
@@ -88,11 +91,11 @@ export default function expressEngineHandlebars(options = {}) {
           .map((modulepath) => path.relative(__dirname, modulepath))
           .filter((modulepath) => path.extname(modulepath) === '.js')
           .forEach((modulepath) => {
-            const {register} = require(modulepath); // eslint-disable-line global-require
+            const {register} = require(modulepath); // eslint-disable-line global-require, import/no-dynamic-require
 
             if (typeof register !== 'function') {
               if (verbose) {
-                console.warn(`Warning: helper '${modulepath}' is not valid format.`); // eslint-disable-line no-console
+                console.warn(`Warning: helper '${modulepath}' is not valid format.`);
               }
               return null;
             }
@@ -102,7 +105,10 @@ export default function expressEngineHandlebars(options = {}) {
 
       // register layouts and partials
       [...layouts, ...partials].forEach((file) => {
-        const name = file.relative.replace(file.extname, '').split(path.sep).join('/');
+        const name = file.relative
+          .replace(file.extname, '')
+          .split(path.sep)
+          .join('/');
 
         hbs.registerPartial(name, file.contents.toString());
       });

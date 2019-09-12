@@ -1,5 +1,6 @@
 /**
  * 完全一致
+ *
  * @param {Any} value 元の値
  * @param {Any} test 比較する値
  * @param {Object} options Handlebars のオプション
