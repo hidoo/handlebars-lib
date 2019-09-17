@@ -1,5 +1,6 @@
 /**
  * JSON 文字列に変換する
+ *
  * @param {Any} value 値
  * @param {Object} options Handlebars のオプション
  * @return {String}

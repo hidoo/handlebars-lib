@@ -1,5 +1,6 @@
 /**
  * JSON 文字列を変数に変換する
+ *
  * @param {String} value JSON 文字列
  * @return {Any}
  */

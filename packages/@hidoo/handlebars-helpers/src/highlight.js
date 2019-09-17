@@ -5,12 +5,14 @@ import hljs from 'highlight.js';
 
 /**
  * シンタックスハイライトを適用する
+ *
  * @param {String} value 値
  * @param {Object} options Handlebars のオプション
  * @return {String}
  *
- * @example
+ * @example ```hbs
  * {{highlight value lang='html'}}
+ * ```
  */
 export default function highlight(value, options) {
   const lang = options.hash.lang || 'html';

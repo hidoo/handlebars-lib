@@ -1,5 +1,3 @@
-/* eslint no-magic-numbers: 0, max-len: 0 */
-
 /**
  * import modules
  */

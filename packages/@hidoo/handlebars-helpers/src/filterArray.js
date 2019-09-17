@@ -5,11 +5,12 @@ import {normalize, followRecursive} from './utils/key';
 
 /**
  * フィルタリングした新しい配列を返す
+ *
  * @param {Array} array 配列
  * @param {Object} options Handlebars のオプション
  * @return {Array}
  */
-export default function filterArray(array = [], options) {
+export default function filterArray(array = [], options = {}) {
   const {value, key} = options.hash;
 
   if (!Array.isArray(array)) {

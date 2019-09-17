@@ -1,5 +1,6 @@
 /**
  * URI エンコード
+ *
  * @param {String} value 値
  * @return {String}
  */

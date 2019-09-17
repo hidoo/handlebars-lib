@@ -6,6 +6,7 @@ import hljs from 'highlight.js';
 
 /**
  * escape html mappings
+ *
  * @type {Object}
  */
 const MAPPING_ESCAPE_HTML_STRINGS = {
@@ -18,6 +19,7 @@ const MAPPING_ESCAPE_HTML_STRINGS = {
 
 /**
  * return escaped html code
+ *
  * @param {String} html html code
  * @return {String}
  */
@@ -30,6 +32,7 @@ function escape(html = '') {
 
 /**
  * configure new Renderer
+ *
  * @return {Renderer}
  */
 function configureRenderer() {
@@ -37,35 +40,34 @@ function configureRenderer() {
 
   /**
    * extend code block
-   * @param {String} code code
+   *
+   * @param {String} content content of code
    * @param {String} lang language
    * @param {Boolean} escaped escape or not
    * @return {String}
    *
    * {@link https://github.com/markedjs/marked/blob/a5b93085d223652badedf70b3d5e3a4b263b7de9/lib/marked.js#L918-L939}
    */
-  renderer.code = function(code, lang, escaped) {
+  renderer.code = function code(content, lang, escaped) {
     const {langPrefix, highlight} = this.options;
-    let newCode = code,
+    let newContent = content,
         newEscaped = escaped;
 
     if (typeof highlight === 'function') {
-      const out = highlight(newCode, lang);
+      const out = highlight(newContent, lang);
 
-      if (out !== null && out !== newCode) {
+      if (out !== null && out !== newContent) {
         newEscaped = true;
-        newCode = out;
+        newContent = out;
       }
     }
 
-    newCode = newEscaped ? newCode : escape(code);
+    newContent = newEscaped ? newContent : escape(content);
 
-    /* eslint-disable max-len */
     if (!lang) {
-      return `<pre><code class="hljs">${newCode}</code></pre>\n`;
+      return `<pre><code class="hljs">${newContent}</code></pre>\n`;
     }
-    return `<pre><code class="hljs ${langPrefix}${escape(lang)}">${newCode}</code></pre>\n`;
-    /* eslint-enable max-len */
+    return `<pre><code class="hljs ${langPrefix}${escape(lang)}">${newContent}</code></pre>\n`;
   };
 
   return renderer;
@@ -73,6 +75,7 @@ function configureRenderer() {
 
 /**
  * Markdown 文字列をパースする
+ *
  * @param {Object} options Handlebars のオプション
  * @return {String}
  */

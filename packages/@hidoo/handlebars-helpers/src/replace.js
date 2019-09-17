@@ -1,12 +1,13 @@
 /**
  * 文字列の置換
  * + 引数 pattern が / デリミタで囲まれている場合、正規表現として扱う
+ *
  * @param {String} value 対象の値
  * @param {String} pattern 正規表現
  * @param {String} replacement 置換対象の値
  * @return {String}
  */
-export default function replace(value = '', pattern, replacement = '') {
+export default function replace(value = '', pattern = '', replacement = '') {
   if (typeof value !== 'string') {
     throw new TypeError('{{replace}}: Argument "value" is not string.');
   }
@@ -21,7 +22,7 @@ export default function replace(value = '', pattern, replacement = '') {
   }
 
   if ((/^\/.+\/$/).test(pattern)) {
-    const regex = new RegExp(pattern.replace(/(^\/|\/$)/g, ''), 'g');
+    const regex = new RegExp(pattern.replace(/(^\/|\/$)/g, ''), 'g'); // eslint-disable-line prefer-named-capture-group
 
     return value.replace(regex, replacement);
   }

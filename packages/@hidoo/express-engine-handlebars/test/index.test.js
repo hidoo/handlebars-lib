@@ -1,4 +1,4 @@
-/* eslint max-len: 0, no-magic-numbers: 0 */
+/* eslint no-sync: off */
 
 import assert from 'assert';
 import fs from 'fs';

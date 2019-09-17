@@ -1,3 +1,5 @@
+/* eslint id-length: off */
+
 /**
  * import modules
  */
@@ -5,6 +7,7 @@ import {normalize, followRecursive} from './utils/key';
 
 /**
  * ソート関数（昇順）
+ *
  * @param {Any} a 比較するアイテム
  * @param {Any} b 比較するアイテム
  * @return {Boolean}
@@ -23,6 +26,7 @@ function sortAscend(a, b) {
 
 /**
  * ソート関数（昇順）
+ *
  * @param {Any} a 比較するアイテム
  * @param {Any} b 比較するアイテム
  * @return {Boolean}
@@ -41,11 +45,12 @@ function sortDescend(a, b) {
 
 /**
  * ソートしたした新しい配列を返す
+ *
  * @param {Array} array 配列
  * @param {Object} options Handlebars のオプション
  * @return {Array}
  */
-export default function sortArray(array = [], options) {
+export default function sortArray(array = [], options = {}) {
   const {order, key} = options.hash;
 
   if (!Array.isArray(array)) {
