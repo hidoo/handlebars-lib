@@ -19,8 +19,8 @@
   "author": "hidoo",
   "license": "MIT",
   "devDependencies": {
-    "@commitlint/cli": "8.1.0",
-    "@commitlint/config-conventional": "8.1.0",
+    "@commitlint/cli": "8.2.0",
+    "@commitlint/config-conventional": "8.2.0",
     "@hidoo/eslint-config": "0.2.0",
     "cross-env": "5.2.1",
     "eslint": "6.4.0",
