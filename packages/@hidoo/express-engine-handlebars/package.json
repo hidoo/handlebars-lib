@@ -32,10 +32,10 @@
     "vinyl": "2.2.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.6.0",
-    "@babel/core": "7.6.0",
-    "@babel/preset-env": "7.6.0",
-    "@babel/register": "7.6.0",
+    "@babel/cli": "7.6.2",
+    "@babel/core": "7.6.2",
+    "@babel/preset-env": "7.6.2",
+    "@babel/register": "7.6.2",
     "babel-preset-power-assert": "3.0.0",
     "cross-env": "6.0.0",
     "express": "4.17.1",
