@@ -28,7 +28,7 @@
     "path-browserify": "1.0.0"
   },
   "peerDependencies": {
-    "handlebars": "4.4.0"
+    "handlebars": "4.4.2"
   },
   "devDependencies": {
     "@babel/cli": "7.6.2",
@@ -37,7 +37,7 @@
     "@babel/register": "7.6.2",
     "babel-preset-power-assert": "3.0.0",
     "cross-env": "6.0.3",
-    "handlebars": "4.4.0",
+    "handlebars": "4.4.2",
     "mocha": "6.2.1",
     "power-assert": "1.6.1",
     "rimraf": "3.0.0"
