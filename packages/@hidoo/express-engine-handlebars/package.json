@@ -1,6 +1,6 @@
 {
   "name": "@hidoo/express-engine-handlebars",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Handlebars template engine for express.",
   "engines": {
     "node": ">=8.0.0"
@@ -24,7 +24,7 @@
     "test": "cross-env NODE_ENV=test mocha ./test"
   },
   "dependencies": {
-    "@hidoo/handlebars-helpers": "^0.6.0",
+    "@hidoo/handlebars-helpers": "^0.6.1",
     "glob": "7.1.6",
     "glob-parent": "5.1.0",
     "handlebars": "4.5.1",
