@@ -1,6 +1,6 @@
 # handlebars-lib
 
-[![Build Status](https://travis-ci.com/hidoo/handlebars-lib.svg?branch=master)](https://travis-ci.com/hidoo/handlebars-lib)
+[![Status](https://github.com/hidoo/handlebars-lib/workflows/Main%20workflow/badge.svg)](https://github.com/hidoo/handlebars-lib/actions?query=branch%3Amaster)
 
 > This is monorepo for libraries of Handlebars.
 
