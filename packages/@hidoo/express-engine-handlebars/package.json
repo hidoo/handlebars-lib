@@ -41,7 +41,7 @@
     "express": "4.17.1",
     "mocha": "7.0.1",
     "power-assert": "1.6.1",
-    "request": "2.88.0",
+    "request": "2.88.2",
     "rimraf": "3.0.2"
   }
 }
