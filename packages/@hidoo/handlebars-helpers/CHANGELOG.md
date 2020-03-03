@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/hidoo/handlebars-lib/compare/v0.6.1...v0.7.0) (2020-03-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency highlight.js to v9.17.1 ([132919a](https://github.com/hidoo/handlebars-lib/commit/132919ac9a41b6b185c55fa21c848fe2309b528c))
+* **deps:** update dependency highlight.js to v9.18.0 ([5cad222](https://github.com/hidoo/handlebars-lib/commit/5cad22200f9f9ec7e690e9bc41ef313dba3e5a85))
+* **deps:** update dependency highlight.js to v9.18.1 ([83a3daf](https://github.com/hidoo/handlebars-lib/commit/83a3dafc336930b1d95b8383324d354f46d883da))
+* **deps:** update dependency marked to v0.8.0 ([350d119](https://github.com/hidoo/handlebars-lib/commit/350d11941987d4290d7588344f92ca850ccd3e04))
+* **node:** remove node v8 support ([3d52fde](https://github.com/hidoo/handlebars-lib/commit/3d52fde59fad4484146fe923597bd2106c89f4cd))
+
+
+
+
+
 ## [0.6.1](https://github.com/hidoo/handlebars-lib/compare/v0.6.0...v0.6.1) (2019-11-11)
 
 

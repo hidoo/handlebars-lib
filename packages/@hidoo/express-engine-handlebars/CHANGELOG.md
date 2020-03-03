@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/hidoo/handlebars-lib/compare/v0.6.1...v0.7.0) (2020-03-03)
+
+
+### Bug Fixes
+
+* **node:** remove node v8 support ([3d52fde](https://github.com/hidoo/handlebars-lib/commit/3d52fde59fad4484146fe923597bd2106c89f4cd))
+
+
+
+
+
 ## [0.6.1](https://github.com/hidoo/handlebars-lib/compare/v0.6.0...v0.6.1) (2019-11-11)
 
 
