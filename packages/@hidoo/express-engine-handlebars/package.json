@@ -26,7 +26,7 @@
   "dependencies": {
     "@hidoo/handlebars-helpers": "^0.7.0",
     "glob": "7.1.6",
-    "glob-parent": "5.1.0",
+    "glob-parent": "5.1.1",
     "handlebars": "4.7.3",
     "handlebars-layouts": "3.1.4",
     "vinyl": "2.2.0"
