@@ -28,3 +28,13 @@ export default function ifAnchorUrl(value = '', options = {}) {
   }
   return options.inverse(self);
 }
+
+/**
+ * register
+ *
+ * @param {Handlebars} handlebars Handlebars instance
+ * @return {void}
+ */
+export function register(handlebars) {
+  handlebars.registerHelper('ifAnchorUrl', ifAnchorUrl);
+}

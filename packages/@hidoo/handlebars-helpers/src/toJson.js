@@ -15,3 +15,13 @@ export default function toJson(value, options) {
     throw new Error(`{{toJson}}: ${error}`);
   }
 }
+
+/**
+ * register
+ *
+ * @param {Handlebars} handlebars Handlebars instance
+ * @return {void}
+ */
+export function register(handlebars) {
+  handlebars.registerHelper('toJson', toJson);
+}

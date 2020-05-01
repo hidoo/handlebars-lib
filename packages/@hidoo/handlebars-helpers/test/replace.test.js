@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import replace from '../src/replace';
+import replace, {register} from '../src/replace';
 
 describe('{{replace value pattern replacement}}', () => {
   let template = null;
@@ -91,4 +91,14 @@ describe('{{replace value pattern replacement}}', () => {
     });
   });
 
+  describe('register', () => {
+    it('should be registered.', () => {
+      const hbs = Handlebars.create();
+
+      register(hbs);
+      hbs.registerHelper('viaRegisterHelper', replace);
+
+      assert(hbs.helpers.replace === hbs.helpers.viaRegisterHelper);
+    });
+  });
 });

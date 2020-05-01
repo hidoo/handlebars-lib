@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import ifAnchorUrl from '../src/ifAnchorUrl';
+import ifAnchorUrl, {register} from '../src/ifAnchorUrl';
 
 describe('{{#ifAnchorUrl value}}...{{/if}}', () => {
   let template = null;
@@ -68,4 +68,14 @@ describe('{{#ifAnchorUrl value}}...{{/if}}', () => {
     });
   });
 
+  describe('register', () => {
+    it('should be registered.', () => {
+      const hbs = Handlebars.create();
+
+      register(hbs);
+      hbs.registerHelper('viaRegisterHelper', ifAnchorUrl);
+
+      assert(hbs.helpers.ifAnchorUrl === hbs.helpers.viaRegisterHelper);
+    });
+  });
 });

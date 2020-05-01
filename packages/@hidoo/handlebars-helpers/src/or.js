@@ -14,3 +14,13 @@ export default function or(value, defaultValue) {
   }
   return defaultValue || '';
 }
+
+/**
+ * register
+ *
+ * @param {Handlebars} handlebars Handlebars instance
+ * @return {void}
+ */
+export function register(handlebars) {
+  handlebars.registerHelper('or', or);
+}

@@ -19,6 +19,15 @@ Object.entries(helpers).forEach(([name, helper]) =>
 );
 ```
 
+via register API:
+
+```js
+import Handlebars from 'handlebars';
+import register from '@hidoo/handlebars-helpers/register';
+
+register(Handlebars);
+```
+
 ## Test
 
 ```sh

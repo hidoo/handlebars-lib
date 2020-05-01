@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import fromJson from '../src/fromJson';
+import fromJson, {register} from '../src/fromJson';
 import toJson from '../src/toJson';
 
 describe('{{fromJson value}}', () => {
@@ -33,6 +33,17 @@ describe('{{fromJson value}}', () => {
       assert(templateResult === value);
       assert(typeof functionResult === typeof expected);
       assert.deepStrictEqual(functionResult, expected);
+    });
+  });
+
+  describe('register', () => {
+    it('should be registered.', () => {
+      const hbs = Handlebars.create();
+
+      register(hbs);
+      hbs.registerHelper('viaRegisterHelper', fromJson);
+
+      assert(hbs.helpers.fromJson === hbs.helpers.viaRegisterHelper);
     });
   });
 });

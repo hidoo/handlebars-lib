@@ -2,7 +2,8 @@
  * import modules
  */
 import assert from 'assert';
-import encodeUrl from '../src/encodeUrl';
+import Handlebars from 'handlebars';
+import encodeUrl, {register} from '../src/encodeUrl';
 
 describe('{{encodeUrl value}}', () => {
 
@@ -34,6 +35,17 @@ describe('{{encodeUrl value}}', () => {
 
       assert(typeof result === 'string');
       assert(result === encodeURIComponent(value));
+    });
+  });
+
+  describe('register', () => {
+    it('should be registered.', () => {
+      const hbs = Handlebars.create();
+
+      register(hbs);
+      hbs.registerHelper('viaRegisterHelper', encodeUrl);
+
+      assert(hbs.helpers.encodeUrl === hbs.helpers.viaRegisterHelper);
     });
   });
 });

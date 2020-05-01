@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import ifModulo from '../src/ifModulo';
+import ifModulo, {register} from '../src/ifModulo';
 
 describe('{{#ifModulo value div rest}}...{{/ifModulo}}', () => {
   let template = null;
@@ -97,4 +97,14 @@ describe('{{#ifModulo value div rest}}...{{/ifModulo}}', () => {
     });
   });
 
+  describe('register', () => {
+    it('should be registered.', () => {
+      const hbs = Handlebars.create();
+
+      register(hbs);
+      hbs.registerHelper('viaRegisterHelper', ifModulo);
+
+      assert(hbs.helpers.ifModulo === hbs.helpers.viaRegisterHelper);
+    });
+  });
 });

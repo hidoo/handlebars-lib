@@ -28,3 +28,13 @@ export default function replace(value = '', pattern = '', replacement = '') {
   }
   return value.replace(pattern, replacement);
 }
+
+/**
+ * register
+ *
+ * @param {Handlebars} handlebars Handlebars instance
+ * @return {void}
+ */
+export function register(handlebars) {
+  handlebars.registerHelper('replace', replace);
+}

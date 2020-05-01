@@ -14,3 +14,13 @@ export default function is(value, test, options) {
   }
   return options.inverse(self);
 }
+
+/**
+ * register
+ *
+ * @param {Handlebars} handlebars Handlebars instance
+ * @return {void}
+ */
+export function register(handlebars) {
+  handlebars.registerHelper('is', is);
+}

@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import highlight from '../src/highlight';
+import highlight, {register} from '../src/highlight';
 
 describe('{{highlight value lang=\'<lang>\'}}', () => {
   let template = null;
@@ -56,6 +56,17 @@ describe('{{highlight value lang=\'<lang>\'}}', () => {
 
       assert(typeof result === 'string');
       assert(result === expected);
+    });
+  });
+
+  describe('register', () => {
+    it('should be registered.', () => {
+      const hbs = Handlebars.create();
+
+      register(hbs);
+      hbs.registerHelper('viaRegisterHelper', highlight);
+
+      assert(hbs.helpers.highlight === hbs.helpers.viaRegisterHelper);
     });
   });
 });

@@ -24,3 +24,13 @@ export default function basename(value = '') {
   }
   return path.basename(tmpPath);
 }
+
+/**
+ * register
+ *
+ * @param {Handlebars} handlebars Handlebars instance
+ * @return {void}
+ */
+export function register(handlebars) {
+  handlebars.registerHelper('basename', basename);
+}

@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import is from '../src/is';
+import is, {register} from '../src/is';
 
 describe('{{#is value test}}...{{/is}}', () => {
   let template = null;
@@ -47,5 +47,16 @@ describe('{{#is value test}}...{{/is}}', () => {
 
     assert(typeof result === 'string');
     assert(result === 'not matched');
+  });
+
+  describe('register', () => {
+    it('should be registered.', () => {
+      const hbs = Handlebars.create();
+
+      register(hbs);
+      hbs.registerHelper('viaRegisterHelper', is);
+
+      assert(hbs.helpers.is === hbs.helpers.viaRegisterHelper);
+    });
   });
 });

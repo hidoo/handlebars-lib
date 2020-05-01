@@ -1,7 +1,7 @@
 /**
  * import modules
  */
-import {SafeString} from 'handlebars';
+import Handlebars from 'handlebars';
 
 /**
  * マッチングパターン
@@ -15,12 +15,13 @@ const PATTERN_START_PARAGRAPH = /^<p>/,
       PATTERN_MULTI_LINEFEEDS = /\n\n+/g;
 
 /**
- * 改行を含む文字列を本文用にマークアップする
+ * 改行を含む文字列を本文用にマークアップする変換処理
  *
  * @param {Number} value 本文用のテキスト
+ * @param {Handlebars} handlebars Handlebars instance
  * @return {String}
  */
-export default function convertBreaks(value = '') {
+function convert(value = '', handlebars = Handlebars) {
   if (typeof value !== 'string') {
     throw new TypeError('{{convertBreaks}}: Argument "value" is not string.');
   }
@@ -60,5 +61,25 @@ export default function convertBreaks(value = '') {
   }
 
   // <br /></p> は </p> に変換
-  return new SafeString(html.replace(PATTERN_END_PARAGRAPH_BR, '</p>'));
+  return new handlebars.SafeString(html.replace(PATTERN_END_PARAGRAPH_BR, '</p>'));
+}
+
+/**
+ * 改行を含む文字列を本文用にマークアップする
+ *
+ * @param {Number} value 本文用のテキスト
+ * @return {String}
+ */
+export default function convertBreaks(value = '') {
+  return convert(value, Handlebars);
+}
+
+/**
+ * register
+ *
+ * @param {Handlebars} handlebars Handlebars instance
+ * @return {void}
+ */
+export function register(handlebars) {
+  handlebars.registerHelper('convertBreaks', (value = '') => convert(value, handlebars));
 }

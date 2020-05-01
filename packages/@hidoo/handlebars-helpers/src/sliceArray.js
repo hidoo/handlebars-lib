@@ -23,3 +23,13 @@ export default function sliceArray(array = [], start = 0, end = 0) { // eslint-d
   }
   return array.slice();
 }
+
+/**
+ * register
+ *
+ * @param {Handlebars} handlebars Handlebars instance
+ * @return {void}
+ */
+export function register(handlebars) {
+  handlebars.registerHelper('sliceArray', sliceArray);
+}
