@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import sortArray from '../src/sortArray';
+import sortArray, {register} from '../src/sortArray';
 import toJson from '../src/toJson';
 
 describe('{{sortArray array}}', () => {
@@ -93,6 +93,17 @@ describe('{{sortArray array}}', () => {
       assert(Array.isArray(functionResult));
       assert(functionResult !== array);
       assert.deepStrictEqual(functionResult, expected);
+    });
+  });
+
+  describe('register', () => {
+    it('should be registered.', () => {
+      const hbs = Handlebars.create();
+
+      register(hbs);
+      hbs.registerHelper('viaRegisterHelper', sortArray);
+
+      assert(hbs.helpers.sortArray === hbs.helpers.viaRegisterHelper);
     });
   });
 });

@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import or from '../src/or';
+import or, {register} from '../src/or';
 
 describe('{{or value defaultValue}}', () => {
   let template = null;
@@ -68,4 +68,14 @@ describe('{{or value defaultValue}}', () => {
     });
   });
 
+  describe('register', () => {
+    it('should be registered.', () => {
+      const hbs = Handlebars.create();
+
+      register(hbs);
+      hbs.registerHelper('viaRegisterHelper', or);
+
+      assert(hbs.helpers.or === hbs.helpers.viaRegisterHelper);
+    });
+  });
 });

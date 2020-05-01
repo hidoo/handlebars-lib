@@ -2,7 +2,8 @@
  * import modules
  */
 import assert from 'assert';
-import basename from '../src/basename';
+import Handlebars from 'handlebars';
+import basename, {register} from '../src/basename';
 
 describe('{{basename value}}', () => {
 
@@ -62,5 +63,16 @@ describe('{{basename value}}', () => {
 
     assert(typeof result === 'string');
     assert(result === 'basename');
+  });
+
+  describe('register', () => {
+    it('should be registered.', () => {
+      const hbs = Handlebars.create();
+
+      register(hbs);
+      hbs.registerHelper('viaRegisterHelper', basename);
+
+      assert(hbs.helpers.basename === hbs.helpers.viaRegisterHelper);
+    });
   });
 });

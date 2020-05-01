@@ -32,3 +32,13 @@ export default function ifModulo(value, div, rest, options) { // eslint-disable-
   }
   return options.inverse(self);
 }
+
+/**
+ * register
+ *
+ * @param {Handlebars} handlebars Handlebars instance
+ * @return {void}
+ */
+export function register(handlebars) {
+  handlebars.registerHelper('ifModulo', ifModulo);
+}

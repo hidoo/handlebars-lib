@@ -25,3 +25,13 @@ export default function add(value = 0, addition = 0) { // eslint-disable-line no
 
   return normalizedValue + normalizedAddition;
 }
+
+/**
+ * register
+ *
+ * @param {Handlebars} handlebars Handlebars instance
+ * @return {void}
+ */
+export function register(handlebars) {
+  handlebars.registerHelper('add', add);
+}

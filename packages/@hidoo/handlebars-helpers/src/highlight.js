@@ -25,3 +25,13 @@ export default function highlight(value, options) {
   }
   return hljs.highlight(lang, value).value;
 }
+
+/**
+ * register
+ *
+ * @param {Handlebars} handlebars Handlebars instance
+ * @return {void}
+ */
+export function register(handlebars) {
+  handlebars.registerHelper('highlight', highlight);
+}

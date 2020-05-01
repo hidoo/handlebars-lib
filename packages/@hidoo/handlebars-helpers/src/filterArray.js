@@ -47,3 +47,13 @@ export default function filterArray(array = [], options = {}) {
   // マッチするものだけを返す
   return array.filter((item) => followRecursive(item, keys) === value);
 }
+
+/**
+ * register
+ *
+ * @param {Handlebars} handlebars Handlebars instance
+ * @return {void}
+ */
+export function register(handlebars) {
+  handlebars.registerHelper('filterArray', filterArray);
+}

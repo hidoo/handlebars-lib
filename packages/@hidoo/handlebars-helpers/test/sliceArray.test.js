@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import sliceArray from '../src/sliceArray';
+import sliceArray, {register} from '../src/sliceArray';
 
 describe('{{sliceArray array start end}}', () => {
   let template = null;
@@ -78,6 +78,17 @@ describe('{{sliceArray array start end}}', () => {
       assert(typeof templateResult === 'string');
       assert(templateResult === expected);
       assert(Array.isArray(functionResult));
+    });
+  });
+
+  describe('register', () => {
+    it('should be registered.', () => {
+      const hbs = Handlebars.create();
+
+      register(hbs);
+      hbs.registerHelper('viaRegisterHelper', sliceArray);
+
+      assert(hbs.helpers.sliceArray === hbs.helpers.viaRegisterHelper);
     });
   });
 });

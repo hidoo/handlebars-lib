@@ -10,3 +10,13 @@ export default function encodeUrl(value = '') {
   }
   return encodeURIComponent(value);
 }
+
+/**
+ * register
+ *
+ * @param {Handlebars} handlebars Handlebars instance
+ * @return {void}
+ */
+export function register(handlebars) {
+  handlebars.registerHelper('encodeUrl', encodeUrl);
+}

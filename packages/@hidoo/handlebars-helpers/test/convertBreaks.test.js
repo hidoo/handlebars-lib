@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import convertBreaks from '../src/convertBreaks';
+import convertBreaks, {register} from '../src/convertBreaks';
 
 describe('{{convertBreaks value}}', () => {
   let template = null;
@@ -75,4 +75,18 @@ describe('{{convertBreaks value}}', () => {
     assert(result === '<p>value</p><p>value<br />value.</p>');
   });
 
+  describe('register', () => {
+    it('should be registered.', () => {
+      const hbs = Handlebars.create();
+
+      register(hbs);
+      hbs.registerHelper('viaRegisterHelper', convertBreaks);
+
+      const templateViaRegister = hbs.compile('{{{convertBreaks value}}}');
+      const templateViaRegisterHelper = hbs.compile('{{{viaRegisterHelper value}}}');
+      const value = 'value\n\n\nvalue\nvalue.';
+
+      assert(templateViaRegister({value}) === templateViaRegisterHelper({value}));
+    });
+  });
 });

@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import filterArray from '../src/filterArray';
+import filterArray, {register} from '../src/filterArray';
 import toJson from '../src/toJson';
 
 describe('{{filterArray array key=key value=value}}', () => {
@@ -91,6 +91,17 @@ describe('{{filterArray array key=key value=value}}', () => {
       assert(Array.isArray(functionResult));
       assert(functionResult !== array);
       assert.deepStrictEqual(functionResult, [array[expectedIndex]]);
+    });
+  });
+
+  describe('register', () => {
+    it('should be registered.', () => {
+      const hbs = Handlebars.create();
+
+      register(hbs);
+      hbs.registerHelper('viaRegisterHelper', filterArray);
+
+      assert(hbs.helpers.filterArray === hbs.helpers.viaRegisterHelper);
     });
   });
 });

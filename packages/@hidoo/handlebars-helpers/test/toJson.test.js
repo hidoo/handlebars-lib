@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import toJson from '../src/toJson';
+import toJson, {register} from '../src/toJson';
 
 describe('{{toJson value prettify=true}}', () => {
   let template = null;
@@ -48,6 +48,17 @@ describe('{{toJson value prettify=true}}', () => {
 
       assert(typeof result === 'string');
       assert(result === expected);
+    });
+  });
+
+  describe('register', () => {
+    it('should be registered.', () => {
+      const hbs = Handlebars.create();
+
+      register(hbs);
+      hbs.registerHelper('viaRegisterHelper', toJson);
+
+      assert(hbs.helpers.toJson === hbs.helpers.viaRegisterHelper);
     });
   });
 });

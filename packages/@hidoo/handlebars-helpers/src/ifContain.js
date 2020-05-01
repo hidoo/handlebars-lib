@@ -11,14 +11,24 @@ export default function ifContain(value, test, options) {
   const self = this; // eslint-disable-line no-invalid-this
 
   if (!value) {
-    throw new TypeError('{{#ifContains}}: Argument "value" is required.');
+    throw new TypeError('{{#ifContain}}: Argument "value" is required.');
   }
   if (typeof value !== 'string' && !Array.isArray(value)) {
-    throw new TypeError('{{#ifContains}}: Argument "value" is not valid. (must be string or array)'); // eslint-disable-line max-len
+    throw new TypeError('{{#ifContain}}: Argument "value" is not valid. (must be string or array)'); // eslint-disable-line max-len
   }
 
   if (value.includes(test)) {
     return options.fn(self);
   }
   return options.inverse(self);
+}
+
+/**
+ * register
+ *
+ * @param {Handlebars} handlebars Handlebars instance
+ * @return {void}
+ */
+export function register(handlebars) {
+  handlebars.registerHelper('ifContain', ifContain);
 }

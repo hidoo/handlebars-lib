@@ -91,3 +91,13 @@ export default function markdown(options) {
     renderer: configureRenderer()
   });
 }
+
+/**
+ * register
+ *
+ * @param {Handlebars} handlebars Handlebars instance
+ * @return {void}
+ */
+export function register(handlebars) {
+  handlebars.registerHelper('markdown', markdown);
+}

@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import ifContain from '../src/ifContain';
+import ifContain, {register} from '../src/ifContain';
 
 describe('{{#ifContain value test}}...{{/ifContain}}', () => {
   let template = null;
@@ -77,6 +77,17 @@ describe('{{#ifContain value test}}...{{/ifContain}}', () => {
 
       assert(typeof result === 'string');
       assert(result === 'not contained');
+    });
+  });
+
+  describe('register', () => {
+    it('should be registered.', () => {
+      const hbs = Handlebars.create();
+
+      register(hbs);
+      hbs.registerHelper('viaRegisterHelper', ifContain);
+
+      assert(hbs.helpers.ifContain === hbs.helpers.viaRegisterHelper);
     });
   });
 });

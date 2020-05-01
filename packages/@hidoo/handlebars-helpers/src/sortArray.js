@@ -86,3 +86,13 @@ export default function sortArray(array = [], options = {}) {
   return [...array].filter((item) => followRecursive(item, keys))
     .sort((a, b) => comparator(followRecursive(a, keys), followRecursive(b, keys)));
 }
+
+/**
+ * register
+ *
+ * @param {Handlebars} handlebars Handlebars instance
+ * @return {void}
+ */
+export function register(handlebars) {
+  handlebars.registerHelper('sortArray', sortArray);
+}

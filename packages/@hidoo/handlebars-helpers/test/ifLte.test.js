@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import ifLte from '../src/ifLte';
+import ifLte, {register} from '../src/ifLte';
 
 describe('{{#ifLte value test}}...{{/ifLte}}', () => {
   let template = null;
@@ -84,5 +84,16 @@ describe('{{#ifLte value test}}...{{/ifLte}}', () => {
 
     assert(typeof result === 'string');
     assert(result === 'not less than equel');
+  });
+
+  describe('register', () => {
+    it('should be registered.', () => {
+      const hbs = Handlebars.create();
+
+      register(hbs);
+      hbs.registerHelper('viaRegisterHelper', ifLte);
+
+      assert(hbs.helpers.ifLte === hbs.helpers.viaRegisterHelper);
+    });
   });
 });

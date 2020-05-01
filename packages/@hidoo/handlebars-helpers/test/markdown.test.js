@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import markdown from '../src/markdown';
+import markdown, {register} from '../src/markdown';
 
 describe('{{#markdown}}...{{/markdown}}', () => {
   let template = null,
@@ -81,6 +81,17 @@ describe('{{#markdown}}...{{/markdown}}', () => {
 
       assert(typeof result === 'string');
       assert(result === expected);
+    });
+  });
+
+  describe('register', () => {
+    it('should be registered.', () => {
+      const hbs = Handlebars.create();
+
+      register(hbs);
+      hbs.registerHelper('viaRegisterHelper', markdown);
+
+      assert(hbs.helpers.markdown === hbs.helpers.viaRegisterHelper);
     });
   });
 });

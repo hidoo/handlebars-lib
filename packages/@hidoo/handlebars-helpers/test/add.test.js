@@ -2,7 +2,8 @@
  * import modules
  */
 import assert from 'assert';
-import add from '../src/add';
+import Handlebars from 'handlebars';
+import add, {register} from '../src/add';
 
 describe('{{add value addition}}', () => {
 
@@ -47,5 +48,16 @@ describe('{{add value addition}}', () => {
 
     assert(typeof result === 'number');
     assert(result === 4);
+  });
+
+  describe('register', () => {
+    it('should be registered.', () => {
+      const hbs = Handlebars.create();
+
+      register(hbs);
+      hbs.registerHelper('viaRegisterHelper', add);
+
+      assert(hbs.helpers.add === hbs.helpers.viaRegisterHelper);
+    });
   });
 });

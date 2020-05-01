@@ -12,3 +12,13 @@ export default function fromJson(value) {
     throw new Error(`{{fromJson}}: ${error}`);
   }
 }
+
+/**
+ * register
+ *
+ * @param {Handlebars} handlebars Handlebars instance
+ * @return {void}
+ */
+export function register(handlebars) {
+  handlebars.registerHelper('fromJson', fromJson);
+}

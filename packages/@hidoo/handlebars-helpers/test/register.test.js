@@ -2,16 +2,21 @@ import assert from 'assert';
 import fs from 'fs';
 import path from 'path';
 import util from 'util';
-import * as helpers from '../src';
+import Handlebars from 'handlebars';
+import register from '../src/register';
 
 const readdir = util.promisify(fs.readdir);
 
-describe('@hidoo/handlebars-helpers', () => {
+describe('@hidoo/handlebars-helpers/register', () => {
 
-  it('should export all helpers.', async () => {
+  it('should register all helpers.', async () => {
     const files = await readdir(path.resolve(__dirname, '../src'));
     const ignoreNames = ['index', 'register'];
-    const exportsHelpers = Object.keys(helpers);
+    const hbs = Handlebars.create();
+
+    register(hbs);
+
+    const registeredHelpers = Object.keys(hbs.helpers);
 
     files
       .filter((file) => path.extname(file) === '.js')
@@ -23,7 +28,7 @@ describe('@hidoo/handlebars-helpers', () => {
           return;
         }
 
-        assert(exportsHelpers.includes(name));
+        assert(registeredHelpers.includes(name));
       });
   });
 });
