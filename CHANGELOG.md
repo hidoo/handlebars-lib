@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/hidoo/handlebars-lib/compare/v0.7.0...v0.8.0) (2020-05-07)
+
+
+### Bug Fixes
+
+* **deps:** force update minimist to version 1.2.5 or later ([f3ab1b4](https://github.com/hidoo/handlebars-lib/commit/f3ab1b497e8abb995abc340d62a47b2f5e129c1e))
+* **deps:** update dependency glob-parent to v5.1.1 ([0aac858](https://github.com/hidoo/handlebars-lib/commit/0aac858558bbee72acee5c3c1041baf70bb10896))
+* **deps:** update dependency highlight.js to v10 ([00aa21a](https://github.com/hidoo/handlebars-lib/commit/00aa21abb32483b7335edbcc4d997772f1a05c53))
+* **deps:** update dependency marked to v0.8.1 ([e19c906](https://github.com/hidoo/handlebars-lib/commit/e19c90642fd63cdd50d846b442019b0652e78d0f))
+* **deps:** update dependency marked to v0.8.2 ([aea9108](https://github.com/hidoo/handlebars-lib/commit/aea91084b9596b0687e74c10a16d8913fd1c061e))
+* **deps:** update dependency marked to v1 ([82ea71a](https://github.com/hidoo/handlebars-lib/commit/82ea71a27e3e26b600cdeae28035ec46175e4075))
+* **deps:** update dependency path-browserify to v1.0.1 ([2c1e912](https://github.com/hidoo/handlebars-lib/commit/2c1e9125bbd3d3e439841dc8b8246226864c48b4))
+
+
+### Features
+
+* **helpers:** add often used helpers ([24f9e45](https://github.com/hidoo/handlebars-lib/commit/24f9e45fb77f31427f6e43cb99462bd1aedbf608))
+* **helpers:** add register api ([c74f085](https://github.com/hidoo/handlebars-lib/commit/c74f085f26b60629e04a7de543d374db72e63d58))
+* **node:** add node v14 support ([1a16899](https://github.com/hidoo/handlebars-lib/commit/1a16899bc02ba7d1655aa39a5506cb3ac611ca6b))
+
+
+
+
+
 # [0.7.0](https://github.com/hidoo/handlebars-lib/compare/v0.6.1...v0.7.0) (2020-03-03)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/hidoo/handlebars-lib/compare/v0.7.0...v0.8.0) (2020-05-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency glob-parent to v5.1.1 ([0aac858](https://github.com/hidoo/handlebars-lib/commit/0aac858558bbee72acee5c3c1041baf70bb10896))
+
+
+
+
+
 # [0.7.0](https://github.com/hidoo/handlebars-lib/compare/v0.6.1...v0.7.0) (2020-03-03)
 
 

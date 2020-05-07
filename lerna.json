@@ -4,7 +4,7 @@
   "packages": [
     "packages/@hidoo/*"
   ],
-  "version": "0.7.0",
+  "version": "0.8.0",
   "command": {
     "publish": {
       "message": "chore(release): publish %s",
