@@ -91,7 +91,7 @@ export default function expressEngineHandlebars(options = {}) {
           .map((modulepath) => path.relative(__dirname, modulepath))
           .filter((modulepath) => path.extname(modulepath) === '.js')
           .forEach((modulepath) => {
-            const {register} = require(modulepath); // eslint-disable-line global-require, import/no-dynamic-require
+            const {register} = require(modulepath); // eslint-disable-line node/global-require, import/no-dynamic-require
 
             if (typeof register !== 'function') {
               if (verbose) {
