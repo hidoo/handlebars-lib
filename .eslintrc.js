@@ -20,7 +20,7 @@ module.exports = {
     // for Node
     {
       'files': [
-        '**/src/**/*.js',
+        '**/src/**/*.js'
       ],
       'extends': [
         '@hidoo/eslint-config/+node'
