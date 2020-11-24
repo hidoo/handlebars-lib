@@ -23,7 +23,7 @@
   "author": "hidoo",
   "license": "MIT",
   "dependencies": {
-    "highlight.js": "10.0.3",
+    "highlight.js": "10.1.2",
     "marked": "1.1.2",
     "path-browserify": "1.0.1"
   },
