@@ -26,18 +26,18 @@
   "dependencies": {
     "@hidoo/handlebars-helpers": "^0.8.0",
     "glob": "7.1.6",
-    "glob-parent": "5.1.1",
-    "handlebars": "4.7.6",
+    "glob-parent": "5.1.2",
+    "handlebars": "4.7.7",
     "handlebars-layouts": "3.1.4",
-    "vinyl": "2.2.0"
+    "vinyl": "2.2.1"
   },
   "devDependencies": {
-    "@babel/cli": "7.8.4",
-    "@babel/core": "7.9.6",
-    "@babel/preset-env": "7.9.6",
-    "@babel/register": "7.9.0",
+    "@babel/cli": "7.13.10",
+    "@babel/core": "7.13.13",
+    "@babel/preset-env": "7.13.12",
+    "@babel/register": "7.13.8",
     "babel-preset-power-assert": "3.0.0",
-    "cross-env": "7.0.2",
+    "cross-env": "7.0.3",
     "express": "4.17.1",
     "mocha": "7.2.0",
     "power-assert": "1.6.1",
