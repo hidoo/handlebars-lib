@@ -69,7 +69,7 @@ describe('{{#markdown}}...{{/markdown}}', () => {
 \`\`\`
 `,
         `<h1 id="heading">heading</h1>
-<pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hoge"</span>&gt;</span>
+<pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hoge&quot;</span>&gt;</span>
   huga
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
 `
