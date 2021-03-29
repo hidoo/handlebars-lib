@@ -37,17 +37,17 @@ describe('{{highlight value lang=\'<lang>\'}}', () => {
       [
         '<div class="hoge"></div>',
         'html',
-        '<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hoge"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>'
+        '<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;hoge&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>'
       ],
       [
         'import lodash from "lodash";',
         'js',
-        '<span class="hljs-keyword">import</span> lodash <span class="hljs-keyword">from</span> <span class="hljs-string">"lodash"</span>;'
+        '<span class="hljs-keyword">import</span> lodash <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;lodash&quot;</span>;'
       ],
       [
         '<div>{{#if @first}}first{{else}}not first{{/if}}</div>',
         'hbs',
-        '<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> @first}}</span><span class="xml">first</span><span class="hljs-template-variable">{{<span class="hljs-builtin-name">else</span>}}</span><span class="xml">not first</span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>'
+        '<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> @first}}</span><span class="xml">first</span><span class="hljs-template-tag">{{<span class="hljs-keyword">else</span>}}</span><span class="xml">not first</span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>'
       ]
     ];
 
