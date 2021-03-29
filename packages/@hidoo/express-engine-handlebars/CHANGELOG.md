@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/hidoo/handlebars-lib/compare/v0.8.0...v0.8.1) (2021-03-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency glob-parent to v5.1.2 ([47e3403](https://github.com/hidoo/handlebars-lib/commit/47e3403d01f70b52ccaea04b96a51818df6d69a4))
+* **deps:** update dependency vinyl to v2.2.1 ([f9e9687](https://github.com/hidoo/handlebars-lib/commit/f9e9687435bcb4b9b5c868f130fcdf8852082295))
+* **express-engine:** fix test case when default helpers use ([d1ebe8c](https://github.com/hidoo/handlebars-lib/commit/d1ebe8c3b1a1bb07dabcab471ff0e9dcd2606a8b))
+
+
+
+
+
 # [0.8.0](https://github.com/hidoo/handlebars-lib/compare/v0.7.0...v0.8.0) (2020-05-07)
 
 

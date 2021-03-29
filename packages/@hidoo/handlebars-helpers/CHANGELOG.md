@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/hidoo/handlebars-lib/compare/v0.8.0...v0.8.1) (2021-03-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency highlight.js to v10.0.2 ([0e44aa3](https://github.com/hidoo/handlebars-lib/commit/0e44aa3854ff81588164053788bad341cf404e81))
+* **deps:** update dependency highlight.js to v10.0.3 ([145fcc1](https://github.com/hidoo/handlebars-lib/commit/145fcc134393ed7f78aa939f152cc36e9f3f929c))
+* **deps:** update dependency highlight.js to v10.4.1 [security] ([4b65082](https://github.com/hidoo/handlebars-lib/commit/4b65082a04ff19f07ae127557fb8b0bfc541e88a))
+* **deps:** update dependency marked to v1.1.0 ([b9542dd](https://github.com/hidoo/handlebars-lib/commit/b9542ddefefb2928a8debbfbd1e7bb4346e96661))
+* **deps:** update dependency marked to v1.1.1 ([e76e5d9](https://github.com/hidoo/handlebars-lib/commit/e76e5d9dbb9f37084ddd72a1c65727c993861b59))
+* **deps:** update dependency marked to v1.1.2 ([e408922](https://github.com/hidoo/handlebars-lib/commit/e4089226c17a1be1c22585f02208079e3517162c))
+* **deps:** update dependency marked to v2 [security] ([a525569](https://github.com/hidoo/handlebars-lib/commit/a525569bcf70ff9102b17a58f0de97273d9ffb3b))
+* **deps:** update dependency marked to v2.0.1 ([9205321](https://github.com/hidoo/handlebars-lib/commit/92053218b2672c684dadbd5b01dd2aa31d0666d8))
+* **helpers:** fix test case of highlight and markdown helpers ([d1cce0a](https://github.com/hidoo/handlebars-lib/commit/d1cce0a3fee5930153c712db77a2c579f1de7eff))
+
+
+
+
+
 # [0.8.0](https://github.com/hidoo/handlebars-lib/compare/v0.7.0...v0.8.0) (2020-05-07)
 
 
