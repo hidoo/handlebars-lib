@@ -32,8 +32,8 @@
     "vinyl": "2.2.1"
   },
   "devDependencies": {
-    "@babel/cli": "7.13.16",
-    "@babel/core": "7.14.2",
+    "@babel/cli": "7.14.3",
+    "@babel/core": "7.14.3",
     "@babel/preset-env": "7.14.2",
     "@babel/register": "7.13.16",
     "babel-preset-power-assert": "3.0.0",
