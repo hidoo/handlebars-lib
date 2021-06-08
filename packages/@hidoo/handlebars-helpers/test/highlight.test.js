@@ -47,7 +47,7 @@ describe('{{highlight value lang=\'<lang>\'}}', () => {
       [
         '<div>{{#if @first}}first{{else}}not first{{/if}}</div>',
         'hbs',
-        '<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-builtin-name">if</span></span> @first}}</span><span class="xml">first</span><span class="hljs-template-tag">{{<span class="hljs-keyword">else</span>}}</span><span class="xml">not first</span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-builtin-name">if</span></span>}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>'
+        '<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><span class="hljs-template-tag">{{#<span class="hljs-name"><span class="hljs-built_in">if</span></span> @first}}</span><span class="language-xml">first</span><span class="hljs-template-tag">{{<span class="hljs-keyword">else</span>}}</span><span class="language-xml">not first</span><span class="hljs-template-tag">{{/<span class="hljs-name"><span class="hljs-built_in">if</span></span>}}</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>'
       ]
     ];
 

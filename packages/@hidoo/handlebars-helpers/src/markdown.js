@@ -54,7 +54,7 @@ function configureRenderer() {
         newEscaped = escaped;
 
     if (typeof highlight === 'function') {
-      const out = highlight(newContent, lang);
+      const out = highlight(newContent, {language: lang || 'html'});
 
       if (out !== null && out !== newContent) {
         newEscaped = true;
@@ -87,7 +87,7 @@ export default function markdown(options) {
     return content;
   }
   return marked(content, {
-    highlight: (code, lang) => hljs.highlight(lang || 'html', code).value,
+    highlight: (code, opts) => hljs.highlight(code, opts).value,
     renderer: configureRenderer()
   });
 }

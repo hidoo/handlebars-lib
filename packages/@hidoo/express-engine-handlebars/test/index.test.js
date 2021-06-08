@@ -12,6 +12,7 @@ describe('express-engine-handlebars', () => {
     expected: `${__dirname}/fixtures/expected`
   };
   let app = null;
+  let server = null;
 
   beforeEach(() => {
     app = express();
@@ -21,6 +22,7 @@ describe('express-engine-handlebars', () => {
 
   afterEach(() => {
     app = null;
+    server.close();
   });
 
   it('should out internal server error if syntax error.', (done) => {
@@ -32,16 +34,16 @@ describe('express-engine-handlebars', () => {
       });
     });
 
-    const server = app.listen(3000, () => {
+    server = app.listen(3000, () => {
       request('http://localhost:3000/syntax-error', (error, response) => {
         const {statusCode} = response;
 
         assert.equal(statusCode, 500);
-        return server.close();
+        return done();
       });
     });
 
-    server.on('close', done);
+    // server.on('close', done);
   });
 
   it('should out it as is if layout not use.', (done) => {
@@ -53,16 +55,16 @@ describe('express-engine-handlebars', () => {
       });
     });
 
-    const server = app.listen(3000, () => {
+    server = app.listen(3000, () => {
       request('http://localhost:3000/no-layout', (error, response, body) => {
         const expected = fs.readFileSync(`${path.expected}/no-layout.html`);
 
         assert.equal(body.toString(), expected.toString());
-        return server.close();
+        return done();
       });
     });
 
-    server.on('close', done);
+    // server.on('close', done);
   });
 
   it('should out applied specified layout if layout use.', (done) => {
@@ -76,16 +78,16 @@ describe('express-engine-handlebars', () => {
       });
     });
 
-    const server = app.listen(3000, () => {
+    server = app.listen(3000, () => {
       request('http://localhost:3000/with-layout', (error, response, body) => {
         const expected = fs.readFileSync(`${path.expected}/with-layout.html`);
 
         assert.equal(body.toString(), expected.toString());
-        return server.close();
+        return done();
       });
     });
 
-    server.on('close', done);
+    // server.on('close', done);
   });
 
   it('should out applied specified partial if partial use.', (done) => {
@@ -99,16 +101,16 @@ describe('express-engine-handlebars', () => {
       });
     });
 
-    const server = app.listen(3000, () => {
+    server = app.listen(3000, () => {
       request('http://localhost:3000/with-partial', (error, response, body) => {
         const expected = fs.readFileSync(`${path.expected}/with-partial.html`);
 
         assert.equal(body.toString(), expected.toString());
-        return server.close();
+        return done();
       });
     });
 
-    server.on('close', done);
+    // server.on('close', done);
   });
 
   it('should out applied specified helpers if it default helpers use.', (done) => {
@@ -134,16 +136,16 @@ hoge();
       });
     });
 
-    const server = app.listen(3000, () => {
+    server = app.listen(3000, () => {
       request('http://localhost:3000/with-default-helpers', (error, response, body) => {
         const expected = fs.readFileSync(`${path.expected}/with-default-helpers.html`);
 
         assert.equal(body.toString(), expected.toString());
-        return server.close();
+        return done();
       });
     });
 
-    server.on('close', done);
+    // server.on('close', done);
   });
 
   it('should out applied specified helpers if additinal helpers use.', (done) => {
@@ -157,16 +159,16 @@ hoge();
       });
     });
 
-    const server = app.listen(3000, () => {
+    server = app.listen(3000, () => {
       request('http://localhost:3000/with-additinal-helpers', (error, response, body) => {
         const expected = fs.readFileSync(`${path.expected}/with-additinal-helpers.html`);
 
         assert.equal(body.toString(), expected.toString());
-        return server.close();
+        return done();
       });
     });
 
-    server.on('close', done);
+    // server.on('close', done);
   });
 
 });

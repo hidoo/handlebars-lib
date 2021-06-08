@@ -23,7 +23,7 @@ export default function highlight(value, options) {
   if (typeof value !== 'string') {
     return String(value);
   }
-  return hljs.highlight(lang, value).value;
+  return hljs.highlight(value, {language: lang}).value;
 }
 
 /**
