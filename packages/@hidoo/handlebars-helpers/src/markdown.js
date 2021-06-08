@@ -87,7 +87,7 @@ export default function markdown(options) {
     return content;
   }
   return marked(content, {
-    highlight: (code, lang) => hljs.highlight(lang || 'html', code).value,
+    highlight: (code, lang) => hljs.highlight(code, {language: lang || 'html'}).value,
     renderer: configureRenderer()
   });
 }
