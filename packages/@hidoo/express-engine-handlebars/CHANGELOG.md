@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.2](https://github.com/hidoo/handlebars-lib/compare/v0.8.1...v0.8.2) (2021-06-08)
+
+
+### Bug Fixes
+
+* fix deprecated warnings and tweaks test case ([8555a88](https://github.com/hidoo/handlebars-lib/commit/8555a889ab377f95afd60fca093459cfe367b8b2))
+* **deps:** update dependency glob to v7.1.7 ([a3613fd](https://github.com/hidoo/handlebars-lib/commit/a3613fd9b14d308043fed3cdb3205db7083fcaba))
+* **deps:** update dependency glob-parent to v6 ([d44ab65](https://github.com/hidoo/handlebars-lib/commit/d44ab65793e21bab236f5035ab21860f4b7f9e43))
+* **node:** remove node v10 support ([c75e7cb](https://github.com/hidoo/handlebars-lib/commit/c75e7cb56f5eaba844f51f2680835c99b23ead8c))
+
+
+
+
+
 ## [0.8.1](https://github.com/hidoo/handlebars-lib/compare/v0.8.0...v0.8.1) (2021-03-29)
 
 
