@@ -33,7 +33,7 @@
   "resolutions": {
     "glob-parent": "^5.1.2",
     "minimist": "^1.2.5",
-    "trim-newlines": "^3.0.1"
+    "trim-newlines": "^4.0.0"
   },
   "workspaces": [
     "packages/@hidoo/*"
