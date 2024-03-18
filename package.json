@@ -14,7 +14,7 @@
     "test:lint": "eslint .",
     "test:packages": "pnpm --filter './packages/@hidoo/**' --if-present test",
     "preinstall": "npx only-allow pnpm",
-    "prepare": "husky install",
+    "prepare": "git config --local core.hooksPath .githooks",
     "version:patch": "lerna version patch && pnpm run --sequential '/^(build|test)$/'",
     "version:minor": "lerna version minor && pnpm run --sequential '/^(build|test)$/'",
     "version:major": "lerna version major && pnpm run --sequential '/^(build|test)$/'",
@@ -28,7 +28,6 @@
     "@hidoo/eslint-config": "0.6.0",
     "cross-env": "7.0.3",
     "eslint": "7.30.0",
-    "husky": "7.0.4",
     "lerna": "4.0.0",
     "lint-staged": "11.0.1",
     "npm-run-all": "4.1.5"
