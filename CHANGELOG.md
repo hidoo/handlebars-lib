@@ -3,8 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.8.2](https://github.com/hidoo/handlebars-lib/compare/v0.8.1...v0.8.2) (2021-06-08)
+# [1.0.0](https://github.com/hidoo/handlebars-lib/compare/v0.8.2...v1.0.0) (2024-03-18)
 
+### Bug Fixes
+
+* **deps:** update dependency glob to v7.2.0 ([769c473](https://github.com/hidoo/handlebars-lib/commit/769c4739c8ecf99b7a056f747b9a2ecff7a189f0))
+* **deps:** update dependency glob to v7.2.3 ([0a0d680](https://github.com/hidoo/handlebars-lib/commit/0a0d6809160909ce4e7d70c8892dd010a2958774))
+* **deps:** update dependency glob-parent to v6.0.1 ([881af65](https://github.com/hidoo/handlebars-lib/commit/881af6564acdf41703bb633c9f69eaafd62312d4))
+* **deps:** update dependency glob-parent to v6.0.2 ([0fc5225](https://github.com/hidoo/handlebars-lib/commit/0fc52254707c16efd98b537134a7c9563838d47c))
+* **deps:** update dependency highlight.js to v11.1.0 ([dc5539f](https://github.com/hidoo/handlebars-lib/commit/dc5539f3fd903fea75776d7c296c1fcba6b71ec4))
+* **deps:** update dependency highlight.js to v11.3.1 ([eb7ce58](https://github.com/hidoo/handlebars-lib/commit/eb7ce583e918640c270714f63693a2045a51f33e))
+* **deps:** update dependency marked to v2.1.2 ([ff01136](https://github.com/hidoo/handlebars-lib/commit/ff01136f71589cb71efb5b8bcb61f22acb3b73ba))
+* **deps:** update dependency marked to v2.1.3 ([9de06ec](https://github.com/hidoo/handlebars-lib/commit/9de06ecb45e5daeddbcf0709235807fd50334267))
+
+* fix!: migrate to es modules ([e6fa7e5](https://github.com/hidoo/handlebars-lib/commit/e6fa7e511d6bf0a98e60f6ee2baf8cd9e774eb29))
+* fix!: update supported nodejs versions ([dc2cc7a](https://github.com/hidoo/handlebars-lib/commit/dc2cc7afaf680d6480822c00e93a340a1b912598))
+
+### BREAKING CHANGES
+
+* Requires ES Modules.
+* Drop Node.js 12, 14, 16 support
+
+## [0.8.2](https://github.com/hidoo/handlebars-lib/compare/v0.8.1...v0.8.2) (2021-06-08)
 
 ### Bug Fixes
 
@@ -22,12 +42,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **helpers:** fix deprecated warnings ([ce4daf1](https://github.com/hidoo/handlebars-lib/commit/ce4daf173aaa28a44484f30586ff8557f50a52c2))
 * **node:** remove node v10 support ([c75e7cb](https://github.com/hidoo/handlebars-lib/commit/c75e7cb56f5eaba844f51f2680835c99b23ead8c))
 
-
-
-
-
 ## [0.8.1](https://github.com/hidoo/handlebars-lib/compare/v0.8.0...v0.8.1) (2021-03-29)
-
 
 ### Bug Fixes
 
@@ -44,12 +59,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **express-engine:** fix test case when default helpers use ([d1ebe8c](https://github.com/hidoo/handlebars-lib/commit/d1ebe8c3b1a1bb07dabcab471ff0e9dcd2606a8b))
 * **helpers:** fix test case of highlight and markdown helpers ([d1cce0a](https://github.com/hidoo/handlebars-lib/commit/d1cce0a3fee5930153c712db77a2c579f1de7eff))
 
-
-
-
-
 # [0.8.0](https://github.com/hidoo/handlebars-lib/compare/v0.7.0...v0.8.0) (2020-05-07)
-
 
 ### Bug Fixes
 
@@ -61,19 +71,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **deps:** update dependency marked to v1 ([82ea71a](https://github.com/hidoo/handlebars-lib/commit/82ea71a27e3e26b600cdeae28035ec46175e4075))
 * **deps:** update dependency path-browserify to v1.0.1 ([2c1e912](https://github.com/hidoo/handlebars-lib/commit/2c1e9125bbd3d3e439841dc8b8246226864c48b4))
 
-
 ### Features
 
 * **helpers:** add often used helpers ([24f9e45](https://github.com/hidoo/handlebars-lib/commit/24f9e45fb77f31427f6e43cb99462bd1aedbf608))
 * **helpers:** add register api ([c74f085](https://github.com/hidoo/handlebars-lib/commit/c74f085f26b60629e04a7de543d374db72e63d58))
 * **node:** add node v14 support ([1a16899](https://github.com/hidoo/handlebars-lib/commit/1a16899bc02ba7d1655aa39a5506cb3ac611ca6b))
 
-
-
-
-
 # [0.7.0](https://github.com/hidoo/handlebars-lib/compare/v0.6.1...v0.7.0) (2020-03-03)
-
 
 ### Bug Fixes
 
@@ -83,12 +87,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **deps:** update dependency marked to v0.8.0 ([350d119](https://github.com/hidoo/handlebars-lib/commit/350d11941987d4290d7588344f92ca850ccd3e04))
 * **node:** remove node v8 support ([3d52fde](https://github.com/hidoo/handlebars-lib/commit/3d52fde59fad4484146fe923597bd2106c89f4cd))
 
-
-
-
-
 ## [0.6.1](https://github.com/hidoo/handlebars-lib/compare/v0.6.0...v0.6.1) (2019-11-11)
-
 
 ### Bug Fixes
 
@@ -99,12 +98,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **deps:** update dependency highlight.js to v9.15.9 ([0fc9b8d](https://github.com/hidoo/handlebars-lib/commit/0fc9b8d))
 * **deps:** update dependency highlight.js to v9.16.2 ([3a3b0f3](https://github.com/hidoo/handlebars-lib/commit/3a3b0f3))
 
-
-
-
-
 # 0.6.0 (2019-08-05)
-
 
 ### Bug Fixes
 
@@ -113,7 +107,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **markdown:** fix to use hljs.highlight from hljs.highlightAuto ([a32033d](https://github.com/hidoo/handlebars-lib/commit/a32033d))
 * **package:** update @hidoo/handlebars-helpers to version 0.4.1 ([e165915](https://github.com/hidoo/handlebars-lib/commit/e165915))
 * **sliceArray:** fix to export sliceArray ([37c95db](https://github.com/hidoo/handlebars-lib/commit/37c95db))
-
 
 ### Features
 
