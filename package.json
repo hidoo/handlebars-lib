@@ -3,39 +3,44 @@
   "version": "0.0.0",
   "description": "This is monorepo for libraries of Handlebars.",
   "private": true,
+  "packageManager": "pnpm@8.15.5",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": "8.15.5"
+  },
+  "type": "module",
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "build": "lerna run build",
-    "dev:test": "lerna exec 'yarn test --watch' --no-private",
-    "lint": "npm-run-all -s lint:*",
-    "lint:js": "eslint .",
-    "pretest": "npm-run-all -s lint",
-    "test": "npm-run-all -s test:packages",
-    "test:packages": "lerna run test --no-private",
-    "preversionup": "npm-run-all -s build test",
-    "versionup": "lerna version --no-push",
-    "release": "lerna publish from-package",
-    "prepare": "husky install"
+    "build": "pnpm run --filter './packages/**' --if-present build",
+    "format": "prettier . --write",
+    "test": "pnpm run --sequential '/^test:.*/'",
+    "test:lint": "eslint .",
+    "test:packages": "pnpm --filter './packages/**' --if-present test",
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "git config --local core.hooksPath .githooks",
+    "version:patch": "lerna version patch && pnpm run --sequential '/^(build|test)$/'",
+    "version:minor": "lerna version minor && pnpm run --sequential '/^(build|test)$/'",
+    "version:major": "lerna version major && pnpm run --sequential '/^(build|test)$/'",
+    "release": "lerna publish from-package"
   },
   "author": "hidoo",
   "license": "MIT",
   "devDependencies": {
-    "@commitlint/cli": "12.1.4",
-    "@commitlint/config-conventional": "12.1.4",
-    "@hidoo/eslint-config": "0.6.0",
+    "@commitlint/cli": "19.2.0",
+    "@commitlint/config-conventional": "19.1.0",
+    "@hidoo/eslint-config": "1.3.1",
+    "@lerna-lite/cli": "3.3.1",
+    "@lerna-lite/publish": "3.3.1",
+    "@lerna-lite/version": "3.3.1",
     "cross-env": "7.0.3",
-    "eslint": "7.30.0",
-    "husky": "7.0.4",
-    "lerna": "4.0.0",
-    "lint-staged": "11.0.1",
-    "npm-run-all": "4.1.5"
+    "eslint": "8.57.0",
+    "lint-staged": "15.2.2",
+    "prettier": "3.2.5"
   },
-  "resolutions": {
-    "glob-parent": "^6.0.0",
-    "minimist": "^1.2.5",
-    "trim-newlines": "^4.0.0"
-  },
-  "workspaces": [
-    "packages/@hidoo/*"
-  ]
+  "pnpm": {
+    "overrides": {
+      "glob-parent": "^6.0.0",
+      "minimist": "^1.2.5",
+      "trim-newlines": "^4.0.0"
+    }
+  }
 }

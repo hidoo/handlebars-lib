@@ -1,18 +1,18 @@
 # handlebars-lib
 
-[![Status](https://github.com/hidoo/handlebars-lib/workflows/Main%20workflow/badge.svg)](https://github.com/hidoo/handlebars-lib/actions?query=branch%3Amaster)
+[![Test](https://github.com/hidoo/handlebars-lib/actions/workflows/test.yml/badge.svg)](https://github.com/hidoo/handlebars-lib/actions/workflows/test.yml)
 
 > This is monorepo for libraries of Handlebars.
 
 ## Packages
 
-+ [@hidoo/express-engine-handlebars](./packages/@hidoo/express-engine-handlebars)
-+ [@hidoo/handlebars-helpers](./packages/@hidoo/handlebars-helpers)
+- [@hidoo/express-engine-handlebars](./packages/express-engine-handlebars)
+- [@hidoo/handlebars-helpers](./packages/handlebars-helpers)
 
 ## Test
 
 ```sh
-$ yarn test
+pnpm test
 ```
 
 ## License

@@ -1,17 +1,18 @@
 {
-  "npmClient": "yarn",
-  "useWorkspaces": true,
-  "packages": [
-    "packages/@hidoo/*"
-  ],
+  "$schema": "https://raw.githubusercontent.com/lerna-lite/lerna-lite/main/packages/cli/schemas/lerna-schema.json",
+  "npmClient": "pnpm",
   "version": "0.8.2",
   "command": {
-    "publish": {
+    "version": {
+      "conventionalCommits": true,
       "message": "chore(release): publish %s",
-      "conventionalCommits": true
+      "push": false,
+      "private": false
+    },
+    "publish": {
+      "removePackageFields": ["devDependencies", "scripts"]
     }
   },
-  "ignoreChanges": [
-    "**/CHANGELOG.md"
-  ]
+  "ignoreChanges": ["**/test/**", "**/CHANGELOG.md"],
+  "includeMergedTags": true
 }

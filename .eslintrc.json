@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/eslintrc.json",
+  "root": true,
+  "extends": ["@hidoo/eslint-config"],
+  "overrides": [
+    {
+      "files": ["**/*.test.js"],
+      "extends": ["@hidoo/eslint-config/+mocha", "@hidoo/eslint-config/+node"],
+      "rules": {
+        "no-empty-function": "off",
+        "node/file-extension-in-import": ["error", "always"]
+      }
+    },
+    {
+      "files": ["**/src/**/*.js"],
+      "extends": ["@hidoo/eslint-config/+node"],
+      "rules": {
+        "jsdoc/no-defaults": "off",
+        "jsdoc/tag-lines": "off",
+        "node/file-extension-in-import": ["error", "always"]
+      }
+    }
+  ]
+}
