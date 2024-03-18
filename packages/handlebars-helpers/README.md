@@ -5,7 +5,7 @@ A helper library that summarizes commonly used functions in Handlebars.
 ## Installation
 
 ```sh
-$ npm install handlebars @hidoo/handlebars-helpers
+npm install --save handlebars @hidoo/handlebars-helpers
 ```
 
 ## Usage
@@ -31,7 +31,7 @@ register(Handlebars);
 ## Test
 
 ```sh
-$ yarn test
+pnpm test
 ```
 
 ## License

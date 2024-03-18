@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-$ npm install --save express @hidoo/express-engine-handlebars
+npm install --save express @hidoo/express-engine-handlebars
 ```
 
 ## Usage
@@ -44,7 +44,7 @@ export const register = (handlebars) => {
 ## Test
 
 ```sh
-$ yarn test
+pnpm test
 ```
 
 ## License
