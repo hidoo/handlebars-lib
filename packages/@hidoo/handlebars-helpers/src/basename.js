@@ -1,5 +1,3 @@
-import path from 'path-browserify';
-
 /**
  * パスのベースネームを返す
  * + クエリ文字列、フラグメントは除去する
@@ -13,13 +11,15 @@ export default function basename(value = '') {
     throw new TypeError('{{basename}}: Argument "path" is not string.');
   }
 
-  const tmpPath = value.replace(/(\?|#).*$/g, '');
-  const ext = path.extname(tmpPath);
+  const lastIndex = -1;
+  const url = new URL(value, 'data://');
+  const filename = url.pathname.split('/').at(lastIndex);
+  const ext = filename.split('.').at(lastIndex);
 
   if (typeof ext === 'string' && ext !== '') {
-    return path.basename(tmpPath, ext);
+    return filename.replace(new RegExp(`.${ext}$`), '');
   }
-  return path.basename(tmpPath);
+  return filename;
 }
 
 /**
