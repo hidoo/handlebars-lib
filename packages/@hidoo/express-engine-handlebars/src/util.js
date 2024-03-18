@@ -1,5 +1,5 @@
 import fs from 'node:fs/promises';
-import glob from 'glob';
+import { glob } from 'glob';
 import globParent from 'glob-parent';
 import Vinyl from 'vinyl';
 
@@ -10,16 +10,14 @@ import Vinyl from 'vinyl';
  * @param {Object} options same as options of glob
  * @return {Array<String>}
  */
-export function globPromise(pattern = '', options = {}) {
-  return new Promise((resolve) => {
-    glob(pattern, options, (err, filepaths) => {
-      if (err) {
-        resolve([]);
-      } else {
-        resolve(filepaths);
-      }
-    });
-  });
+export async function globPromise(pattern = '', options = {}) {
+  try {
+    const filePaths = await glob(pattern, options);
+
+    return filePaths;
+  } catch (error) {
+    return [];
+  }
 }
 
 /**

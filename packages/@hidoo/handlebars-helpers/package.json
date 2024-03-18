@@ -26,16 +26,18 @@
   "author": "hidoo",
   "license": "MIT",
   "dependencies": {
-    "highlight.js": "11.3.1",
-    "marked": "2.1.3",
+    "highlight.js": "11.9.0",
+    "marked": "12.0.1",
+    "marked-gfm-heading-id": "3.1.3",
+    "marked-highlight": "2.1.1",
     "path-browserify": "1.0.1"
-  },
-  "peerDependencies": {
-    "handlebars": "4.7.7"
   },
   "devDependencies": {
     "cross-env": "7.0.3",
-    "handlebars": "4.7.7",
-    "mocha": "9.1.3"
+    "handlebars": "4.7.8",
+    "mocha": "10.3.0"
+  },
+  "peerDependencies": {
+    "handlebars": ">=4.7.8"
   }
 }
