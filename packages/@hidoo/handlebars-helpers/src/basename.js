@@ -17,7 +17,7 @@ export default function basename(value = '') {
   }
 
   const tmpPath = value.replace(/(\?|#).*$/g, ''), // eslint-disable-line prefer-named-capture-group
-        ext = path.extname(tmpPath);
+    ext = path.extname(tmpPath);
 
   if (typeof ext === 'string' && ext !== '') {
     return path.basename(tmpPath, ext);

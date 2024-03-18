@@ -21,7 +21,7 @@ export default function replace(value = '', pattern = '', replacement = '') {
     return value;
   }
 
-  if ((/^\/.+\/$/).test(pattern)) {
+  if (/^\/.+\/$/.test(pattern)) {
     const regex = new RegExp(pattern.replace(/(^\/|\/$)/g, ''), 'g'); // eslint-disable-line prefer-named-capture-group
 
     return value.replace(regex, replacement);

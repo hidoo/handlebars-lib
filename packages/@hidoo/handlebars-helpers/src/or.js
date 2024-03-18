@@ -8,8 +8,8 @@
 export default function or(value, defaultValue) {
   if (value) {
     return value;
-  }
-  else if (value === 0) { // eslint-disable-line no-magic-numbers
+    // eslint-disable-next-line no-magic-numbers
+  } else if (value === 0) {
     return value;
   }
   return defaultValue || '';

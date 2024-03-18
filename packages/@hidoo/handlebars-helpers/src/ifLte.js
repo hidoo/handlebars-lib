@@ -9,11 +9,14 @@
 export default function ifLte(value, test, options) {
   const self = this; // eslint-disable-line no-invalid-this
 
-  if (!value && value !== 0 && value !== '') { // eslint-disable-line no-magic-numbers
+  // eslint-disable-next-line no-magic-numbers
+  if (!value && value !== 0 && value !== '') {
     throw new TypeError('{{#ifLte}}: Argument "value" is required.');
   }
   if (typeof value !== 'string' && typeof value !== 'number') {
-    throw new TypeError('{{#ifLte}}: Argument "value" is not valid. (must be string or array).'); // eslint-disable-line max-len
+    throw new TypeError(
+      '{{#ifLte}}: Argument "value" is not valid. (must be string or array).'
+    );
   }
 
   if (value <= test) {

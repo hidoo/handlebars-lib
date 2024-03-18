@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import ifMatch, {register} from '../src/ifMatch';
+import ifMatch, { register } from '../src/ifMatch';
 
 describe('{{#ifMatch value pattern}}...{{/ifMatch}}', () => {
   let template = null;
@@ -12,7 +12,9 @@ describe('{{#ifMatch value pattern}}...{{/ifMatch}}', () => {
     const hbs = Handlebars.create();
 
     hbs.registerHelper('ifMatch', ifMatch);
-    template = hbs.compile('{{#ifMatch value pattern}}matched{{else}}not matched{{/ifMatch}}');
+    template = hbs.compile(
+      '{{#ifMatch value pattern}}matched{{else}}not matched{{/ifMatch}}'
+    );
   });
 
   it('should throw TypeError if argument "value" is not string.', () => {
@@ -20,9 +22,8 @@ describe('{{#ifMatch value pattern}}...{{/ifMatch}}', () => {
 
     invalidValues.forEach((value) => {
       try {
-        template({value, pattern: 'hoge'});
-      }
-      catch (error) {
+        template({ value, pattern: 'hoge' });
+      } catch (error) {
         assert(error instanceof TypeError);
       }
     });
@@ -33,9 +34,8 @@ describe('{{#ifMatch value pattern}}...{{/ifMatch}}', () => {
 
     invalidPatterns.forEach((pattern) => {
       try {
-        template({value: '', pattern});
-      }
-      catch (error) {
+        template({ value: '', pattern });
+      } catch (error) {
         assert(error instanceof TypeError);
       }
     });
@@ -48,7 +48,7 @@ describe('{{#ifMatch value pattern}}...{{/ifMatch}}', () => {
     ];
 
     values.forEach(([value, pattern]) => {
-      const result = template({value, pattern});
+      const result = template({ value, pattern });
 
       assert(typeof result === 'string');
       assert(result === 'matched');
@@ -62,7 +62,7 @@ describe('{{#ifMatch value pattern}}...{{/ifMatch}}', () => {
     ];
 
     values.forEach(([value, pattern]) => {
-      const result = template({value, pattern});
+      const result = template({ value, pattern });
 
       assert(typeof result === 'string');
       assert(result === 'not matched');
@@ -70,12 +70,10 @@ describe('{{#ifMatch value pattern}}...{{/ifMatch}}', () => {
   });
 
   it('should return "matched" if argument "pattern" is string like regex and argument "value" is match argument "pattern".', () => {
-    const values = [
-      ['value', '/^v.+e$/']
-    ];
+    const values = [['value', '/^v.+e$/']];
 
     values.forEach(([value, pattern]) => {
-      const result = template({value, pattern});
+      const result = template({ value, pattern });
 
       assert(typeof result === 'string');
       assert(result === 'matched');
@@ -83,12 +81,10 @@ describe('{{#ifMatch value pattern}}...{{/ifMatch}}', () => {
   });
 
   it('should return "not matched" if argument "pattern" is string like regex and argument "value" is not match argument "pattern".', () => {
-    const values = [
-      ['eulav', '/^v.+e$/']
-    ];
+    const values = [['eulav', '/^v.+e$/']];
 
     values.forEach(([value, pattern]) => {
-      const result = template({value, pattern});
+      const result = template({ value, pattern });
 
       assert(typeof result === 'string');
       assert(result === 'not matched');

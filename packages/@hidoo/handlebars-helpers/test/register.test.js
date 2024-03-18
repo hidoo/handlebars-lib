@@ -8,7 +8,6 @@ import register from '../src/register';
 const readdir = util.promisify(fs.readdir);
 
 describe('@hidoo/handlebars-helpers/register', () => {
-
   it('should register all helpers.', async () => {
     const files = await readdir(path.resolve(__dirname, '../src'));
     const ignoreNames = ['index', 'register'];

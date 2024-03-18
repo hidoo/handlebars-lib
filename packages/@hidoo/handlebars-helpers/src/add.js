@@ -5,9 +5,10 @@
  * @param {Number|String} addition 加算する値
  * @return {Number}
  */
-export default function add(value = 0, addition = 0) { // eslint-disable-line no-magic-numbers
+// eslint-disable-next-line no-magic-numbers
+export default function add(value = 0, addition = 0) {
   let normalizedValue = value,
-      normalizedAddition = addition;
+    normalizedAddition = addition;
 
   if (typeof normalizedValue === 'string') {
     normalizedValue = parseInt(value, 10);

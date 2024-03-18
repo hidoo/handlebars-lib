@@ -16,15 +16,14 @@ export default function ifMatch(value, pattern, options) {
     throw new TypeError('{{ifMatch}}: Argument "pattern" is not string.');
   }
 
-  if ((/^\/.+\/$/).test(pattern)) {
+  if (/^\/.+\/$/.test(pattern)) {
     const regex = new RegExp(pattern.replace(/(^\/|\/$)/g, '')); // eslint-disable-line prefer-named-capture-group
 
     if (regex.test(value)) {
       return options.fn(self);
     }
     return options.inverse(self);
-  }
-  else if (value === pattern) {
+  } else if (value === pattern) {
     return options.fn(self);
   }
   return options.inverse(self);

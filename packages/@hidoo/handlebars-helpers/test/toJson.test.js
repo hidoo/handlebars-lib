@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import toJson, {register} from '../src/toJson';
+import toJson, { register } from '../src/toJson';
 
 describe('{{toJson value prettify=true}}', () => {
   let template = null;
@@ -21,12 +21,15 @@ describe('{{toJson value prettify=true}}', () => {
       ['value', '"value"'],
       [null, 'null'],
       [[0, 1, 2], '[0,1,2]'],
-      [{key1: 'value1', key2: 'value2'}, '{"key1":"value1","key2":"value2"}'],
-      [{[{}]: 'value1', [[]]: 'value2'}, '{"[object Object]":"value1","":"value2"}']
+      [{ key1: 'value1', key2: 'value2' }, '{"key1":"value1","key2":"value2"}'],
+      [
+        { [{}]: 'value1', [[]]: 'value2' },
+        '{"[object Object]":"value1","":"value2"}'
+      ]
     ];
 
     values.forEach(([value, expected]) => {
-      const result = template({value});
+      const result = template({ value });
 
       assert(typeof result === 'string');
       assert(result === expected);
@@ -39,12 +42,18 @@ describe('{{toJson value prettify=true}}', () => {
       ['value', '"value"'],
       [null, 'null'],
       [[0, 1, 2], '[\n  0,\n  1,\n  2\n]'],
-      [{key1: 'value1', key2: 'value2'}, '{\n  "key1": "value1",\n  "key2": "value2"\n}'],
-      [{[{}]: 'value1', [[]]: 'value2'}, '{\n  "[object Object]": "value1",\n  "": "value2"\n}']
+      [
+        { key1: 'value1', key2: 'value2' },
+        '{\n  "key1": "value1",\n  "key2": "value2"\n}'
+      ],
+      [
+        { [{}]: 'value1', [[]]: 'value2' },
+        '{\n  "[object Object]": "value1",\n  "": "value2"\n}'
+      ]
     ];
 
     values.forEach(([value, expected]) => {
-      const result = template({value, options: {prettify: true}});
+      const result = template({ value, options: { prettify: true } });
 
       assert(typeof result === 'string');
       assert(result === expected);

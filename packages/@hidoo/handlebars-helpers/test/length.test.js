@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import length, {register} from '../src/length';
+import length, { register } from '../src/length';
 
 describe('{{length value}}', () => {
   let template = null;
@@ -20,9 +20,8 @@ describe('{{length value}}', () => {
 
     invalidValues.forEach((value) => {
       try {
-        template({value});
-      }
-      catch (error) {
+        template({ value });
+      } catch (error) {
         assert(error instanceof TypeError);
       }
     });
@@ -35,8 +34,8 @@ describe('{{length value}}', () => {
     ];
 
     values.forEach(([value, expected]) => {
-      const templateResult = template({value}),
-            functionResult = length(value);
+      const templateResult = template({ value }),
+        functionResult = length(value);
 
       assert(typeof templateResult === 'string');
       assert(templateResult === expected.toString());
@@ -52,8 +51,8 @@ describe('{{length value}}', () => {
     ];
 
     values.forEach(([value, expected]) => {
-      const templateResult = template({value}),
-            functionResult = length(value);
+      const templateResult = template({ value }),
+        functionResult = length(value);
 
       assert(typeof templateResult === 'string');
       assert(templateResult === expected.toString());

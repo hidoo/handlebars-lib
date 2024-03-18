@@ -22,4 +22,3 @@ export default function choice(condition, value, fallback) {
 export function register(handlebars) {
   handlebars.registerHelper('choice', choice);
 }
-

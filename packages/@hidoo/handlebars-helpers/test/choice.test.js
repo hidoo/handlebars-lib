@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import choice, {register} from '../src/choice';
+import choice, { register } from '../src/choice';
 
 describe('{{choice condition value fallback}}', () => {
   let template = null;
@@ -16,8 +16,8 @@ describe('{{choice condition value fallback}}', () => {
   });
 
   it('should return empty string if argument "condition" is "" and argument "fallback" is "".', () => {
-    const templateResult = template({condition: '', value: '', fallback: ''}),
-          functionResult = choice('', '', '');
+    const templateResult = template({ condition: '', value: '', fallback: '' }),
+      functionResult = choice('', '', '');
 
     assert(typeof templateResult === 'string');
     assert(templateResult === '');
@@ -27,23 +27,25 @@ describe('{{choice condition value fallback}}', () => {
 
   it('should return value of "value" if argument "condition" is not falsy value.', () => {
     const array = [],
-          obj = {},
-          func = () => {},
-          values = [
-            [true, 'value', 'fallback', 'value'],
-            ['string value', 'value', 'fallback', 'value'],
-            [100, 'value', 'fallback', 'value'],
-            [array, 'value', 'fallback', 'value'],
-            [obj, 'value', 'fallback', 'value'],
-            [func, 'value', 'fallback', 'value']
-          ];
+      obj = {},
+      func = () => {},
+      values = [
+        [true, 'value', 'fallback', 'value'],
+        ['string value', 'value', 'fallback', 'value'],
+        [100, 'value', 'fallback', 'value'],
+        [array, 'value', 'fallback', 'value'],
+        [obj, 'value', 'fallback', 'value'],
+        [func, 'value', 'fallback', 'value']
+      ];
 
     values.forEach(([condition, value, fallback, expected]) => {
-      const templateResult = template({condition, value, fallback}),
-            functionResult = choice(condition, value, fallback);
+      const templateResult = template({ condition, value, fallback }),
+        functionResult = choice(condition, value, fallback);
 
       assert(typeof templateResult === 'string');
-      assert(templateResult === Handlebars.escapeExpression(expected.toString()));
+      assert(
+        templateResult === Handlebars.escapeExpression(expected.toString())
+      );
       assert(functionResult === expected);
     });
   });
@@ -59,11 +61,13 @@ describe('{{choice condition value fallback}}', () => {
     ];
 
     values.forEach(([condition, value, fallback, expected]) => {
-      const templateResult = template({condition, value, fallback}),
-            functionResult = choice(condition, value, fallback);
+      const templateResult = template({ condition, value, fallback }),
+        functionResult = choice(condition, value, fallback);
 
       assert(typeof templateResult === 'string');
-      assert(templateResult === Handlebars.escapeExpression(expected.toString()));
+      assert(
+        templateResult === Handlebars.escapeExpression(expected.toString())
+      );
       assert(functionResult === expected);
     });
   });

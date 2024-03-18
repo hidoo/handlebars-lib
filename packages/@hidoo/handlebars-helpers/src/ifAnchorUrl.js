@@ -3,7 +3,8 @@
  *
  * @type {RegExp}
  */
-const PATTERN_ANCHOR_URL = /^https?:\/\/([\w-]+\.)+[\w-]+(\/[\w-./?%&=]*)?#([^?=:,./"'&].+)$/; // eslint-disable-line max-len, prefer-named-capture-group
+const PATTERN_ANCHOR_URL =
+  /^https?:\/\/([\w-]+\.)+[\w-]+(\/[\w-./?%&=]*)?#([^?=:,./"'&].+)$/;
 
 /**
  * リンクに関する値を受け取り、アンカーリンクか否かで条件分岐する

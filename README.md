@@ -6,8 +6,8 @@
 
 ## Packages
 
-+ [@hidoo/express-engine-handlebars](./packages/@hidoo/express-engine-handlebars)
-+ [@hidoo/handlebars-helpers](./packages/@hidoo/handlebars-helpers)
+- [@hidoo/express-engine-handlebars](./packages/@hidoo/express-engine-handlebars)
+- [@hidoo/handlebars-helpers](./packages/@hidoo/handlebars-helpers)
 
 ## Test
 

@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import ifModulo, {register} from '../src/ifModulo';
+import ifModulo, { register } from '../src/ifModulo';
 
 describe('{{#ifModulo value div rest}}...{{/ifModulo}}', () => {
   let template = null;
@@ -12,7 +12,9 @@ describe('{{#ifModulo value div rest}}...{{/ifModulo}}', () => {
     const hbs = Handlebars.create();
 
     hbs.registerHelper('ifModulo', ifModulo);
-    template = hbs.compile('{{#ifModulo value div rest}}matched{{else}}not matched{{/ifModulo}}');
+    template = hbs.compile(
+      '{{#ifModulo value div rest}}matched{{else}}not matched{{/ifModulo}}'
+    );
   });
 
   it('should throw TypeError if argument "value" is not number.', () => {
@@ -20,9 +22,8 @@ describe('{{#ifModulo value div rest}}...{{/ifModulo}}', () => {
 
     invalidValues.forEach((value) => {
       try {
-        template({value, div: 1, rest: 1});
-      }
-      catch (error) {
+        template({ value, div: 1, rest: 1 });
+      } catch (error) {
         assert(error instanceof TypeError);
       }
     });
@@ -33,9 +34,8 @@ describe('{{#ifModulo value div rest}}...{{/ifModulo}}', () => {
 
     invalidDivs.forEach((div) => {
       try {
-        template({value: 1, div, rest: 1});
-      }
-      catch (error) {
+        template({ value: 1, div, rest: 1 });
+      } catch (error) {
         assert(error instanceof TypeError);
       }
     });
@@ -46,9 +46,8 @@ describe('{{#ifModulo value div rest}}...{{/ifModulo}}', () => {
 
     invalidRests.forEach((rest) => {
       try {
-        template({value: 1, div: 1, rest});
-      }
-      catch (error) {
+        template({ value: 1, div: 1, rest });
+      } catch (error) {
         assert(error instanceof TypeError);
       }
     });
@@ -56,9 +55,8 @@ describe('{{#ifModulo value div rest}}...{{/ifModulo}}', () => {
 
   it('should throw Error if argument "div" is 0.', () => {
     try {
-      template({value: 1, div: 0, rest: 1});
-    }
-    catch (error) {
+      template({ value: 1, div: 0, rest: 1 });
+    } catch (error) {
       assert(error instanceof Error);
     }
   });
@@ -73,7 +71,7 @@ describe('{{#ifModulo value div rest}}...{{/ifModulo}}', () => {
     ];
 
     values.forEach(([value, div, rest]) => {
-      const result = template({value, div, rest});
+      const result = template({ value, div, rest });
 
       assert(typeof result === 'string');
       assert(result === 'matched');
@@ -90,7 +88,7 @@ describe('{{#ifModulo value div rest}}...{{/ifModulo}}', () => {
     ];
 
     values.forEach(([value, div, rest]) => {
-      const result = template({value, div, rest});
+      const result = template({ value, div, rest });
 
       assert(typeof result === 'string');
       assert(result === 'not matched');

@@ -14,7 +14,9 @@ export default function ifContain(value, test, options) {
     throw new TypeError('{{#ifContain}}: Argument "value" is required.');
   }
   if (typeof value !== 'string' && !Array.isArray(value)) {
-    throw new TypeError('{{#ifContain}}: Argument "value" is not valid. (must be string or array)'); // eslint-disable-line max-len
+    throw new TypeError(
+      '{{#ifContain}}: Argument "value" is not valid. (must be string or array)'
+    );
   }
 
   if (value.includes(test)) {

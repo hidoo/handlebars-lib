@@ -11,14 +11,15 @@ import Vinyl from 'vinyl';
  * @return {Array<String>}
  */
 export function globPromise(pattern = '', options = {}) {
-  return new Promise(
-    (resolve) => glob(pattern, options, (err, filepaths) => {
+  return new Promise((resolve) => {
+    glob(pattern, options, (err, filepaths) => {
       if (err) {
-        return resolve([]);
+        resolve([]);
+      } else {
+        resolve(filepaths);
       }
-      return resolve(filepaths);
-    })
-  );
+    });
+  });
 }
 
 /**
@@ -33,7 +34,7 @@ export function globPromise(pattern = '', options = {}) {
  * @return {Promise<Vinyl>}
  */
 export function readFile(filepath, options = {}) {
-  const {base, verbose, ...readFileOptions} = options;
+  const { base, verbose, ...readFileOptions } = options;
 
   return new Promise((resolve) => {
     fs.readFile(filepath, readFileOptions, (error, contents) => {
@@ -41,9 +42,9 @@ export function readFile(filepath, options = {}) {
         if (verbose) {
           console.error(error);
         }
-        return resolve(new Vinyl({path: filepath, base, error}));
+        return resolve(new Vinyl({ path: filepath, base, error }));
       }
-      return resolve(new Vinyl({path: filepath, base, contents}));
+      return resolve(new Vinyl({ path: filepath, base, contents }));
     });
   });
 }
@@ -59,14 +60,19 @@ export function readFile(filepath, options = {}) {
  * @return {Promise<Array<Vinyl>>}
  */
 export async function readFiles(pattern, options = {}) {
-  const {verbose} = options,
-        base = globParent(pattern);
+  const { verbose } = options,
+    base = globParent(pattern);
 
-  const filepaths = await globPromise(pattern, {silent: !verbose, ...options.glob});
+  const filepaths = await globPromise(pattern, {
+    silent: !verbose,
+    ...options.glob
+  });
 
   const files = await Promise.all(
-    filepaths.map((filepath) => readFile(filepath, {...options.readFile, base, verbose}))
+    filepaths.map((filepath) =>
+      readFile(filepath, { ...options.readFile, base, verbose })
+    )
   );
 
-  return files.filter(({error}) => !error);
+  return files.filter(({ error }) => !error);
 }

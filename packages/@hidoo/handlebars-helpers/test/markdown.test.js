@@ -3,11 +3,11 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import markdown, {register} from '../src/markdown';
+import markdown, { register } from '../src/markdown';
 
 describe('{{#markdown}}...{{/markdown}}', () => {
   let template = null,
-      templateRawContent = null;
+    templateRawContent = null;
 
   before(() => {
     const hbs = Handlebars.create();
@@ -25,7 +25,7 @@ describe('{{#markdown}}...{{/markdown}}', () => {
     ];
 
     contents.forEach(([content, expected]) => {
-      const result = template({content});
+      const result = template({ content });
 
       assert(typeof result === 'string');
       assert(result === expected);
@@ -51,7 +51,7 @@ describe('{{#markdown}}...{{/markdown}}', () => {
     ];
 
     contents.forEach(([content, expected]) => {
-      const result = template({content});
+      const result = template({ content });
 
       assert(typeof result === 'string');
       assert(result === expected);
@@ -77,7 +77,7 @@ describe('{{#markdown}}...{{/markdown}}', () => {
     ];
 
     contents.forEach(([content, expected]) => {
-      const result = templateRawContent({content});
+      const result = templateRawContent({ content });
 
       assert(typeof result === 'string');
       assert(result === expected);

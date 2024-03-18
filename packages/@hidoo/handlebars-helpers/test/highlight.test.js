@@ -3,9 +3,9 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import highlight, {register} from '../src/highlight';
+import highlight, { register } from '../src/highlight';
 
-describe('{{highlight value lang=\'<lang>\'}}', () => {
+describe("{{highlight value lang='<lang>'}}", () => {
   let template = null;
 
   before(() => {
@@ -24,7 +24,7 @@ describe('{{highlight value lang=\'<lang>\'}}', () => {
     ];
 
     values.forEach(([value, lang, expected]) => {
-      const result = template({value, options: {lang}});
+      const result = template({ value, options: { lang } });
 
       assert(typeof result === 'string');
       assert(result === expected);
@@ -52,7 +52,7 @@ describe('{{highlight value lang=\'<lang>\'}}', () => {
     ];
 
     values.forEach(([value, lang, expected]) => {
-      const result = template({value, options: {lang}});
+      const result = template({ value, options: { lang } });
 
       assert(typeof result === 'string');
       assert(result === expected);

@@ -3,7 +3,7 @@
 /**
  * import modules
  */
-import {normalize, followRecursive} from './utils/key';
+import { normalize, followRecursive } from './utils/key';
 
 /**
  * ソート関数（昇順）
@@ -16,8 +16,7 @@ function sortAscend(a, b) {
   /* eslint-disable no-magic-numbers */
   if (a < b) {
     return -1;
-  }
-  else if (a > b) {
+  } else if (a > b) {
     return 1;
   }
   return 0;
@@ -35,8 +34,7 @@ function sortDescend(a, b) {
   /* eslint-disable no-magic-numbers */
   if (a > b) {
     return -1;
-  }
-  else if (a < b) {
+  } else if (a < b) {
     return 1;
   }
   return 0;
@@ -51,7 +49,7 @@ function sortDescend(a, b) {
  * @return {Array}
  */
 export default function sortArray(array = [], options = {}) {
-  const {order, key} = options.hash;
+  const { order, key } = options.hash;
 
   if (!Array.isArray(array)) {
     throw new TypeError('{{sortArray}}: Argument "array" is not array.');
@@ -74,7 +72,8 @@ export default function sortArray(array = [], options = {}) {
   // + 文字列以外の値をプロパティに持っている値のみをフィルタリングし、
   //   その中でソートを行なって返す
   if (typeof key !== 'string') {
-    return [...array].filter((item) => item[key])
+    return [...array]
+      .filter((item) => item[key])
       .sort((a, b) => comparator(a[key], b[key]));
   }
 
@@ -83,8 +82,11 @@ export default function sortArray(array = [], options = {}) {
 
   // key を辿って目的の値を再帰的に取り出して比較し、ソートする
   // + 該当する key がないものは事前にフィルタリングする
-  return [...array].filter((item) => followRecursive(item, keys))
-    .sort((a, b) => comparator(followRecursive(a, keys), followRecursive(b, keys)));
+  return [...array]
+    .filter((item) => followRecursive(item, keys))
+    .sort((a, b) =>
+      comparator(followRecursive(a, keys), followRecursive(b, keys))
+    );
 }
 
 /**

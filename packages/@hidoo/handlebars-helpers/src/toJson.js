@@ -6,12 +6,11 @@
  * @return {String}
  */
 export default function toJson(value, options) {
-  const {prettify} = options.hash;
+  const { prettify } = options.hash;
 
   try {
     return JSON.stringify(value, null, prettify ? '  ' : null);
-  }
-  catch (error) {
+  } catch (error) {
     throw new Error(`{{toJson}}: ${error}`);
   }
 }

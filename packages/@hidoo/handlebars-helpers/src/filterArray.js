@@ -1,7 +1,7 @@
 /**
  * import modules
  */
-import {normalize, followRecursive} from './utils/key';
+import { normalize, followRecursive } from './utils/key';
 
 /**
  * フィルタリングした新しい配列を返す
@@ -11,7 +11,7 @@ import {normalize, followRecursive} from './utils/key';
  * @return {Array}
  */
 export default function filterArray(array = [], options = {}) {
-  const {value, key} = options.hash;
+  const { value, key } = options.hash;
 
   if (!Array.isArray(array)) {
     throw new TypeError('{{filterArray}}: Argument "array" is not array.');

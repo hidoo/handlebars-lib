@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import convertBreaks, {register} from '../src/convertBreaks';
+import convertBreaks, { register } from '../src/convertBreaks';
 
 describe('{{convertBreaks value}}', () => {
   let template = null;
@@ -20,9 +20,8 @@ describe('{{convertBreaks value}}', () => {
 
     invalidValues.forEach((value) => {
       try {
-        template({value});
-      }
-      catch (error) {
+        template({ value });
+      } catch (error) {
         assert(error instanceof TypeError);
       }
     });
@@ -37,7 +36,7 @@ describe('{{convertBreaks value}}', () => {
 
   it('should return "<p>value value value.</p>" if argument "value" is "value value value.".', () => {
     const value = 'value value value.',
-          result = template({value});
+      result = template({ value });
 
     assert(typeof result === 'string');
     assert(result === '<p>value value value.</p>');
@@ -45,7 +44,7 @@ describe('{{convertBreaks value}}', () => {
 
   it('should return "<p>value value value.</p>" if argument "value" is "<p>value value value.".', () => {
     const value = '<p>value value value.',
-          result = template({value});
+      result = template({ value });
 
     assert(typeof result === 'string');
     assert(result === '<p>value value value.</p>');
@@ -53,7 +52,7 @@ describe('{{convertBreaks value}}', () => {
 
   it('should return "<p>value value value.</p>" if argument "value" is "value value value.</p>".', () => {
     const value = 'value value value.</p>',
-          result = template({value});
+      result = template({ value });
 
     assert(typeof result === 'string');
     assert(result === '<p>value value value.</p>');
@@ -61,7 +60,7 @@ describe('{{convertBreaks value}}', () => {
 
   it('should return "<p>value<br />value<br />value.</p>" if argument "value" is "value\\nvalue\\nvalue.".', () => {
     const value = 'value\nvalue\nvalue.',
-          result = template({value});
+      result = template({ value });
 
     assert(typeof result === 'string');
     assert(result === '<p>value<br />value<br />value.</p>');
@@ -69,7 +68,7 @@ describe('{{convertBreaks value}}', () => {
 
   it('should return "<p>value</p><p>value<br />value.</p>" if argument "value" is "value\\n\\n\\nvalue\\nvalue.".', () => {
     const value = 'value\n\n\nvalue\nvalue.',
-          result = template({value});
+      result = template({ value });
 
     assert(typeof result === 'string');
     assert(result === '<p>value</p><p>value<br />value.</p>');
@@ -83,10 +82,14 @@ describe('{{convertBreaks value}}', () => {
       hbs.registerHelper('viaRegisterHelper', convertBreaks);
 
       const templateViaRegister = hbs.compile('{{{convertBreaks value}}}');
-      const templateViaRegisterHelper = hbs.compile('{{{viaRegisterHelper value}}}');
+      const templateViaRegisterHelper = hbs.compile(
+        '{{{viaRegisterHelper value}}}'
+      );
       const value = 'value\n\n\nvalue\nvalue.';
 
-      assert(templateViaRegister({value}) === templateViaRegisterHelper({value}));
+      assert(
+        templateViaRegister({ value }) === templateViaRegisterHelper({ value })
+      );
     });
   });
 });

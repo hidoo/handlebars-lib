@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import split, {register} from '../src/split';
+import split, { register } from '../src/split';
 import toJson from '../src/toJson';
 
 describe('{{split array}}', () => {
@@ -22,9 +22,8 @@ describe('{{split array}}', () => {
 
     invalidValues.forEach((value) => {
       try {
-        template({value});
-      }
-      catch (error) {
+        template({ value });
+      } catch (error) {
         assert(error instanceof TypeError);
       }
     });
@@ -43,8 +42,8 @@ describe('{{split array}}', () => {
     ];
 
     values.forEach(([value, separator, expected]) => {
-      const templateResult = template({value, separator}),
-            functionResult = split(value, separator);
+      const templateResult = template({ value, separator }),
+        functionResult = split(value, separator);
 
       assert(typeof templateResult === 'string');
       assert(templateResult === expected);
@@ -63,8 +62,8 @@ describe('{{split array}}', () => {
     ];
 
     values.forEach(([value, separator, expected]) => {
-      const templateResult = template({value, separator}),
-            functionResult = split(value, separator);
+      const templateResult = template({ value, separator }),
+        functionResult = split(value, separator);
 
       assert(typeof templateResult === 'string');
       assert(templateResult === expected);

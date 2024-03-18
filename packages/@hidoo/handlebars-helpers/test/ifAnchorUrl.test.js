@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import ifAnchorUrl, {register} from '../src/ifAnchorUrl';
+import ifAnchorUrl, { register } from '../src/ifAnchorUrl';
 
 describe('{{#ifAnchorUrl value}}...{{/if}}', () => {
   let template = null;
@@ -12,7 +12,9 @@ describe('{{#ifAnchorUrl value}}...{{/if}}', () => {
     const hbs = Handlebars.create();
 
     hbs.registerHelper('ifAnchorUrl', ifAnchorUrl);
-    template = hbs.compile('{{#ifAnchorUrl value}}anchor url{{else}}not anchor url{{/ifAnchorUrl}}');
+    template = hbs.compile(
+      '{{#ifAnchorUrl value}}anchor url{{else}}not anchor url{{/ifAnchorUrl}}'
+    );
   });
 
   it('should throw TypeError if argument "value" is not string.', () => {
@@ -20,9 +22,8 @@ describe('{{#ifAnchorUrl value}}...{{/if}}', () => {
 
     invalidValues.forEach((value) => {
       try {
-        template({value});
-      }
-      catch (error) {
+        template({ value });
+      } catch (error) {
         assert(error instanceof TypeError);
       }
     });
@@ -45,7 +46,7 @@ describe('{{#ifAnchorUrl value}}...{{/if}}', () => {
     ];
 
     values.forEach(([value, expected]) => {
-      const result = template({value});
+      const result = template({ value });
 
       assert(typeof result === 'string');
       assert(result === expected);
@@ -57,11 +58,14 @@ describe('{{#ifAnchorUrl value}}...{{/if}}', () => {
       ['https://example.com/#anchor-name', 'anchor url'],
       ['https://example.com/path/to/#anchor-name', 'anchor url'],
       ['https://example.com/path/to/index.html#anchor-name', 'anchor url'],
-      ['https://example.com/path/to/index.html?key=value#anchor-name', 'anchor url']
+      [
+        'https://example.com/path/to/index.html?key=value#anchor-name',
+        'anchor url'
+      ]
     ];
 
     values.forEach(([value, expected]) => {
-      const result = template({value});
+      const result = template({ value });
 
       assert(typeof result === 'string');
       assert(result === expected);

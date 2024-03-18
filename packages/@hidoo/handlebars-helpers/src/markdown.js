@@ -24,8 +24,11 @@ const MAPPING_ESCAPE_HTML_STRINGS = {
  * @return {String}
  */
 function escape(html = '') {
-  if ((/[&<>"']/).test(html)) {
-    return html.replace(/[<>"'&]/g, (match) => MAPPING_ESCAPE_HTML_STRINGS[match]);
+  if (/[&<>"']/.test(html)) {
+    return html.replace(
+      /[<>"'&]/g,
+      (match) => MAPPING_ESCAPE_HTML_STRINGS[match]
+    );
   }
   return html;
 }
@@ -49,12 +52,12 @@ function configureRenderer() {
    * {@link https://github.com/markedjs/marked/blob/a5b93085d223652badedf70b3d5e3a4b263b7de9/lib/marked.js#L918-L939}
    */
   renderer.code = function code(content, lang, escaped) {
-    const {langPrefix, highlight} = this.options;
+    const { langPrefix, highlight } = this.options;
     let newContent = content,
-        newEscaped = escaped;
+      newEscaped = escaped;
 
     if (typeof highlight === 'function') {
-      const out = highlight(newContent, {language: lang || 'html'});
+      const out = highlight(newContent, { language: lang || 'html' });
 
       if (out !== null && out !== newContent) {
         newEscaped = true;
@@ -81,7 +84,7 @@ function configureRenderer() {
  */
 export default function markdown(options) {
   const self = this, // eslint-disable-line no-invalid-this
-        content = options.fn(self);
+    content = options.fn(self);
 
   if (typeof content !== 'string') {
     return content;

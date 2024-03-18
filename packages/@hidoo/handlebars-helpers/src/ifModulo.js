@@ -11,7 +11,8 @@
  * {{#ifModulo value 3 1}}value が 3 で割って 1 余る時{{/ifModulo}}
  * ```
  */
-export default function ifModulo(value, div, rest, options) { // eslint-disable-line max-params
+// eslint-disable-next-line max-params
+export default function ifModulo(value, div, rest, options) {
   const self = this; // eslint-disable-line no-invalid-this
 
   if (typeof value !== 'number') {
@@ -20,7 +21,8 @@ export default function ifModulo(value, div, rest, options) { // eslint-disable-
   if (typeof div !== 'number') {
     throw new TypeError('{{#ifModulo}}: Argument "div" is not number.');
   }
-  if (div === 0) { // eslint-disable-line no-magic-numbers
+  // eslint-disable-next-line no-magic-numbers
+  if (div === 0) {
     throw new Error('{{#ifModulo}}: Argument "div" is 0.');
   }
   if (typeof rest !== 'number') {

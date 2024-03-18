@@ -10,6 +10,7 @@
   },
   "scripts": {
     "build": "pnpm run --filter './packages/@hidoo/**' --if-present build",
+    "format": "prettier . --write",
     "test": "pnpm run --sequential '/^test:.*/'",
     "test:lint": "eslint .",
     "test:packages": "pnpm --filter './packages/@hidoo/**' --if-present test",
@@ -25,13 +26,14 @@
   "devDependencies": {
     "@commitlint/cli": "12.1.4",
     "@commitlint/config-conventional": "12.1.4",
-    "@hidoo/eslint-config": "0.6.0",
+    "@hidoo/eslint-config": "1.3.1",
     "@lerna-lite/cli": "3.3.1",
     "@lerna-lite/publish": "3.3.1",
     "@lerna-lite/version": "3.3.1",
     "cross-env": "7.0.3",
-    "eslint": "7.30.0",
-    "lint-staged": "11.0.1"
+    "eslint": "8.57.0",
+    "lint-staged": "11.0.1",
+    "prettier": "3.2.5"
   },
   "pnpm": {
     "overrides": {

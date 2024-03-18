@@ -3,10 +3,9 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import encodeUrl, {register} from '../src/encodeUrl';
+import encodeUrl, { register } from '../src/encodeUrl';
 
 describe('{{encodeUrl value}}', () => {
-
   it('should return empty string if arguments is not set.', () => {
     const result = encodeUrl();
 
@@ -20,8 +19,7 @@ describe('{{encodeUrl value}}', () => {
     invalidValues.forEach((value) => {
       try {
         encodeUrl(value);
-      }
-      catch (error) {
+      } catch (error) {
         assert(error instanceof TypeError);
       }
     });

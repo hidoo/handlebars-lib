@@ -9,10 +9,10 @@ import Handlebars from 'handlebars';
  * @type {RegExp}
  */
 const PATTERN_START_PARAGRAPH = /^<p>/,
-      PATTERN_END_PARAGRAPH = /<\/p>$/,
-      PATTERN_END_PARAGRAPH_BR = /<br \/><\/p>/g,
-      PATTERN_SINGLE_LINEFEEDS = /(?<!\n)\n(?!\n)/g,
-      PATTERN_MULTI_LINEFEEDS = /\n\n+/g;
+  PATTERN_END_PARAGRAPH = /<\/p>$/,
+  PATTERN_END_PARAGRAPH_BR = /<br \/><\/p>/g,
+  PATTERN_SINGLE_LINEFEEDS = /(?<!\n)\n(?!\n)/g,
+  PATTERN_MULTI_LINEFEEDS = /\n\n+/g;
 
 /**
  * 改行を含む文字列を本文用にマークアップする変換処理
@@ -39,7 +39,7 @@ function convert(value = '', handlebars = Handlebars) {
     .split('\n')
     .map((line) => {
       const hasStartParagraphTag = PATTERN_START_PARAGRAPH.test(line),
-            hasEndParagraphTag = PATTERN_END_PARAGRAPH.test(line);
+        hasEndParagraphTag = PATTERN_END_PARAGRAPH.test(line);
 
       // 始まりにも終わりにも <p> がない場合は <br /> を追加
       if (!hasStartParagraphTag && !hasEndParagraphTag) {
@@ -61,7 +61,9 @@ function convert(value = '', handlebars = Handlebars) {
   }
 
   // <br /></p> は </p> に変換
-  return new handlebars.SafeString(html.replace(PATTERN_END_PARAGRAPH_BR, '</p>'));
+  return new handlebars.SafeString(
+    html.replace(PATTERN_END_PARAGRAPH_BR, '</p>')
+  );
 }
 
 /**
@@ -81,5 +83,7 @@ export default function convertBreaks(value = '') {
  * @return {void}
  */
 export function register(handlebars) {
-  handlebars.registerHelper('convertBreaks', (value = '') => convert(value, handlebars));
+  handlebars.registerHelper('convertBreaks', (value = '') =>
+    convert(value, handlebars)
+  );
 }

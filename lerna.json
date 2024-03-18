@@ -13,9 +13,6 @@
       "removePackageFields": ["devDependencies", "scripts"]
     }
   },
-  "ignoreChanges": [
-    "**/test/**",
-    "**/CHANGELOG.md"
-  ],
+  "ignoreChanges": ["**/test/**", "**/CHANGELOG.md"],
   "includeMergedTags": true
 }

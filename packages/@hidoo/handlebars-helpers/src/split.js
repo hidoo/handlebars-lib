@@ -9,7 +9,7 @@ export default function split(value, separator = ',') {
   if (typeof value !== 'string') {
     throw new TypeError('{{split}}: Argument "value" must be string.');
   }
-  if ((/^\/.+\/$/).test(separator)) {
+  if (/^\/.+\/$/.test(separator)) {
     const regex = new RegExp(separator.replace(/(^\/|\/$)/g, ''), 'g'); // eslint-disable-line prefer-named-capture-group
 
     return value.split(regex);

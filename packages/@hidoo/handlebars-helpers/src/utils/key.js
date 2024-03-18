@@ -12,7 +12,7 @@ export function normalize(key) {
     return key;
   }
   return key.split('.').map((keyStr) => {
-    if ((/^\[\d+\]$/).test(keyStr)) {
+    if (/^\[\d+\]$/.test(keyStr)) {
       return parseInt(keyStr.replace(/^\[|\]$/g, ''), 10);
     }
     return keyStr;
@@ -35,7 +35,7 @@ export function followRecursive(obj = {}, keys = []) {
   }
 
   const [key, ...restKeys] = keys,
-        value = obj[key];
+    value = obj[key];
 
   // 有効な値の場合に再帰処理する
   if (value && typeof value === 'object') {

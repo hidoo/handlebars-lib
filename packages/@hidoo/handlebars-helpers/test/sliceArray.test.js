@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import sliceArray, {register} from '../src/sliceArray';
+import sliceArray, { register } from '../src/sliceArray';
 
 describe('{{sliceArray array start end}}', () => {
   let template = null;
@@ -20,9 +20,8 @@ describe('{{sliceArray array start end}}', () => {
 
     invalidValues.forEach((value) => {
       try {
-        template({value});
-      }
-      catch (error) {
+        template({ value });
+      } catch (error) {
         assert(error instanceof TypeError);
       }
     });
@@ -36,8 +35,8 @@ describe('{{sliceArray array start end}}', () => {
     ];
 
     values.forEach(([array, start, end, expected]) => {
-      const templateResult = template({array, start, end}),
-            functionResult = sliceArray(array, start, end);
+      const templateResult = template({ array, start, end }),
+        functionResult = sliceArray(array, start, end);
 
       assert(typeof templateResult === 'string');
       assert(templateResult === expected);
@@ -55,8 +54,8 @@ describe('{{sliceArray array start end}}', () => {
     ];
 
     values.forEach(([array, start, end, expected]) => {
-      const templateResult = template({array, start, end}),
-            functionResult = sliceArray(array, start, end);
+      const templateResult = template({ array, start, end }),
+        functionResult = sliceArray(array, start, end);
 
       assert(typeof templateResult === 'string');
       assert(templateResult === expected);
@@ -72,8 +71,8 @@ describe('{{sliceArray array start end}}', () => {
     ];
 
     values.forEach(([array, start, end, expected]) => {
-      const templateResult = template({array, start, end}),
-            functionResult = sliceArray(array, start, end);
+      const templateResult = template({ array, start, end }),
+        functionResult = sliceArray(array, start, end);
 
       assert(typeof templateResult === 'string');
       assert(templateResult === expected);

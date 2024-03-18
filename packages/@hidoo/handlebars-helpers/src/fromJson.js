@@ -7,8 +7,7 @@
 export default function fromJson(value) {
   try {
     return JSON.parse(value);
-  }
-  catch (error) {
+  } catch (error) {
     throw new Error(`{{fromJson}}: ${error}`);
   }
 }

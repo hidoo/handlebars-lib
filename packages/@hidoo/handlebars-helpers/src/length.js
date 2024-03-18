@@ -6,7 +6,9 @@
  */
 export default function length(value) {
   if (typeof value !== 'string' && !Array.isArray(value)) {
-    throw new TypeError('{{length}}: Argument "value" must be string or array.');
+    throw new TypeError(
+      '{{length}}: Argument "value" must be string or array.'
+    );
   }
   return value.length;
 }

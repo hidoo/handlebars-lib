@@ -17,13 +17,14 @@ import hljs from 'highlight.js';
 export default function highlight(value, options) {
   const lang = options.hash.lang || 'html';
 
-  if (!value && value !== 0) { // eslint-disable-line no-magic-numbers
+  // eslint-disable-next-line no-magic-numbers
+  if (!value && value !== 0) {
     return '';
   }
   if (typeof value !== 'string') {
     return String(value);
   }
-  return hljs.highlight(value, {language: lang}).value;
+  return hljs.highlight(value, { language: lang }).value;
 }
 
 /**

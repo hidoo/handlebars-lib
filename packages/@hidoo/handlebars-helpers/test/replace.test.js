@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import replace, {register} from '../src/replace';
+import replace, { register } from '../src/replace';
 
 describe('{{replace value pattern replacement}}', () => {
   let template = null;
@@ -20,9 +20,8 @@ describe('{{replace value pattern replacement}}', () => {
 
     invalidValues.forEach((value) => {
       try {
-        template({value, pattern: '', replacement: ''});
-      }
-      catch (error) {
+        template({ value, pattern: '', replacement: '' });
+      } catch (error) {
         assert(error instanceof TypeError);
       }
     });
@@ -33,9 +32,8 @@ describe('{{replace value pattern replacement}}', () => {
 
     invalidPatterns.forEach((pattern) => {
       try {
-        template({value: '', pattern, replacement: ''});
-      }
-      catch (error) {
+        template({ value: '', pattern, replacement: '' });
+      } catch (error) {
         assert(error instanceof TypeError);
       }
     });
@@ -46,16 +44,15 @@ describe('{{replace value pattern replacement}}', () => {
 
     invalidReplacements.forEach((replacement) => {
       try {
-        template({value: '', pattern: '', replacement});
-      }
-      catch (error) {
+        template({ value: '', pattern: '', replacement });
+      } catch (error) {
         assert(error instanceof TypeError);
       }
     });
   });
 
   it('should return empty string if argument "value" is "" and arguument "pattern" is "".', () => {
-    const result = template({value: '', pattern: ''});
+    const result = template({ value: '', pattern: '' });
 
     assert(typeof result === 'string');
     assert(result === '');
@@ -69,7 +66,7 @@ describe('{{replace value pattern replacement}}', () => {
     ];
 
     values.forEach(([value, pattern, replacement, expected]) => {
-      const result = template({value, pattern, replacement});
+      const result = template({ value, pattern, replacement });
 
       assert(typeof result === 'string');
       assert(result === expected);
@@ -84,7 +81,7 @@ describe('{{replace value pattern replacement}}', () => {
     ];
 
     values.forEach(([value, pattern, replacement, expected]) => {
-      const result = template({value, pattern, replacement});
+      const result = template({ value, pattern, replacement });
 
       assert(typeof result === 'string');
       assert(result === expected);

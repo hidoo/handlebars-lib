@@ -7,7 +7,6 @@ import * as helpers from '../src';
 const readdir = util.promisify(fs.readdir);
 
 describe('@hidoo/handlebars-helpers', () => {
-
   it('should export all helpers.', async () => {
     const files = await readdir(path.resolve(__dirname, '../src'));
     const ignoreNames = ['index', 'register'];

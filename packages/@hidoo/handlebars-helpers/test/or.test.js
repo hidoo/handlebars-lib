@@ -3,7 +3,7 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import or, {register} from '../src/or';
+import or, { register } from '../src/or';
 
 describe('{{or value defaultValue}}', () => {
   let template = null;
@@ -16,8 +16,8 @@ describe('{{or value defaultValue}}', () => {
   });
 
   it('should return empty string if argument "value" is "" and argument "defaultValue" is "".', () => {
-    const templateResult = template({value: '', defaultValue: ''}),
-          functionResult = or('', '');
+    const templateResult = template({ value: '', defaultValue: '' }),
+      functionResult = or('', '');
 
     assert(typeof templateResult === 'string');
     assert(templateResult === '');
@@ -27,23 +27,25 @@ describe('{{or value defaultValue}}', () => {
 
   it('should return as it if argument "value" is not falsy value.', () => {
     const array = [],
-          obj = {},
-          func = () => {},
-          values = [
-            [true, 'default value', true],
-            ['string value', 'default value', 'string value'],
-            [100, 'default value', 100],
-            [array, 'default value', array],
-            [obj, 'default value', obj],
-            [func, 'default value', func]
-          ];
+      obj = {},
+      func = () => {},
+      values = [
+        [true, 'default value', true],
+        ['string value', 'default value', 'string value'],
+        [100, 'default value', 100],
+        [array, 'default value', array],
+        [obj, 'default value', obj],
+        [func, 'default value', func]
+      ];
 
     values.forEach(([value, defaultValue, expected]) => {
-      const templateResult = template({value, defaultValue}),
-            functionResult = or(value, defaultValue);
+      const templateResult = template({ value, defaultValue }),
+        functionResult = or(value, defaultValue);
 
       assert(typeof templateResult === 'string');
-      assert(templateResult === Handlebars.escapeExpression(expected.toString()));
+      assert(
+        templateResult === Handlebars.escapeExpression(expected.toString())
+      );
       assert(functionResult === expected);
     });
   });
@@ -59,11 +61,13 @@ describe('{{or value defaultValue}}', () => {
     ];
 
     values.forEach(([value, defaultValue, expected]) => {
-      const templateResult = template({value, defaultValue}),
-            functionResult = or(value, defaultValue);
+      const templateResult = template({ value, defaultValue }),
+        functionResult = or(value, defaultValue);
 
       assert(typeof templateResult === 'string');
-      assert(templateResult === Handlebars.escapeExpression(expected.toString()));
+      assert(
+        templateResult === Handlebars.escapeExpression(expected.toString())
+      );
       assert(functionResult === expected);
     });
   });

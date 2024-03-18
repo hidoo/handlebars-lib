@@ -3,20 +3,24 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import filterArray, {register} from '../src/filterArray';
+import filterArray, { register } from '../src/filterArray';
 import toJson from '../src/toJson';
 
 describe('{{filterArray array key=key value=value}}', () => {
   let template = null,
-      templateToJson = null;
+    templateToJson = null;
 
   before(() => {
     const hbs = Handlebars.create();
 
     hbs.registerHelper('filterArray', filterArray);
     hbs.registerHelper('toJson', toJson);
-    template = hbs.compile('{{filterArray array key=options.key value=options.value}}');
-    templateToJson = hbs.compile('{{{toJson (filterArray array key=options.key value=options.value)}}}');
+    template = hbs.compile(
+      '{{filterArray array key=options.key value=options.value}}'
+    );
+    templateToJson = hbs.compile(
+      '{{{toJson (filterArray array key=options.key value=options.value)}}}'
+    );
   });
 
   it('should throw TypeError if argument "array" is not array.', () => {
@@ -24,9 +28,8 @@ describe('{{filterArray array key=key value=value}}', () => {
 
     invalidValues.forEach((value) => {
       try {
-        template({value});
-      }
-      catch (error) {
+        template({ value });
+      } catch (error) {
         assert(error instanceof TypeError);
       }
     });
@@ -40,8 +43,8 @@ describe('{{filterArray array key=key value=value}}', () => {
     ];
 
     values.forEach(([array, value, expected]) => {
-      const templateResult = template({array, options: {value}}),
-            functionResult = filterArray(array, {hash: {value}});
+      const templateResult = template({ array, options: { value } }),
+        functionResult = filterArray(array, { hash: { value } });
 
       assert(typeof templateResult === 'string');
       assert(templateResult === expected);
@@ -60,8 +63,8 @@ describe('{{filterArray array key=key value=value}}', () => {
     ];
 
     values.forEach(([array, value, expected]) => {
-      const templateResult = template({array, options: {value}}),
-            functionResult = filterArray(array, {hash: {value}});
+      const templateResult = template({ array, options: { value } }),
+        functionResult = filterArray(array, { hash: { value } });
 
       assert(typeof templateResult === 'string');
       assert(templateResult === expected.join(','));
@@ -73,18 +76,59 @@ describe('{{filterArray array key=key value=value}}', () => {
 
   it('should return new array that filtered by specified key if argument "array" and attribute "key" are valid.', () => {
     const objectKey = {},
-          arrayKey = [],
-          values = [
-            [[{[objectKey]: 'value1'}, {[objectKey]: 'value2'}, {[objectKey]: 'value3'}], 'value3', objectKey, 2],
-            [[{[arrayKey]: 'value1'}, {[arrayKey]: 'value2'}, {[arrayKey]: 'value3'}], 'value3', arrayKey, 2],
-            [[{prop1: 'value1'}, {prop1: 'value2'}, {prop1: 'value3'}], 'value3', 'prop1', 2],
-            [[{prop1: {prop2: 'value1'}}, {prop1: {prop2: 'value2'}}, {prop1: {prop2: 'value3'}}], 'value1', 'prop1.prop2', 0],
-            [[{prop1: [{}, {prop2: 'value1'}]}, {prop1: [{}, {prop2: 'value2'}]}, {prop1: [{}, {prop2: 'value3'}]}], 'value2', 'prop1.[1].prop2', 1]
-          ];
+      arrayKey = [],
+      values = [
+        [
+          [
+            { [objectKey]: 'value1' },
+            { [objectKey]: 'value2' },
+            { [objectKey]: 'value3' }
+          ],
+          'value3',
+          objectKey,
+          2
+        ],
+        [
+          [
+            { [arrayKey]: 'value1' },
+            { [arrayKey]: 'value2' },
+            { [arrayKey]: 'value3' }
+          ],
+          'value3',
+          arrayKey,
+          2
+        ],
+        [
+          [{ prop1: 'value1' }, { prop1: 'value2' }, { prop1: 'value3' }],
+          'value3',
+          'prop1',
+          2
+        ],
+        [
+          [
+            { prop1: { prop2: 'value1' } },
+            { prop1: { prop2: 'value2' } },
+            { prop1: { prop2: 'value3' } }
+          ],
+          'value1',
+          'prop1.prop2',
+          0
+        ],
+        [
+          [
+            { prop1: [{}, { prop2: 'value1' }] },
+            { prop1: [{}, { prop2: 'value2' }] },
+            { prop1: [{}, { prop2: 'value3' }] }
+          ],
+          'value2',
+          'prop1.[1].prop2',
+          1
+        ]
+      ];
 
     values.forEach(([array, value, key, expectedIndex]) => {
-      const templateResult = templateToJson({array, options: {value, key}}),
-            functionResult = filterArray(array, {hash: {value, key}});
+      const templateResult = templateToJson({ array, options: { value, key } }),
+        functionResult = filterArray(array, { hash: { value, key } });
 
       assert(typeof templateResult === 'string');
       assert(templateResult === JSON.stringify([array[expectedIndex]]));

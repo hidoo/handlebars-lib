@@ -2,14 +2,14 @@ import path from 'path';
 import Handlebars from 'handlebars';
 import layoutsHelper from 'handlebars-layouts';
 import * as defaultHelpers from '@hidoo/handlebars-helpers';
-import {globPromise, readFile, readFiles} from './util';
+import { globPromise, readFile, readFiles } from './util';
 
 /**
  * Handlebars default instance
  *
  * @type {Object}
  */
-export {default as Handlebars} from 'handlebars';
+export { default as Handlebars } from 'handlebars';
 
 /**
  * default options
@@ -17,7 +17,6 @@ export {default as Handlebars} from 'handlebars';
  * @type {Object}
  */
 const DEFAULT_OPTIONS = {
-
   // Handlebars partials files glob pattern
   partials: '',
 
@@ -59,16 +58,16 @@ const DEFAULT_OPTIONS = {
  * @return {Function}
  */
 export default function expressEngineHandlebars(options = {}) {
-  const opts = {...DEFAULT_OPTIONS, ...options};
+  const opts = { ...DEFAULT_OPTIONS, ...options };
 
   return async (filepath, context, done) => {
-    const {verbose} = opts;
+    const { verbose } = opts;
 
     try {
-      const {error, contents} = await readFile(filepath, {verbose}),
-            layouts = await readFiles(opts.layouts, {verbose}),
-            partials = await readFiles(opts.partials, {verbose}),
-            hbs = opts.handlebars || Handlebars.create();
+      const { error, contents } = await readFile(filepath, { verbose }),
+        layouts = await readFiles(opts.layouts, { verbose }),
+        partials = await readFiles(opts.partials, { verbose }),
+        hbs = opts.handlebars || Handlebars.create();
 
       // filepath not loaded
       if (error) {
@@ -79,23 +78,27 @@ export default function expressEngineHandlebars(options = {}) {
       hbs.registerHelper(layoutsHelper(hbs));
 
       // register default helpers
-      Object.entries(defaultHelpers).forEach(
-        ([name, helper]) => hbs.registerHelper(name, helper)
+      Object.entries(defaultHelpers).forEach(([name, helper]) =>
+        hbs.registerHelper(name, helper)
       );
 
       // register additional helpers
       if (typeof opts.helpers === 'string') {
-        const modulepaths = await globPromise(opts.helpers, {silent: verbose});
+        const modulepaths = await globPromise(opts.helpers, {
+          silent: verbose
+        });
 
         modulepaths
           .map((modulepath) => path.relative(__dirname, modulepath))
           .filter((modulepath) => path.extname(modulepath) === '.js')
           .forEach((modulepath) => {
-            const {register} = require(modulepath); // eslint-disable-line node/global-require, import/no-dynamic-require
+            const { register } = require(modulepath); // eslint-disable-line node/global-require, import/no-dynamic-require
 
             if (typeof register !== 'function') {
               if (verbose) {
-                console.warn(`Warning: helper '${modulepath}' is not valid format.`);
+                console.warn(
+                  `Warning: helper '${modulepath}' is not valid format.`
+                );
               }
               return null;
             }
@@ -116,8 +119,7 @@ export default function expressEngineHandlebars(options = {}) {
       const template = hbs.compile(contents.toString(), opts.compileOptions);
 
       done(null, template(context));
-    }
-    catch (error) {
+    } catch (error) {
       done(error);
     }
   };

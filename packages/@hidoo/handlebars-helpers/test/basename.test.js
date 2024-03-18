@@ -3,10 +3,9 @@
  */
 import assert from 'assert';
 import Handlebars from 'handlebars';
-import basename, {register} from '../src/basename';
+import basename, { register } from '../src/basename';
 
 describe('{{basename value}}', () => {
-
   it('should return empty string if arguments is not set.', () => {
     const result = basename();
 
@@ -17,8 +16,7 @@ describe('{{basename value}}', () => {
   it('should be throw TypeError if argument "value" is not string.', () => {
     try {
       basename({});
-    }
-    catch (error) {
+    } catch (error) {
       assert(error instanceof TypeError);
     }
   });
