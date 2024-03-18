@@ -1,9 +1,6 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import encodeUrl, { register } from '../src/encodeUrl';
+import encodeUrl, { register } from '../src/encodeUrl.js';
 
 describe('{{encodeUrl value}}', () => {
   it('should return empty string if arguments is not set.', () => {

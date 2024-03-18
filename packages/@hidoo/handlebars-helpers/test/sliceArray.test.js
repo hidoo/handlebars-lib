@@ -1,9 +1,6 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import sliceArray, { register } from '../src/sliceArray';
+import sliceArray, { register } from '../src/sliceArray.js';
 
 describe('{{sliceArray array start end}}', () => {
   let template = null;
@@ -35,8 +32,8 @@ describe('{{sliceArray array start end}}', () => {
     ];
 
     values.forEach(([array, start, end, expected]) => {
-      const templateResult = template({ array, start, end }),
-        functionResult = sliceArray(array, start, end);
+      const templateResult = template({ array, start, end });
+      const functionResult = sliceArray(array, start, end);
 
       assert(typeof templateResult === 'string');
       assert(templateResult === expected);
@@ -54,8 +51,8 @@ describe('{{sliceArray array start end}}', () => {
     ];
 
     values.forEach(([array, start, end, expected]) => {
-      const templateResult = template({ array, start, end }),
-        functionResult = sliceArray(array, start, end);
+      const templateResult = template({ array, start, end });
+      const functionResult = sliceArray(array, start, end);
 
       assert(typeof templateResult === 'string');
       assert(templateResult === expected);
@@ -71,8 +68,8 @@ describe('{{sliceArray array start end}}', () => {
     ];
 
     values.forEach(([array, start, end, expected]) => {
-      const templateResult = template({ array, start, end }),
-        functionResult = sliceArray(array, start, end);
+      const templateResult = template({ array, start, end });
+      const functionResult = sliceArray(array, start, end);
 
       assert(typeof templateResult === 'string');
       assert(templateResult === expected);

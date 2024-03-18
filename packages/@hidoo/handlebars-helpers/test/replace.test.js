@@ -1,9 +1,6 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import replace, { register } from '../src/replace';
+import replace, { register } from '../src/replace.js';
 
 describe('{{replace value pattern replacement}}', () => {
   let template = null;
@@ -51,7 +48,7 @@ describe('{{replace value pattern replacement}}', () => {
     });
   });
 
-  it('should return empty string if argument "value" is "" and arguument "pattern" is "".', () => {
+  it('should return empty string if argument "value" is "" and argument "pattern" is "".', () => {
     const result = template({ value: '', pattern: '' });
 
     assert(typeof result === 'string');

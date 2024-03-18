@@ -1,6 +1,3 @@
-/**
- * import modules
- */
 import path from 'path-browserify';
 
 /**
@@ -16,8 +13,8 @@ export default function basename(value = '') {
     throw new TypeError('{{basename}}: Argument "path" is not string.');
   }
 
-  const tmpPath = value.replace(/(\?|#).*$/g, ''), // eslint-disable-line prefer-named-capture-group
-    ext = path.extname(tmpPath);
+  const tmpPath = value.replace(/(\?|#).*$/g, '');
+  const ext = path.extname(tmpPath);
 
   if (typeof ext === 'string' && ext !== '') {
     return path.basename(tmpPath, ext);

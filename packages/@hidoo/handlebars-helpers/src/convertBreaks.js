@@ -1,6 +1,3 @@
-/**
- * import modules
- */
 import Handlebars from 'handlebars';
 
 /**
@@ -8,11 +5,11 @@ import Handlebars from 'handlebars';
  *
  * @type {RegExp}
  */
-const PATTERN_START_PARAGRAPH = /^<p>/,
-  PATTERN_END_PARAGRAPH = /<\/p>$/,
-  PATTERN_END_PARAGRAPH_BR = /<br \/><\/p>/g,
-  PATTERN_SINGLE_LINEFEEDS = /(?<!\n)\n(?!\n)/g,
-  PATTERN_MULTI_LINEFEEDS = /\n\n+/g;
+const PATTERN_START_PARAGRAPH = /^<p>/;
+const PATTERN_END_PARAGRAPH = /<\/p>$/;
+const PATTERN_END_PARAGRAPH_BR = /<br \/><\/p>/g;
+const PATTERN_SINGLE_LINE_FEEDS = /(?<!\n)\n(?!\n)/g;
+const PATTERN_MULTI_LINE_FEEDS = /\n\n+/g;
 
 /**
  * 改行を含む文字列を本文用にマークアップする変換処理
@@ -34,12 +31,12 @@ function convert(value = '', handlebars = Handlebars) {
   // + 2 行以上の改行は、</p>\n<p> に変換する
   // + 改行文字で分割して配列に変換する
   const paragraphs = value
-    .replace(PATTERN_SINGLE_LINEFEEDS, '<br />')
-    .replace(PATTERN_MULTI_LINEFEEDS, '</p>\n<p>')
+    .replace(PATTERN_SINGLE_LINE_FEEDS, '<br />')
+    .replace(PATTERN_MULTI_LINE_FEEDS, '</p>\n<p>')
     .split('\n')
     .map((line) => {
-      const hasStartParagraphTag = PATTERN_START_PARAGRAPH.test(line),
-        hasEndParagraphTag = PATTERN_END_PARAGRAPH.test(line);
+      const hasStartParagraphTag = PATTERN_START_PARAGRAPH.test(line);
+      const hasEndParagraphTag = PATTERN_END_PARAGRAPH.test(line);
 
       // 始まりにも終わりにも <p> がない場合は <br /> を追加
       if (!hasStartParagraphTag && !hasEndParagraphTag) {

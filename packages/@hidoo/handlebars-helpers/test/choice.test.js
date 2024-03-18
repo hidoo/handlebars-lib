@@ -1,9 +1,6 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import choice, { register } from '../src/choice';
+import choice, { register } from '../src/choice.js';
 
 describe('{{choice condition value fallback}}', () => {
   let template = null;

@@ -1,9 +1,6 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import ifLte, { register } from '../src/ifLte';
+import ifLte, { register } from '../src/ifLte.js';
 
 describe('{{#ifLte value test}}...{{/ifLte}}', () => {
   let template = null;

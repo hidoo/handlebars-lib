@@ -1,9 +1,6 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import toJson, { register } from '../src/toJson';
+import toJson, { register } from '../src/toJson.js';
 
 describe('{{toJson value prettify=true}}', () => {
   let template = null;

@@ -1,9 +1,6 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import ifContain, { register } from '../src/ifContain';
+import ifContain, { register } from '../src/ifContain.js';
 
 describe('{{#ifContain value test}}...{{/ifContain}}', () => {
   let template = null;

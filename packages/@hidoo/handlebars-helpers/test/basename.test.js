@@ -1,9 +1,6 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import basename, { register } from '../src/basename';
+import basename, { register } from '../src/basename.js';
 
 describe('{{basename value}}', () => {
   it('should return empty string if arguments is not set.', () => {

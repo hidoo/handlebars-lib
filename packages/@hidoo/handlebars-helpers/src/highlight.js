@@ -1,6 +1,3 @@
-/**
- * import modules
- */
 import hljs from 'highlight.js';
 
 /**

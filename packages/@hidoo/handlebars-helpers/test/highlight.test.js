@@ -1,9 +1,6 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import highlight, { register } from '../src/highlight';
+import highlight, { register } from '../src/highlight.js';
 
 describe("{{highlight value lang='<lang>'}}", () => {
   let template = null;

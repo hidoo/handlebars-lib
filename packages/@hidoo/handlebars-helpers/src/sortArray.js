@@ -3,7 +3,7 @@
 /**
  * import modules
  */
-import { normalize, followRecursive } from './utils/key';
+import { normalize, followRecursive } from './utils/key.js';
 
 /**
  * ソート関数（昇順）

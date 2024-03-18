@@ -1,11 +1,12 @@
-import assert from 'assert';
-import fs from 'fs';
-import path from 'path';
-import request from 'request';
+import assert from 'node:assert';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import express from 'express';
-import expressEngineHandlebars from '../src';
+import expressEngineHandlebars from '../src/index.js';
 
 describe('express-engine-handlebars', () => {
+  let dirname = null;
   let fixtureDir = null;
   let srcDir = null;
   let expectedDir = null;
@@ -13,7 +14,8 @@ describe('express-engine-handlebars', () => {
   let server = null;
 
   before(() => {
-    fixtureDir = path.resolve(__dirname, 'fixtures');
+    dirname = path.dirname(fileURLToPath(import.meta.url));
+    fixtureDir = path.resolve(dirname, 'fixtures');
     srcDir = path.resolve(fixtureDir, 'src');
     expectedDir = path.resolve(fixtureDir, 'expected');
   });
@@ -25,11 +27,13 @@ describe('express-engine-handlebars', () => {
   });
 
   afterEach(() => {
-    app = null;
     server.close();
+    server.closeAllConnections();
+    server = null;
+    app = null;
   });
 
-  it('should out internal server error if syntax error.', (done) => {
+  it('should out internal server error if syntax error.', async () => {
     app.engine('hbs', expressEngineHandlebars());
     app.get('/syntax-error', (req, res) => {
       res.render('syntax-error', {
@@ -37,21 +41,16 @@ describe('express-engine-handlebars', () => {
         contents: 'syntax error contents'
       });
     });
-
-    server = app.listen(3000, () => {
-      request('http://localhost:3000/syntax-error', (error, response) => {
-        if (error) {
-          return done(error);
-        }
-        const { statusCode } = response;
-
-        assert.equal(statusCode, 500);
-        return done();
-      });
+    await new Promise((resolve) => {
+      server = app.listen(3000, resolve);
     });
+
+    const response = await fetch('http://localhost:3000/syntax-error');
+
+    assert.equal(response.status, 500);
   });
 
-  it('should out it as is if layout not use.', (done) => {
+  it('should out it as is if layout not use.', async () => {
     app.engine('hbs', expressEngineHandlebars());
     app.get('/no-layout', (req, res) => {
       res.render('no-layout', {
@@ -59,23 +58,20 @@ describe('express-engine-handlebars', () => {
         contents: 'no layout contents'
       });
     });
-
-    server = app.listen(3000, () => {
-      request('http://localhost:3000/no-layout', (error, response, body) => {
-        if (error) {
-          return done(error);
-        }
-        const expected = fs.readFileSync(
-          path.resolve(expectedDir, 'no-layout.html')
-        );
-
-        assert.equal(body.toString(), expected.toString());
-        return done();
-      });
+    await new Promise((resolve) => {
+      server = app.listen(3000, resolve);
     });
+
+    const response = await fetch('http://localhost:3000/no-layout');
+    const expected = await fs.readFile(
+      path.resolve(expectedDir, 'no-layout.html')
+    );
+
+    assert.equal(response.status, 200);
+    assert.equal(await response.text(), expected.toString());
   });
 
-  it('should out applied specified layout if layout use.', (done) => {
+  it('should out applied specified layout if layout use.', async () => {
     app.engine(
       'hbs',
       expressEngineHandlebars({
@@ -88,23 +84,20 @@ describe('express-engine-handlebars', () => {
         contents: 'with layout contents'
       });
     });
-
-    server = app.listen(3000, () => {
-      request('http://localhost:3000/with-layout', (error, response, body) => {
-        if (error) {
-          return done(error);
-        }
-        const expected = fs.readFileSync(
-          path.resolve(expectedDir, 'with-layout.html')
-        );
-
-        assert.equal(body.toString(), expected.toString());
-        return done();
-      });
+    await new Promise((resolve) => {
+      server = app.listen(3000, resolve);
     });
+
+    const response = await fetch('http://localhost:3000/with-layout');
+    const expected = await fs.readFile(
+      path.resolve(expectedDir, 'with-layout.html')
+    );
+
+    assert.equal(response.status, 200);
+    assert.equal(await response.text(), expected.toString());
   });
 
-  it('should out applied specified partial if partial use.', (done) => {
+  it('should out applied specified partial if partial use.', async () => {
     app.engine(
       'hbs',
       expressEngineHandlebars({
@@ -117,23 +110,20 @@ describe('express-engine-handlebars', () => {
         contents: 'with partial contents'
       });
     });
-
-    server = app.listen(3000, () => {
-      request('http://localhost:3000/with-partial', (error, response, body) => {
-        if (error) {
-          return done(error);
-        }
-        const expected = fs.readFileSync(
-          path.resolve(expectedDir, 'with-partial.html')
-        );
-
-        assert.equal(body.toString(), expected.toString());
-        return done();
-      });
+    await new Promise((resolve) => {
+      server = app.listen(3000, resolve);
     });
+
+    const response = await fetch('http://localhost:3000/with-partial');
+    const expected = await fs.readFile(
+      path.resolve(expectedDir, 'with-partial.html')
+    );
+
+    assert.equal(response.status, 200);
+    assert.equal(await response.text(), expected.toString());
   });
 
-  it('should out applied specified helpers if it default helpers use.', (done) => {
+  it('should out applied specified helpers if it default helpers use.', async () => {
     app.engine('hbs', expressEngineHandlebars());
     app.get('/with-default-helpers', (req, res) => {
       res.render('with-default-helpers', {
@@ -155,54 +145,44 @@ hoge();
         `
       });
     });
-
-    server = app.listen(3000, () => {
-      request(
-        'http://localhost:3000/with-default-helpers',
-        (error, response, body) => {
-          if (error) {
-            return done(error);
-          }
-          const expected = fs.readFileSync(
-            path.resolve(expectedDir, 'with-default-helpers.html')
-          );
-
-          assert.equal(body.toString(), expected.toString());
-          return done();
-        }
-      );
+    await new Promise((resolve) => {
+      server = app.listen(3000, resolve);
     });
+
+    const response = await fetch('http://localhost:3000/with-default-helpers');
+    const expected = await fs.readFile(
+      path.resolve(expectedDir, 'with-default-helpers.html')
+    );
+
+    assert.equal(response.status, 200);
+    assert.equal(await response.text(), expected.toString());
   });
 
-  it('should out applied specified helpers if additinal helpers use.', (done) => {
+  it('should out applied specified helpers if additional helpers use.', async () => {
     app.engine(
       'hbs',
       expressEngineHandlebars({
         helpers: path.resolve(srcDir, 'views/helpers/**/*.js')
       })
     );
-    app.get('/with-additinal-helpers', (req, res) => {
-      res.render('with-additinal-helpers', {
-        title: 'with additinal helpers test',
-        contents: 'with additinal helpers contents'
+    app.get('/with-additional-helpers', (req, res) => {
+      res.render('with-additional-helpers', {
+        title: 'with additional helpers test',
+        contents: 'with additional helpers contents'
       });
     });
-
-    server = app.listen(3000, () => {
-      request(
-        'http://localhost:3000/with-additinal-helpers',
-        (error, response, body) => {
-          if (error) {
-            return done(error);
-          }
-          const expected = fs.readFileSync(
-            path.resolve(expectedDir, 'with-additinal-helpers.html')
-          );
-
-          assert.equal(body.toString(), expected.toString());
-          return done();
-        }
-      );
+    await new Promise((resolve) => {
+      server = app.listen(3000, resolve);
     });
+
+    const response = await fetch(
+      'http://localhost:3000/with-additional-helpers'
+    );
+    const expected = await fs.readFile(
+      path.resolve(expectedDir, 'with-additional-helpers.html')
+    );
+
+    assert.equal(response.status, 200);
+    assert.equal(await response.text(), expected.toString());
   });
 });

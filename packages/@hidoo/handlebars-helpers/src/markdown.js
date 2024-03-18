@@ -1,6 +1,3 @@
-/**
- * import modules
- */
 import marked from 'marked';
 import hljs from 'highlight.js';
 
@@ -53,8 +50,8 @@ function configureRenderer() {
    */
   renderer.code = function code(content, lang, escaped) {
     const { langPrefix, highlight } = this.options;
-    let newContent = content,
-      newEscaped = escaped;
+    let newContent = content;
+    let newEscaped = escaped;
 
     if (typeof highlight === 'function') {
       const out = highlight(newContent, { language: lang || 'html' });
@@ -83,8 +80,8 @@ function configureRenderer() {
  * @return {String}
  */
 export default function markdown(options) {
-  const self = this, // eslint-disable-line no-invalid-this
-    content = options.fn(self);
+  const self = this; // eslint-disable-line no-invalid-this
+  const content = options.fn(self);
 
   if (typeof content !== 'string') {
     return content;

@@ -1,9 +1,6 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import or, { register } from '../src/or';
+import or, { register } from '../src/or.js';
 
 describe('{{or value defaultValue}}', () => {
   let template = null;
@@ -16,8 +13,8 @@ describe('{{or value defaultValue}}', () => {
   });
 
   it('should return empty string if argument "value" is "" and argument "defaultValue" is "".', () => {
-    const templateResult = template({ value: '', defaultValue: '' }),
-      functionResult = or('', '');
+    const templateResult = template({ value: '', defaultValue: '' });
+    const functionResult = or('', '');
 
     assert(typeof templateResult === 'string');
     assert(templateResult === '');
@@ -39,8 +36,8 @@ describe('{{or value defaultValue}}', () => {
       ];
 
     values.forEach(([value, defaultValue, expected]) => {
-      const templateResult = template({ value, defaultValue }),
-        functionResult = or(value, defaultValue);
+      const templateResult = template({ value, defaultValue });
+      const functionResult = or(value, defaultValue);
 
       assert(typeof templateResult === 'string');
       assert(
@@ -61,8 +58,8 @@ describe('{{or value defaultValue}}', () => {
     ];
 
     values.forEach(([value, defaultValue, expected]) => {
-      const templateResult = template({ value, defaultValue }),
-        functionResult = or(value, defaultValue);
+      const templateResult = template({ value, defaultValue });
+      const functionResult = or(value, defaultValue);
 
       assert(typeof templateResult === 'string');
       assert(

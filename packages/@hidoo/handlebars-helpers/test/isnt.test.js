@@ -1,9 +1,6 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import isnt, { register } from '../src/isnt';
+import isnt, { register } from '../src/isnt.js';
 
 describe('{{#isnt value test}}...{{/isnt}}', () => {
   let template = null;
@@ -25,27 +22,27 @@ describe('{{#isnt value test}}...{{/isnt}}', () => {
   });
 
   it('should return "matched" if argument "value" is "value" and argument "test" is "value".', () => {
-    const value = 'value',
-      test = value,
-      result = template({ value, test });
+    const value = 'value';
+    const test = value;
+    const result = template({ value, test });
 
     assert(typeof result === 'string');
     assert(result === 'matched');
   });
 
   it('should return "matched" if argument "value" is {} and argument "test" is same {}.', () => {
-    const value = {},
-      test = value,
-      result = template({ value, test });
+    const value = {};
+    const test = value;
+    const result = template({ value, test });
 
     assert(typeof result === 'string');
     assert(result === 'matched');
   });
 
   it('should return "not matched" if argument "value" is "value" and argument "test" is "test".', () => {
-    const value = 'value',
-      test = 'test',
-      result = template({ value, test });
+    const value = 'value';
+    const test = 'test';
+    const result = template({ value, test });
 
     assert(typeof result === 'string');
     assert(result === 'not matched');

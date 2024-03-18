@@ -1,9 +1,6 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import ifMatch, { register } from '../src/ifMatch';
+import ifMatch, { register } from '../src/ifMatch.js';
 
 describe('{{#ifMatch value pattern}}...{{/ifMatch}}', () => {
   let template = null;

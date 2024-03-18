@@ -1,9 +1,6 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import markdown, { register } from '../src/markdown';
+import markdown, { register } from '../src/markdown.js';
 
 describe('{{#markdown}}...{{/markdown}}', () => {
   let template = null,

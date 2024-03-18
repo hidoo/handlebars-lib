@@ -2,7 +2,7 @@
  * choice according to conditions
  *
  * @param {Any} condition choice condition
- * @param {Any} value return value if condition is truesy
+ * @param {Any} value return value if condition is truthy
  * @param {Any} fallback return value if condition is not falsy
  * @return {Any}
  */

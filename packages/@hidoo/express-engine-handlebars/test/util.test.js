@@ -1,17 +1,19 @@
-import assert from 'assert';
-import fs from 'fs/promises';
-import path from 'path';
-import rimraf from 'rimraf';
+import assert from 'node:assert';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import Vinyl from 'vinyl';
-import { globPromise, readFile, readFiles } from '../src/util';
+import { globPromise, readFile, readFiles } from '../src/util.js';
 
 describe('util', () => {
+  let dirname = null;
   let fixtureDir = null;
   let srcDir = null;
   let notAccessibleDir = null;
 
   before(async () => {
-    fixtureDir = path.resolve(__dirname, 'fixtures');
+    dirname = path.dirname(fileURLToPath(import.meta.url));
+    fixtureDir = path.resolve(dirname, 'fixtures');
     srcDir = path.resolve(fixtureDir, 'src');
     notAccessibleDir = path.resolve(fixtureDir, '__NOT_ACCESSIBLE__');
 
@@ -19,8 +21,8 @@ describe('util', () => {
     await fs.mkdir(path.resolve(notAccessibleDir, 'target'), 0);
   });
 
-  after((done) => {
-    rimraf(notAccessibleDir, done);
+  after(async () => {
+    await fs.rm(notAccessibleDir, { recursive: true });
   });
 
   describe('globPromise', () => {

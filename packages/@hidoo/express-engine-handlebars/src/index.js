@@ -1,8 +1,9 @@
-import path from 'path';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import Handlebars from 'handlebars';
 import layoutsHelper from 'handlebars-layouts';
 import * as defaultHelpers from '@hidoo/handlebars-helpers';
-import { globPromise, readFile, readFiles } from './util';
+import { globPromise, readFile, readFiles } from './util.js';
 
 /**
  * Handlebars default instance
@@ -60,14 +61,16 @@ const DEFAULT_OPTIONS = {
 export default function expressEngineHandlebars(options = {}) {
   const opts = { ...DEFAULT_OPTIONS, ...options };
 
+  /* eslint-disable max-statements */
   return async (filepath, context, done) => {
     const { verbose } = opts;
+    const dirname = path.dirname(fileURLToPath(import.meta.url));
 
     try {
-      const { error, contents } = await readFile(filepath, { verbose }),
-        layouts = await readFiles(opts.layouts, { verbose }),
-        partials = await readFiles(opts.partials, { verbose }),
-        hbs = opts.handlebars || Handlebars.create();
+      const { error, contents } = await readFile(filepath, { verbose });
+      const layouts = await readFiles(opts.layouts, { verbose });
+      const partials = await readFiles(opts.partials, { verbose });
+      const hbs = opts.handlebars || Handlebars.create();
 
       // filepath not loaded
       if (error) {
@@ -84,26 +87,31 @@ export default function expressEngineHandlebars(options = {}) {
 
       // register additional helpers
       if (typeof opts.helpers === 'string') {
-        const modulepaths = await globPromise(opts.helpers, {
+        const modulePaths = await globPromise(opts.helpers, {
           silent: verbose
         });
 
-        modulepaths
-          .map((modulepath) => path.relative(__dirname, modulepath))
-          .filter((modulepath) => path.extname(modulepath) === '.js')
-          .forEach((modulepath) => {
-            const { register } = require(modulepath); // eslint-disable-line node/global-require, import/no-dynamic-require
+        await Promise.all(
+          modulePaths
+            .map((modulePath) => path.relative(dirname, modulePath))
+            .filter((modulePath) =>
+              ['.js', '.cjs', '.mjs'].includes(path.extname(modulePath))
+            )
+            .map(async (modulePath) => {
+              const { register } = await import(modulePath);
 
-            if (typeof register !== 'function') {
-              if (verbose) {
-                console.warn(
-                  `Warning: helper '${modulepath}' is not valid format.`
-                );
+              if (typeof register !== 'function') {
+                if (verbose) {
+                  process.emitWarning('Invalid helper format', {
+                    code: 'E_INVALID_HELPER',
+                    detail: `Helper '${modulePath}' is not valid format.`
+                  });
+                }
+                return null;
               }
-              return null;
-            }
-            return register(hbs);
-          });
+              return register(hbs);
+            })
+        );
       }
 
       // register layouts and partials
@@ -123,4 +131,5 @@ export default function expressEngineHandlebars(options = {}) {
       done(error);
     }
   };
+  /* eslint-enable max-statements */
 }

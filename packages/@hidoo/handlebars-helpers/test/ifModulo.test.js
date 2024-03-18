@@ -1,9 +1,6 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import ifModulo, { register } from '../src/ifModulo';
+import ifModulo, { register } from '../src/ifModulo.js';
 
 describe('{{#ifModulo value div rest}}...{{/ifModulo}}', () => {
   let template = null;

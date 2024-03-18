@@ -1,9 +1,6 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import add, { register } from '../src/add';
+import add, { register } from '../src/add.js';
 
 describe('{{add value addition}}', () => {
   it('should return 0 if arguments is not set.', () => {

@@ -1,7 +1,4 @@
-/**
- * import modules
- */
-import { normalize, followRecursive } from './utils/key';
+import { normalize, followRecursive } from './utils/key.js';
 
 /**
  * フィルタリングした新しい配列を返す

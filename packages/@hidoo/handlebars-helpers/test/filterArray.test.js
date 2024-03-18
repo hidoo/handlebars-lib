@@ -1,10 +1,7 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import filterArray, { register } from '../src/filterArray';
-import toJson from '../src/toJson';
+import filterArray, { register } from '../src/filterArray.js';
+import toJson from '../src/toJson.js';
 
 describe('{{filterArray array key=key value=value}}', () => {
   let template = null,

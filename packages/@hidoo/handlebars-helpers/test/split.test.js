@@ -1,10 +1,7 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import split, { register } from '../src/split';
-import toJson from '../src/toJson';
+import split, { register } from '../src/split.js';
+import toJson from '../src/toJson.js';
 
 describe('{{split array}}', () => {
   let template = null;
@@ -42,8 +39,8 @@ describe('{{split array}}', () => {
     ];
 
     values.forEach(([value, separator, expected]) => {
-      const templateResult = template({ value, separator }),
-        functionResult = split(value, separator);
+      const templateResult = template({ value, separator });
+      const functionResult = split(value, separator);
 
       assert(typeof templateResult === 'string');
       assert(templateResult === expected);
@@ -62,8 +59,8 @@ describe('{{split array}}', () => {
     ];
 
     values.forEach(([value, separator, expected]) => {
-      const templateResult = template({ value, separator }),
-        functionResult = split(value, separator);
+      const templateResult = template({ value, separator });
+      const functionResult = split(value, separator);
 
       assert(typeof templateResult === 'string');
       assert(templateResult === expected);

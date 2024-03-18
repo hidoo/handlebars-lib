@@ -8,6 +8,7 @@
     "node": ">=18.0.0",
     "pnpm": "8.15.5"
   },
+  "type": "module",
   "scripts": {
     "build": "pnpm run --filter './packages/@hidoo/**' --if-present build",
     "format": "prettier . --write",

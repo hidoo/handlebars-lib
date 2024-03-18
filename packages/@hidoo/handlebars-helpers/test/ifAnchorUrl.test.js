@@ -1,9 +1,6 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import ifAnchorUrl, { register } from '../src/ifAnchorUrl';
+import ifAnchorUrl, { register } from '../src/ifAnchorUrl.js';
 
 describe('{{#ifAnchorUrl value}}...{{/if}}', () => {
   let template = null;

@@ -1,9 +1,6 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import is, { register } from '../src/is';
+import is, { register } from '../src/is.js';
 
 describe('{{#is value test}}...{{/is}}', () => {
   let template = null;

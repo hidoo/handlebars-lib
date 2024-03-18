@@ -1,8 +1,5 @@
-/**
- * import modules
- */
-import assert from 'assert';
-import { normalize, followRecursive } from '../../src/utils/key';
+import assert from 'node:assert';
+import { normalize, followRecursive } from '../../src/utils/key.js';
 
 describe('utils/key', () => {
   describe('normalize', () => {

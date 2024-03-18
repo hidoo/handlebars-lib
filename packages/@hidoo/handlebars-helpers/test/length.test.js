@@ -1,9 +1,6 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import length, { register } from '../src/length';
+import length, { register } from '../src/length.js';
 
 describe('{{length value}}', () => {
   let template = null;
@@ -34,8 +31,8 @@ describe('{{length value}}', () => {
     ];
 
     values.forEach(([value, expected]) => {
-      const templateResult = template({ value }),
-        functionResult = length(value);
+      const templateResult = template({ value });
+      const functionResult = length(value);
 
       assert(typeof templateResult === 'string');
       assert(templateResult === expected.toString());
@@ -51,8 +48,8 @@ describe('{{length value}}', () => {
     ];
 
     values.forEach(([value, expected]) => {
-      const templateResult = template({ value }),
-        functionResult = length(value);
+      const templateResult = template({ value });
+      const functionResult = length(value);
 
       assert(typeof templateResult === 'string');
       assert(templateResult === expected.toString());

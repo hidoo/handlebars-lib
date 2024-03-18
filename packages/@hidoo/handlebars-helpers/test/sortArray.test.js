@@ -1,10 +1,7 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import sortArray, { register } from '../src/sortArray';
-import toJson from '../src/toJson';
+import sortArray, { register } from '../src/sortArray.js';
+import toJson from '../src/toJson.js';
 
 describe('{{sortArray array}}', () => {
   let template = null,
@@ -43,8 +40,8 @@ describe('{{sortArray array}}', () => {
     ];
 
     values.forEach(([array, order, expected]) => {
-      const templateResult = template({ array, options: { order } }),
-        functionResult = sortArray(array, { hash: { order } });
+      const templateResult = template({ array, options: { order } });
+      const functionResult = sortArray(array, { hash: { order } });
 
       assert(typeof templateResult === 'string');
       assert(templateResult === expected);
@@ -73,8 +70,8 @@ describe('{{sortArray array}}', () => {
     ];
 
     values.forEach(([array, order, expected]) => {
-      const templateResult = template({ array, options: { order } }),
-        functionResult = sortArray(array, { hash: { order } });
+      const templateResult = template({ array, options: { order } });
+      const functionResult = sortArray(array, { hash: { order } });
 
       assert(typeof templateResult === 'string');
       assert(templateResult === expected.join(','));
@@ -85,76 +82,76 @@ describe('{{sortArray array}}', () => {
   });
 
   it('should return new array that sorted by specified key if argument "array" and attribute "key" are valid.', () => {
-    const objectKey = {},
-      arrayKey = [],
-      values = [
+    const objectKey = {};
+    const arrayKey = [];
+    const values = [
+      [
         [
-          [
-            { [objectKey]: 'value1' },
-            { [objectKey]: 'value2' },
-            { [objectKey]: 'value3' }
-          ],
-          'descend',
-          objectKey,
-          [
-            { [objectKey]: 'value3' },
-            { [objectKey]: 'value2' },
-            { [objectKey]: 'value1' }
-          ]
+          { [objectKey]: 'value1' },
+          { [objectKey]: 'value2' },
+          { [objectKey]: 'value3' }
         ],
+        'descend',
+        objectKey,
         [
-          [
-            { [arrayKey]: 'value1' },
-            { [arrayKey]: 'value2' },
-            { [arrayKey]: 'value3' }
-          ],
-          'descend',
-          arrayKey,
-          [
-            { [arrayKey]: 'value3' },
-            { [arrayKey]: 'value2' },
-            { [arrayKey]: 'value1' }
-          ]
-        ],
-        [
-          [{ prop1: 'value1' }, { prop1: 'value2' }, { prop1: 'value3' }],
-          'descend',
-          'prop1',
-          [{ prop1: 'value3' }, { prop1: 'value2' }, { prop1: 'value1' }]
-        ],
-        [
-          [
-            { prop1: { prop2: 'value1' } },
-            { prop1: { prop2: 'value2' } },
-            { prop1: { prop2: 'value3' } }
-          ],
-          'descend',
-          'prop1.prop2',
-          [
-            { prop1: { prop2: 'value3' } },
-            { prop1: { prop2: 'value2' } },
-            { prop1: { prop2: 'value1' } }
-          ]
-        ],
-        [
-          [
-            { prop1: [{}, { prop2: 'value1' }] },
-            { prop1: [{}, { prop2: 'value2' }] },
-            { prop1: [{}, { prop2: 'value3' }] }
-          ],
-          'descend',
-          'prop1.[1].prop2',
-          [
-            { prop1: [{}, { prop2: 'value3' }] },
-            { prop1: [{}, { prop2: 'value2' }] },
-            { prop1: [{}, { prop2: 'value1' }] }
-          ]
+          { [objectKey]: 'value3' },
+          { [objectKey]: 'value2' },
+          { [objectKey]: 'value1' }
         ]
-      ];
+      ],
+      [
+        [
+          { [arrayKey]: 'value1' },
+          { [arrayKey]: 'value2' },
+          { [arrayKey]: 'value3' }
+        ],
+        'descend',
+        arrayKey,
+        [
+          { [arrayKey]: 'value3' },
+          { [arrayKey]: 'value2' },
+          { [arrayKey]: 'value1' }
+        ]
+      ],
+      [
+        [{ prop1: 'value1' }, { prop1: 'value2' }, { prop1: 'value3' }],
+        'descend',
+        'prop1',
+        [{ prop1: 'value3' }, { prop1: 'value2' }, { prop1: 'value1' }]
+      ],
+      [
+        [
+          { prop1: { prop2: 'value1' } },
+          { prop1: { prop2: 'value2' } },
+          { prop1: { prop2: 'value3' } }
+        ],
+        'descend',
+        'prop1.prop2',
+        [
+          { prop1: { prop2: 'value3' } },
+          { prop1: { prop2: 'value2' } },
+          { prop1: { prop2: 'value1' } }
+        ]
+      ],
+      [
+        [
+          { prop1: [{}, { prop2: 'value1' }] },
+          { prop1: [{}, { prop2: 'value2' }] },
+          { prop1: [{}, { prop2: 'value3' }] }
+        ],
+        'descend',
+        'prop1.[1].prop2',
+        [
+          { prop1: [{}, { prop2: 'value3' }] },
+          { prop1: [{}, { prop2: 'value2' }] },
+          { prop1: [{}, { prop2: 'value1' }] }
+        ]
+      ]
+    ];
 
     values.forEach(([array, order, key, expected]) => {
-      const templateResult = templateToJson({ array, options: { order, key } }),
-        functionResult = sortArray(array, { hash: { order, key } });
+      const templateResult = templateToJson({ array, options: { order, key } });
+      const functionResult = sortArray(array, { hash: { order, key } });
 
       assert(typeof templateResult === 'string');
       assert(templateResult === JSON.stringify(expected));

@@ -1,9 +1,6 @@
-/**
- * import modules
- */
-import assert from 'assert';
+import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import convertBreaks, { register } from '../src/convertBreaks';
+import convertBreaks, { register } from '../src/convertBreaks.js';
 
 describe('{{convertBreaks value}}', () => {
   let template = null;
