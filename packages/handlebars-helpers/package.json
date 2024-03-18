@@ -1,6 +1,6 @@
 {
   "name": "@hidoo/handlebars-helpers",
-  "version": "0.8.2",
+  "version": "1.0.0",
   "description": "A helper library that summarizes commonly used functions in Handlebars.",
   "engines": {
     "node": ">=18.0.0"

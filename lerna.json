@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/lerna-lite/lerna-lite/main/packages/cli/schemas/lerna-schema.json",
   "npmClient": "pnpm",
-  "version": "0.8.2",
+  "version": "1.0.0",
   "command": {
     "version": {
       "conventionalCommits": true,
@@ -10,9 +10,15 @@
       "private": false
     },
     "publish": {
-      "removePackageFields": ["devDependencies", "scripts"]
+      "removePackageFields": [
+        "devDependencies",
+        "scripts"
+      ]
     }
   },
-  "ignoreChanges": ["**/test/**", "**/CHANGELOG.md"],
+  "ignoreChanges": [
+    "**/test/**",
+    "**/CHANGELOG.md"
+  ],
   "includeMergedTags": true
 }
