@@ -24,7 +24,7 @@
     "test": "cross-env NODE_ENV=test mocha ./test"
   },
   "dependencies": {
-    "@hidoo/handlebars-helpers": "^0.8.2",
+    "@hidoo/handlebars-helpers": "workspace:*",
     "glob": "7.2.3",
     "glob-parent": "6.0.2",
     "handlebars": "4.7.7",
