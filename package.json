@@ -10,11 +10,11 @@
   },
   "type": "module",
   "scripts": {
-    "build": "pnpm run --filter './packages/@hidoo/**' --if-present build",
+    "build": "pnpm run --filter './packages/**' --if-present build",
     "format": "prettier . --write",
     "test": "pnpm run --sequential '/^test:.*/'",
     "test:lint": "eslint .",
-    "test:packages": "pnpm --filter './packages/@hidoo/**' --if-present test",
+    "test:packages": "pnpm --filter './packages/**' --if-present test",
     "preinstall": "npx only-allow pnpm",
     "prepare": "git config --local core.hooksPath .githooks",
     "version:patch": "lerna version patch && pnpm run --sequential '/^(build|test)$/'",
