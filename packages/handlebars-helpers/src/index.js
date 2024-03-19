@@ -16,6 +16,7 @@ export { default as ifModulo } from './ifModulo.js';
 export { default as is } from './is.js';
 export { default as isnt } from './isnt.js';
 export { default as length } from './length.js';
+export { default as map } from './map.js';
 export { default as markdown } from './markdown.js';
 export { default as replace } from './replace.js';
 export { default as or } from './or.js';

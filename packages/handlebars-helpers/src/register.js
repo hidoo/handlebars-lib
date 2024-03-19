@@ -16,6 +16,7 @@ import { register as ifModulo } from './ifModulo.js';
 import { register as is } from './is.js';
 import { register as isnt } from './isnt.js';
 import { register as length } from './length.js';
+import { register as map } from './map.js';
 import { register as markdown } from './markdown.js';
 import { register as replace } from './replace.js';
 import { register as or } from './or.js';
@@ -50,6 +51,7 @@ export default function register(handlebars) {
   is(handlebars);
   isnt(handlebars);
   length(handlebars);
+  map(handlebars);
   markdown(handlebars);
   replace(handlebars);
   or(handlebars);
