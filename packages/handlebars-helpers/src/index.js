@@ -24,4 +24,5 @@ export { default as or } from './or.js';
 export { default as sliceArray } from './sliceArray.js';
 export { default as sortArray } from './sortArray.js';
 export { default as split } from './split.js';
+export { default as truncate } from './truncate.js';
 export { default as toJson } from './toJson.js';

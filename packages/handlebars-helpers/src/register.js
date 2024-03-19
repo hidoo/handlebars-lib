@@ -24,6 +24,7 @@ import { register as or } from './or.js';
 import { register as sliceArray } from './sliceArray.js';
 import { register as sortArray } from './sortArray.js';
 import { register as split } from './split.js';
+import { register as truncate } from './truncate.js';
 import { register as toJson } from './toJson.js';
 
 /* eslint-disable max-statements */
@@ -60,6 +61,7 @@ export default function register(handlebars) {
   sliceArray(handlebars);
   sortArray(handlebars);
   split(handlebars);
+  truncate(handlebars);
   toJson(handlebars);
 }
 /* eslint-enable max-statements */
