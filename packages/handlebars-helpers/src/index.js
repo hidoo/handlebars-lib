@@ -1,6 +1,7 @@
 export { default as add } from './add.js';
 export { default as array } from './array.js';
 export { default as basename } from './basename.js';
+export { default as calc } from './calc.js';
 export { default as choice } from './choice.js';
 export { default as convertBreaks } from './convertBreaks.js';
 export { default as encodeUrl } from './encodeUrl.js';

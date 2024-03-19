@@ -1,6 +1,7 @@
 import { register as add } from './add.js';
 import { register as array } from './array.js';
 import { register as basename } from './basename.js';
+import { register as calc } from './calc.js';
 import { register as choice } from './choice.js';
 import { register as convertBreaks } from './convertBreaks.js';
 import { register as encodeUrl } from './encodeUrl.js';
@@ -34,6 +35,7 @@ export default function register(handlebars) {
   add(handlebars);
   array(handlebars);
   basename(handlebars);
+  calc(handlebars);
   choice(handlebars);
   convertBreaks(handlebars);
   encodeUrl(handlebars);
