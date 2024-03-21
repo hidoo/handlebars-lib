@@ -19,6 +19,7 @@ import { register as length } from './length.js';
 import { register as map } from './map.js';
 import { register as markdown } from './markdown.js';
 import { register as not } from './not.js';
+import { register as parse } from './parse.js';
 import { register as replace } from './replace.js';
 import { register as or } from './or.js';
 import { register as sliceArray } from './sliceArray.js';
@@ -57,6 +58,7 @@ export default function register(handlebars) {
   markdown(handlebars);
   not(handlebars);
   replace(handlebars);
+  parse(handlebars);
   or(handlebars);
   sliceArray(handlebars);
   sortArray(handlebars);

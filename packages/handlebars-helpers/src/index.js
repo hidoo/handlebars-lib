@@ -19,6 +19,7 @@ export { default as length } from './length.js';
 export { default as map } from './map.js';
 export { default as markdown } from './markdown.js';
 export { default as not } from './not.js';
+export { default as parse } from './parse.js';
 export { default as replace } from './replace.js';
 export { default as or } from './or.js';
 export { default as sliceArray } from './sliceArray.js';
