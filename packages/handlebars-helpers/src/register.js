@@ -36,23 +36,15 @@ import { register as toJson } from './toJson.js';
  * @return {void}
  */
 export default function register(handlebars) {
-  add(handlebars);
   array(handlebars);
   basename(handlebars);
   calc(handlebars);
   choice(handlebars);
-  convertBreaks(handlebars);
   encodeUrl(handlebars);
   filterArray(handlebars);
   fromJson(handlebars);
   highlight(handlebars);
   ifAnchorUrl(handlebars);
-  ifContain(handlebars);
-  ifLte(handlebars);
-  ifModulo(handlebars);
-  ifMatch(handlebars);
-  is(handlebars);
-  isnt(handlebars);
   length(handlebars);
   map(handlebars);
   markdown(handlebars);
@@ -65,5 +57,15 @@ export default function register(handlebars) {
   split(handlebars);
   truncate(handlebars);
   toJson(handlebars);
+
+  // DEPRECATED
+  add(handlebars);
+  convertBreaks(handlebars);
+  ifContain(handlebars);
+  ifLte(handlebars);
+  ifModulo(handlebars);
+  ifMatch(handlebars);
+  is(handlebars);
+  isnt(handlebars);
 }
 /* eslint-enable max-statements */

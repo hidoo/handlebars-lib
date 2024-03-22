@@ -1,4 +1,5 @@
 import Handlebars from 'handlebars';
+import deprecated from './utils/deprecated.js';
 
 /**
  * マッチングパターン
@@ -14,11 +15,14 @@ const PATTERN_MULTI_LINE_FEEDS = /\n\n+/g;
 /**
  * 改行を含む文字列を本文用にマークアップする変換処理
  *
+ * @deprecated since version 1.1.0
  * @param {Number} value 本文用のテキスト
  * @param {Handlebars} handlebars Handlebars instance
  * @return {String}
  */
 function convert(value = '', handlebars = Handlebars) {
+  deprecated('convertBreaks');
+
   if (typeof value !== 'string') {
     throw new TypeError('{{convertBreaks}}: Argument "value" is not string.');
   }

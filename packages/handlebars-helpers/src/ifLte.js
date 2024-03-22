@@ -1,12 +1,17 @@
+import deprecated from './utils/deprecated.js';
+
 /**
  * 元の値が比較する値以下であるかどうかでの条件分岐をする
  *
+ * @deprecated since version 1.1.0
  * @param {String|Number} value 元の値
  * @param {String|Number} test 比較する値
  * @param {Object} options Handlebars のオプション
  * @return {String}
  */
 export default function ifLte(value, test, options) {
+  deprecated('ifLte', 'calc', "{{#if (calc a '>=' b)}} ... {{/if}}");
+
   const self = this; // eslint-disable-line no-invalid-this
 
   // eslint-disable-next-line no-magic-numbers

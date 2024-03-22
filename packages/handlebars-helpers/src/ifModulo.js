@@ -1,6 +1,9 @@
+import deprecated from './utils/deprecated.js';
+
 /**
  * 割った時の余りが指定した値の時に条件分岐をする
  *
+ * @deprecated since version 1.1.0
  * @param {Number} value 比較する値
  * @param {Number} div 割る値
  * @param {Number} rest あまりの値
@@ -13,6 +16,12 @@
  */
 // eslint-disable-next-line max-params
 export default function ifModulo(value, div, rest, options) {
+  deprecated(
+    'ifModulo',
+    'calc',
+    "{{#if (calc (calc a '%' b) '===' 1)}} ... {{/if}}"
+  );
+
   const self = this; // eslint-disable-line no-invalid-this
 
   if (typeof value !== 'number') {
