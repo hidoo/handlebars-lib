@@ -24,7 +24,7 @@ describe('{{parse value}}', () => {
   });
 
   context('if <value> is specified.', () => {
-    it('should return an inverted boolean.', () => {
+    it('should return parsed data as an object.', () => {
       const cases = [
         [
           `
