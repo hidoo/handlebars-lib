@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/hidoo/handlebars-lib/compare/v1.0.0...v1.1.0) (2024-03-25)
+
+### Bug Fixes
+
+* **express-engine:** change to use register function of @hidoo/handlebars-helpers ([202ab74](https://github.com/hidoo/handlebars-lib/commit/202ab74ddee6fa52518a83a36517dbff455c903b))
+* **helpers:** change {{ifAnchorUrl}} to be DEPRECATED ([67d27f2](https://github.com/hidoo/handlebars-lib/commit/67d27f2b8766201b2d75ebaa067ab7c8c3841ad5))
+
+### Features
+
+* **helpers:** add array helper ([3287a50](https://github.com/hidoo/handlebars-lib/commit/3287a50e2f8b5547bc2caa7f5c69b74489feff0d))
+* **helpers:** add calc helper ([57057d1](https://github.com/hidoo/handlebars-lib/commit/57057d155db0f8e3ae3f252ec9cbc3e882da2300))
+* **helpers:** add map helper ([520468f](https://github.com/hidoo/handlebars-lib/commit/520468f13587e3ec5f3339dfdf69624debb3127f))
+* **helpers:** add not helper ([24b7a13](https://github.com/hidoo/handlebars-lib/commit/24b7a13ccaa0e245dacae97a69cb962f87a6d143))
+* **helpers:** add parse helper ([689f045](https://github.com/hidoo/handlebars-lib/commit/689f045ad516bfa075579793c76ea180edfe2ad3))
+* **helpers:** add parseURL helper ([062e704](https://github.com/hidoo/handlebars-lib/commit/062e704927aeeb55690ee41dddc88fafa3995a16))
+* **helpers:** add truncate helper ([dd7a00b](https://github.com/hidoo/handlebars-lib/commit/dd7a00b83d36dd47a29fa9a839dc34adbfa94d5b))
+
 # [1.0.0](https://github.com/hidoo/handlebars-lib/compare/v0.8.2...v1.0.0) (2024-03-18)
 
 ### Bug Fixes
