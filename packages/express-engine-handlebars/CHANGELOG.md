@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/hidoo/handlebars-lib/compare/v1.0.0...v1.1.0) (2024-03-25)
+
+### Bug Fixes
+
+* **express-engine:** change to use register function of @hidoo/handlebars-helpers ([202ab74](https://github.com/hidoo/handlebars-lib/commit/202ab74ddee6fa52518a83a36517dbff455c903b))
+
 # [1.0.0](https://github.com/hidoo/handlebars-lib/compare/v0.8.2...v1.0.0) (2024-03-18)
 
 **Note:** Version bump only for package @hidoo/express-engine-handlebars
