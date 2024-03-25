@@ -20,11 +20,16 @@
   "publishConfig": {
     "access": "public"
   },
+  "author": "hidoo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hidoo/handlebars-lib.git",
+    "directory": "packages/handlebars-helpers"
+  },
   "scripts": {
     "test": "cross-env NODE_ENV=test mocha ./test"
   },
-  "author": "hidoo",
-  "license": "MIT",
   "dependencies": {
     "@hidoo/data-from": "1.0.0",
     "highlight.js": "11.9.0",

@@ -19,6 +19,11 @@
   },
   "author": "hidoo",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hidoo/handlebars-lib.git",
+    "directory": "packages/express-engine-handlebars"
+  },
   "scripts": {
     "test": "cross-env NODE_ENV=test mocha ./test"
   },
