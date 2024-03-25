@@ -6,7 +6,6 @@ export { default as encodeUrl } from './encodeUrl.js';
 export { default as filterArray } from './filterArray.js';
 export { default as fromJson } from './fromJson.js';
 export { default as highlight } from './highlight.js';
-export { default as ifAnchorUrl } from './ifAnchorUrl.js';
 export { default as length } from './length.js';
 export { default as map } from './map.js';
 export { default as markdown } from './markdown.js';
@@ -23,6 +22,7 @@ export { default as toJson } from './toJson.js';
 
 // DEPRECATED
 export { default as add } from './add.js';
+export { default as ifAnchorUrl } from './ifAnchorUrl.js';
 export { default as convertBreaks } from './convertBreaks.js';
 export { default as ifContain } from './ifContain.js';
 export { default as ifLte } from './ifLte.js';

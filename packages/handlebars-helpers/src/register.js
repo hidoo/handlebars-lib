@@ -45,7 +45,6 @@ export default function register(handlebars) {
   filterArray(handlebars);
   fromJson(handlebars);
   highlight(handlebars);
-  ifAnchorUrl(handlebars);
   length(handlebars);
   map(handlebars);
   markdown(handlebars);
@@ -62,6 +61,7 @@ export default function register(handlebars) {
 
   // DEPRECATED
   add(handlebars);
+  ifAnchorUrl(handlebars);
   convertBreaks(handlebars);
   ifContain(handlebars);
   ifLte(handlebars);
