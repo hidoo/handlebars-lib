@@ -1,8 +1,9 @@
+/* eslint import/no-unresolved: warn */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import Handlebars from 'handlebars';
 import layoutsHelper from 'handlebars-layouts';
-import * as defaultHelpers from '@hidoo/handlebars-helpers';
+import defaultHelperRegister from '@hidoo/handlebars-helpers/register';
 import { globPromise, readFile, readFiles } from './util.js';
 
 /**
@@ -81,9 +82,7 @@ export default function expressEngineHandlebars(options = {}) {
       hbs.registerHelper(layoutsHelper(hbs));
 
       // register default helpers
-      Object.entries(defaultHelpers).forEach(([name, helper]) =>
-        hbs.registerHelper(name, helper)
-      );
+      defaultHelperRegister(hbs);
 
       // register additional helpers
       if (typeof opts.helpers === 'string') {

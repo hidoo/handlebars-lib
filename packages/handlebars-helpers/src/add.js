@@ -1,12 +1,17 @@
+import deprecated from './utils/deprecated.js';
+
 /**
  * 加算
  *
+ * @deprecated since version 1.1.0
  * @param {Number|String} value 元の値
  * @param {Number|String} addition 加算する値
  * @return {Number}
  */
 // eslint-disable-next-line no-magic-numbers
 export default function add(value = 0, addition = 0) {
+  deprecated('add', 'calc', "{{calc a '+' b}}");
+
   let normalizedValue = value;
   let normalizedAddition = addition;
 

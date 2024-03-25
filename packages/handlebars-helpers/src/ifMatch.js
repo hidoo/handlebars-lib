@@ -1,12 +1,17 @@
+import deprecated from './utils/deprecated.js';
+
 /**
  * conditional branch if condition is match or not
  *
- * @param {String} value return value if condition is truesy
+ * @deprecated since version 1.1.0
+ * @param {String} value return value if condition is truthy
  * @param {String} pattern return value if condition is not falsy
  * @param {Object} options options of Handlebars
  * @return {String}
  */
 export default function ifMatch(value, pattern, options) {
+  deprecated('ifMatch', 'calc', "{{#if (calc a '=~' b)}} ... {{/if}}");
+
   const self = this; // eslint-disable-line no-invalid-this
 
   if (typeof value !== 'string') {
