@@ -33,7 +33,7 @@
     "@lerna-lite/version": "3.4.0",
     "cross-env": "7.0.3",
     "eslint": "8.57.0",
-    "lint-staged": "15.2.5",
+    "lint-staged": "15.2.7",
     "prettier": "3.3.2"
   }
 }
