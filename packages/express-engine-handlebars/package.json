@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@hidoo/handlebars-helpers": "workspace:*",
-    "glob": "10.4.1",
+    "glob": "10.4.2",
     "glob-parent": "6.0.2",
     "handlebars": "4.7.8",
     "handlebars-layouts": "3.1.4",
