@@ -33,7 +33,7 @@
   "dependencies": {
     "@hidoo/data-from": "1.0.0",
     "highlight.js": "11.9.0",
-    "marked": "13.0.1",
+    "marked": "13.0.2",
     "marked-gfm-heading-id": "4.0.0",
     "marked-highlight": "2.1.3"
   },
