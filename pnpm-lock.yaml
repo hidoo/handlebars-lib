@@ -79,14 +79,14 @@ importers:
         specifier: 11.10.0
         version: 11.10.0
       marked:
-        specifier: 14.1.0
-        version: 14.1.0
+        specifier: 14.1.2
+        version: 14.1.2
       marked-gfm-heading-id:
         specifier: 4.1.0
-        version: 4.1.0(marked@14.1.0)
+        version: 4.1.0(marked@14.1.2)
       marked-highlight:
         specifier: 2.1.4
-        version: 2.1.4(marked@14.1.0)
+        version: 2.1.4(marked@14.1.2)
     devDependencies:
       cross-env:
         specifier: 7.0.3
@@ -2154,8 +2154,8 @@ packages:
     peerDependencies:
       marked: '>=4 <15'
 
-  marked@14.1.0:
-    resolution: {integrity: sha512-P93GikH/Pde0hM5TAXEd8I4JAYi8IB03n8qzW8Bh1BIEFpEyBoYxi/XWZA53LSpTeLBiMQOoSMj0u5E/tiVYTA==}
+  marked@14.1.2:
+    resolution: {integrity: sha512-f3r0yqpz31VXiDB/wj9GaOB0a2PRLQl6vJmXiFrniNwjkKdvakqJRULhjFKJpxOchlCRiG5fcacoUZY5Xa6PEQ==}
     engines: {node: '>= 18'}
     hasBin: true
 
@@ -5771,16 +5771,16 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  marked-gfm-heading-id@4.1.0(marked@14.1.0):
+  marked-gfm-heading-id@4.1.0(marked@14.1.2):
     dependencies:
       github-slugger: 2.0.0
-      marked: 14.1.0
+      marked: 14.1.2
 
-  marked-highlight@2.1.4(marked@14.1.0):
+  marked-highlight@2.1.4(marked@14.1.2):
     dependencies:
-      marked: 14.1.0
+      marked: 14.1.2
 
-  marked@14.1.0: {}
+  marked@14.1.2: {}
 
   media-typer@0.3.0: {}
 
