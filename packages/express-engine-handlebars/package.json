@@ -38,6 +38,6 @@
   "devDependencies": {
     "cross-env": "7.0.3",
     "express": "4.21.1",
-    "mocha": "10.7.3"
+    "mocha": "10.8.2"
   }
 }
