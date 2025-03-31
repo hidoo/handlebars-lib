@@ -79,14 +79,14 @@ importers:
         specifier: 11.11.1
         version: 11.11.1
       marked:
-        specifier: 14.1.4
-        version: 14.1.4
+        specifier: 15.0.7
+        version: 15.0.7
       marked-gfm-heading-id:
         specifier: 4.1.1
-        version: 4.1.1(marked@14.1.4)
+        version: 4.1.1(marked@15.0.7)
       marked-highlight:
         specifier: 2.2.1
-        version: 2.2.1(marked@14.1.4)
+        version: 2.2.1(marked@15.0.7)
     devDependencies:
       cross-env:
         specifier: 7.0.3
@@ -2212,8 +2212,8 @@ packages:
     peerDependencies:
       marked: '>=4 <16'
 
-  marked@14.1.4:
-    resolution: {integrity: sha512-vkVZ8ONmUdPnjCKc5uTRvmkRbx4EAi2OkTOXmfTDhZz3OFqMNBM1oTTWwTr4HY4uAEojhzPf+Fy8F1DWa3Sndg==}
+  marked@15.0.7:
+    resolution: {integrity: sha512-dgLIeKGLx5FwziAnsk4ONoGwHwGPJzselimvlVskE9XLN4Orv9u2VA3GWw/lYUqjfA0rUT/6fqKwfZJapP9BEg==}
     engines: {node: '>= 18'}
     hasBin: true
 
@@ -5928,16 +5928,16 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  marked-gfm-heading-id@4.1.1(marked@14.1.4):
+  marked-gfm-heading-id@4.1.1(marked@15.0.7):
     dependencies:
       github-slugger: 2.0.0
-      marked: 14.1.4
+      marked: 15.0.7
 
-  marked-highlight@2.2.1(marked@14.1.4):
+  marked-highlight@2.2.1(marked@15.0.7):
     dependencies:
-      marked: 14.1.4
+      marked: 15.0.7
 
-  marked@14.1.4: {}
+  marked@15.0.7: {}
 
   math-intrinsics@1.1.0: {}
 
