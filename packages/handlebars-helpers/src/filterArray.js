@@ -1,3 +1,4 @@
+import comparators from './utils/comparators.js';
 import { normalize, followRecursive } from './utils/key.js';
 
 /**
@@ -8,11 +9,16 @@ import { normalize, followRecursive } from './utils/key.js';
  * @return {Array}
  */
 export default function filterArray(array = [], options = {}) {
-  const { value, key } = options.hash;
+  const { value, key, operator } = options.hash;
 
   if (!Array.isArray(array)) {
     throw new TypeError('{{filterArray}}: Argument "array" is not array.');
   }
+
+  const compare =
+    typeof comparators[operator] === 'function'
+      ? comparators[operator]
+      : comparators['==='];
 
   // array が空の配列の場合、
   // または value の指定がない場合は新しい配列にして返す
@@ -20,9 +26,9 @@ export default function filterArray(array = [], options = {}) {
     return [...array];
   }
 
-  // key の指定がない場合は、完全に一致したものだけを返す
+  // key の指定がない場合は、値が条件に一致したものだけを返す
   if (!key) {
-    return array.filter((item) => item === value);
+    return array.filter((item) => compare(item, value));
   }
 
   // key が文字列ではない場合の対応
@@ -31,7 +37,7 @@ export default function filterArray(array = [], options = {}) {
   if (typeof key !== 'string') {
     return array.filter((item) => {
       if (item[key]) {
-        return item[key] === value;
+        return compare(item[key], value);
       }
       return false;
     });
@@ -42,7 +48,7 @@ export default function filterArray(array = [], options = {}) {
 
   // key を辿って目的の値を再帰的に取り出して比較し、
   // マッチするものだけを返す
-  return array.filter((item) => followRecursive(item, keys) === value);
+  return array.filter((item) => compare(followRecursive(item, keys), value));
 }
 
 /**

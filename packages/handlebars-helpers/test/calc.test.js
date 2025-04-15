@@ -1,6 +1,7 @@
 import assert from 'node:assert';
 import Handlebars from 'handlebars';
-import calc, { comparators, register } from '../src/calc.js';
+import calc, { register } from '../src/calc.js';
+import comparators from '../src/utils/comparators.js';
 
 const DEBUG = Boolean(process.env.DEBUG);
 
