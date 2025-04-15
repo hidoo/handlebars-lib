@@ -15,6 +15,7 @@ export async function globPromise(pattern = '', options = {}) {
     const filePaths = await glob(pattern, options);
 
     return filePaths;
+    // eslint-disable-next-line no-unused-vars
   } catch (error) {
     return [];
   }
