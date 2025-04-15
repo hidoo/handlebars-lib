@@ -6,6 +6,7 @@ export { default as encodeUrl } from './encodeUrl.js';
 export { default as filterArray } from './filterArray.js';
 export { default as fromJson } from './fromJson.js';
 export { default as highlight } from './highlight.js';
+export { default as htmlAttrs } from './htmlAttrs.js';
 export { default as length } from './length.js';
 export { default as map } from './map.js';
 export { default as markdown } from './markdown.js';

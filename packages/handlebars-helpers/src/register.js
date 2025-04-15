@@ -8,6 +8,7 @@ import { register as encodeUrl } from './encodeUrl.js';
 import { register as filterArray } from './filterArray.js';
 import { register as fromJson } from './fromJson.js';
 import { register as highlight } from './highlight.js';
+import { register as htmlAttrs } from './htmlAttrs.js';
 import { register as ifAnchorUrl } from './ifAnchorUrl.js';
 import { register as ifContain } from './ifContain.js';
 import { register as ifLte } from './ifLte.js';
@@ -45,6 +46,7 @@ export default function register(handlebars) {
   filterArray(handlebars);
   fromJson(handlebars);
   highlight(handlebars);
+  htmlAttrs(handlebars);
   length(handlebars);
   map(handlebars);
   markdown(handlebars);
