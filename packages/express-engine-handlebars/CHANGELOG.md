@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/hidoo/handlebars-lib/compare/v1.1.0...v1.2.0) (2025-04-15)
+
+### Bug Fixes
+
+* **deps:** update dependency glob to v10.3.12 ([e103f29](https://github.com/hidoo/handlebars-lib/commit/e103f29c32e7182a3d361fe86a6d1a59896d868f))
+* **deps:** update dependency glob to v10.3.15 ([9e36807](https://github.com/hidoo/handlebars-lib/commit/9e3680798d709122625fc090fc917c3f5f154944))
+* **deps:** update dependency glob to v10.4.1 ([1fcd863](https://github.com/hidoo/handlebars-lib/commit/1fcd86306bef563f629fed1608be3e134ce10f6e))
+* **deps:** update dependency glob to v10.4.2 ([a346b6f](https://github.com/hidoo/handlebars-lib/commit/a346b6fa76c8b3d2f5d4ae3935e53c632adc228d))
+* **deps:** update dependency glob to v10.4.3 ([61ebb29](https://github.com/hidoo/handlebars-lib/commit/61ebb294c5148aa3988569d04f2579d1a97b9b88))
+* **deps:** update dependency glob to v10.4.5 ([c5a0908](https://github.com/hidoo/handlebars-lib/commit/c5a09083b0fe219d42b10df7fd4531854b314bd2))
+* **deps:** update dependency glob to v11 ([4ef57b1](https://github.com/hidoo/handlebars-lib/commit/4ef57b1249651cd5aca62f1ce56f2d036ab0af32))
+* **deps:** update dependency glob to v11.0.1 ([#404](https://github.com/hidoo/handlebars-lib/issues/404)) ([bf695a5](https://github.com/hidoo/handlebars-lib/commit/bf695a5fac94690c1499e1631d5c4dc140e5e6a2))
+
 # [1.1.0](https://github.com/hidoo/handlebars-lib/compare/v1.0.0...v1.1.0) (2024-03-25)
 
 ### Bug Fixes
