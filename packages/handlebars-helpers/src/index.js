@@ -20,6 +20,7 @@ export { default as sortArray } from './sortArray.js';
 export { default as split } from './split.js';
 export { default as truncate } from './truncate.js';
 export { default as toJson } from './toJson.js';
+export { default as urlParams } from './urlParams.js';
 
 // DEPRECATED
 export { default as add } from './add.js';

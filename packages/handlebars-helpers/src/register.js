@@ -29,6 +29,7 @@ import { register as sortArray } from './sortArray.js';
 import { register as split } from './split.js';
 import { register as truncate } from './truncate.js';
 import { register as toJson } from './toJson.js';
+import { register as urlParams } from './urlParams.js';
 
 /* eslint-disable max-statements */
 /**
@@ -60,6 +61,7 @@ export default function register(handlebars) {
   split(handlebars);
   truncate(handlebars);
   toJson(handlebars);
+  urlParams(handlebars);
 
   // DEPRECATED
   add(handlebars);
