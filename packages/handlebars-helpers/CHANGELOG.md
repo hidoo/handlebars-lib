@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/hidoo/handlebars-lib/compare/v1.1.0...v1.2.0) (2025-04-15)
+
+### Bug Fixes
+
+* **deps:** update dependency highlight.js to v11.10.0 ([d2d1c46](https://github.com/hidoo/handlebars-lib/commit/d2d1c468fd8d122a212e7bf50d4cc550be9e9729))
+* **deps:** update dependency highlight.js to v11.11.0 ([#398](https://github.com/hidoo/handlebars-lib/issues/398)) ([fbcbd70](https://github.com/hidoo/handlebars-lib/commit/fbcbd705b94a69e9906b77dc475bbaf90eb3f430))
+* **deps:** update dependency highlight.js to v11.11.1 ([#401](https://github.com/hidoo/handlebars-lib/issues/401)) ([1c643e1](https://github.com/hidoo/handlebars-lib/commit/1c643e1ad2310f186337175bea754f5d9cabe46c))
+* **deps:** update dependency marked to v12.0.2 ([6beb0a4](https://github.com/hidoo/handlebars-lib/commit/6beb0a460801bb3351e9e77cd1f2186d28709859))
+* **deps:** update dependency marked to v13 ([1f3feb6](https://github.com/hidoo/handlebars-lib/commit/1f3feb67a4bba666c570466d2f0cf54b68295529))
+* **deps:** update dependency marked to v13.0.2 ([e95ff10](https://github.com/hidoo/handlebars-lib/commit/e95ff107796f978aa5611cb3bf5c45797b99445b))
+* **deps:** update dependency marked to v13.0.3 ([b2fc6ce](https://github.com/hidoo/handlebars-lib/commit/b2fc6ceefb03b315d1a59ab74c6857ff71ddd9af))
+* **deps:** update dependency marked to v14 ([5cc83ab](https://github.com/hidoo/handlebars-lib/commit/5cc83ab207b8132fdc07b471dbbb4b219ca3ff71))
+* **deps:** update dependency marked to v14.1.2 ([b57af15](https://github.com/hidoo/handlebars-lib/commit/b57af151dfeae1c5075c9438b09df464cb45e3a1))
+* **deps:** update dependency marked to v14.1.3 ([197f060](https://github.com/hidoo/handlebars-lib/commit/197f06049917a2d606438fdecd40b7462b986479))
+* **deps:** update dependency marked to v14.1.4 ([#385](https://github.com/hidoo/handlebars-lib/issues/385)) ([81eb6d9](https://github.com/hidoo/handlebars-lib/commit/81eb6d93b8b6a6657199218414b87c0f56adbaf6))
+* **deps:** update dependency marked to v15 ([8fedc45](https://github.com/hidoo/handlebars-lib/commit/8fedc45b18ed07159dfb57ec9824733956aa598d))
+* **deps:** update dependency marked-gfm-heading-id to v3.2.0 ([97b0163](https://github.com/hidoo/handlebars-lib/commit/97b01631fc72eaaaf720b469493cd2f544dfad8a))
+* **deps:** update dependency marked-gfm-heading-id to v4 ([1cfa80e](https://github.com/hidoo/handlebars-lib/commit/1cfa80e70ebd21e741e6e51fccd90bb79db9868b))
+* **deps:** update dependency marked-gfm-heading-id to v4.0.1 ([464a0ce](https://github.com/hidoo/handlebars-lib/commit/464a0ceb9fa8a482295be5238a2e9e8dce5fb1a2))
+* **deps:** update dependency marked-gfm-heading-id to v4.1.0 ([bd3577e](https://github.com/hidoo/handlebars-lib/commit/bd3577e75f57347ce8757ae805720d480235353b))
+* **deps:** update dependency marked-gfm-heading-id to v4.1.1 ([#386](https://github.com/hidoo/handlebars-lib/issues/386)) ([916a912](https://github.com/hidoo/handlebars-lib/commit/916a9129821115bef609c724d820fd499e4c823d))
+* **deps:** update dependency marked-highlight to v2.1.3 ([22a91c5](https://github.com/hidoo/handlebars-lib/commit/22a91c53769b30f6ad4953ee0174fb408c5609cc))
+* **deps:** update dependency marked-highlight to v2.1.4 ([de0a25a](https://github.com/hidoo/handlebars-lib/commit/de0a25a564c3c6675b465f1976e4190e60a1dddc))
+* **deps:** update dependency marked-highlight to v2.2.0 ([56b12fd](https://github.com/hidoo/handlebars-lib/commit/56b12fdf5be1321d18565df72f9817b82632e16f))
+* **deps:** update dependency marked-highlight to v2.2.1 ([#387](https://github.com/hidoo/handlebars-lib/issues/387)) ([6c0d62a](https://github.com/hidoo/handlebars-lib/commit/6c0d62ac08a9ac969906c19e3542ff5d37f294a6))
+
+### Features
+
+* **helpers:** add htmlAttrs helper ([397c4a8](https://github.com/hidoo/handlebars-lib/commit/397c4a8909eca6130f021de574fad48267a2820b))
+* **helpers:** add operator options to filterArray helper ([2594b6c](https://github.com/hidoo/handlebars-lib/commit/2594b6cd5559380b64d69c43c2fc8e19a437795f))
+* **helpers:** add urlParams helper ([7ed3726](https://github.com/hidoo/handlebars-lib/commit/7ed3726851cc1104fbd37507eb545e832359200b))
+
 # [1.1.0](https://github.com/hidoo/handlebars-lib/compare/v1.0.0...v1.1.0) (2024-03-25)
 
 ### Bug Fixes
