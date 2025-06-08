@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "description": "This is monorepo for libraries of Handlebars.",
   "private": true,
-  "packageManager": "pnpm@10.11.1",
+  "packageManager": "pnpm@10.12.1",
   "engines": {
     "node": ">=18.0.0",
-    "pnpm": "10.11.1"
+    "pnpm": "10.12.1"
   },
   "type": "module",
   "scripts": {
@@ -34,7 +34,7 @@
     "cross-env": "7.0.3",
     "eslint": "9.28.0",
     "lint-staged": "15.5.1",
-    "pnpm": "10.11.1",
+    "pnpm": "10.12.1",
     "prettier": "3.5.3"
   }
 }
