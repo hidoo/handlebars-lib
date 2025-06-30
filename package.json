@@ -35,6 +35,6 @@
     "eslint": "9.30.0",
     "lint-staged": "15.5.1",
     "pnpm": "10.12.4",
-    "prettier": "3.5.3"
+    "prettier": "3.6.2"
   }
 }
