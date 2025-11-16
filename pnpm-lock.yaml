@@ -88,8 +88,8 @@ importers:
         specifier: 4.1.3
         version: 4.1.3(marked@15.0.12)
       marked-highlight:
-        specifier: 2.2.2
-        version: 2.2.2(marked@15.0.12)
+        specifier: 2.2.3
+        version: 2.2.3(marked@15.0.12)
     devDependencies:
       cross-env:
         specifier: 7.0.3
@@ -2265,10 +2265,10 @@ packages:
     peerDependencies:
       marked: '>=13 <18'
 
-  marked-highlight@2.2.2:
-    resolution: {integrity: sha512-KlHOP31DatbtPPXPaI8nx1KTrG3EW0Z5zewCwpUj65swbtKOTStteK3sNAjBqV75Pgo3fNEVNHeptg18mDuWgw==}
+  marked-highlight@2.2.3:
+    resolution: {integrity: sha512-FCfZRxW/msZAiasCML4isYpxyQWKEEx44vOgdn5Kloae+Qc3q4XR7WjpKKf8oMLk7JP9ZCRd2vhtclJFdwxlWQ==}
     peerDependencies:
-      marked: '>=4 <17'
+      marked: '>=4 <18'
 
   marked@15.0.12:
     resolution: {integrity: sha512-8dD6FusOQSrpv9Z1rdNMdlSgQOIP880DHqnohobOmYLElGEqAL/JvxvuxZO16r4HtjTlfPRDC1hbvxC9dPN2nA==}
@@ -5983,7 +5983,7 @@ snapshots:
       github-slugger: 2.0.0
       marked: 15.0.12
 
-  marked-highlight@2.2.2(marked@15.0.12):
+  marked-highlight@2.2.3(marked@15.0.12):
     dependencies:
       marked: 15.0.12
 
