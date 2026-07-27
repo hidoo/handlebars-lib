@@ -85,8 +85,8 @@ importers:
         specifier: 15.0.12
         version: 15.0.12
       marked-gfm-heading-id:
-        specifier: 4.1.3
-        version: 4.1.3(marked@15.0.12)
+        specifier: 4.1.4
+        version: 4.1.4(marked@15.0.12)
       marked-highlight:
         specifier: 2.2.3
         version: 2.2.3(marked@15.0.12)
@@ -2302,10 +2302,10 @@ packages:
     resolution: {integrity: sha512-iyyEpDty1mwW3dGlYXAJqC/azFn5PPvgKVwXayOGBSmKLxhKZ9fg4qIan2ePpp1vJIwfFiO34LAPZgq9SZW9Aw==}
     engines: {node: ^20.17.0 || >=22.9.0}
 
-  marked-gfm-heading-id@4.1.3:
-    resolution: {integrity: sha512-aR0i63LmFbuxU/gAgrgz1Ir+8HK6zAIFXMlckeKHpV+qKbYaOP95L4Ux5Gi+sKmCZU5qnN2rdKpvpb7PnUBIWg==}
+  marked-gfm-heading-id@4.1.4:
+    resolution: {integrity: sha512-CspnvVfHSkb/znqdPS4jUR8HtCjq3M/DnrsJCrfLBLvdrgbemmoINKpeWKQYkBiXAoBGejw0cV7xzqrPdup3WA==}
     peerDependencies:
-      marked: '>=13 <18'
+      marked: '>=13 <19'
 
   marked-highlight@2.2.3:
     resolution: {integrity: sha512-FCfZRxW/msZAiasCML4isYpxyQWKEEx44vOgdn5Kloae+Qc3q4XR7WjpKKf8oMLk7JP9ZCRd2vhtclJFdwxlWQ==}
@@ -6068,7 +6068,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  marked-gfm-heading-id@4.1.3(marked@15.0.12):
+  marked-gfm-heading-id@4.1.4(marked@15.0.12):
     dependencies:
       github-slugger: 2.0.0
       marked: 15.0.12
