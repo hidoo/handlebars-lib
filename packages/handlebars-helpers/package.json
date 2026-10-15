@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "cross-env": "7.0.3",
-    "handlebars": "4.7.9",
+    "handlebars": "4.7.10",
     "mocha": "11.8.0"
   },
   "peerDependencies": {
